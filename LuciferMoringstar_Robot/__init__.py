@@ -25,19 +25,19 @@ Bot Owner Only
 /logger  Get Logs
 /delete Delete File From Database
 
-[➡️How To Add Old Files For database](https://youtu.be/mtu5hgW-l_o)
-
-@Mo_Tech_YT
+@KicchaRequest
 """
 
 ABOUT = """
-➥ Name :  Auto Filter With IMDB
+➥ Name :  Allu Arjun RoBot
     
-➥ Creator : [Muhammed RK](t.me/Mrk_YT)
+➥ Creator : [Sachin S](https://t.me/sachin_official_admin)
 
 ➥ Language : Python3
 
 ➥ Library : Pyrogram Asyncio 1.13.0
 
-➥ Source Code : [Click Me](https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
+➥ Request Group : [Kiccha Request](https://t.me/KicchaRequest)
+
+➥ Movie Channel :  [KICCHA REQUEST Channel](https://t.me/GD_FILMCLUB)
 """
