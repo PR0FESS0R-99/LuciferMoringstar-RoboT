@@ -223,6 +223,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
                 buttons.append(
                     [InlineKeyboardButton("⌫ 𝐂𝐨𝐦𝐞 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 𝑷𝒂𝒈𝒆 ≫", callback_data=f"next_{int(index)+1}_{keyword}")]
+                )
+                buttons.append(
                     [InlineKeyboardButton(f"🎶 𝙿𝚊𝚐𝚎𝚜 {int(index)+2}/{data['total']}", callback_data="pages")]
                 )
 
@@ -257,6 +259,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
                 buttons.append(
                     [InlineKeyboardButton("⌫ 𝐂𝐨𝐦𝐞 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 𝑷𝒂𝒈𝒆 ≫", callback_data=f"next_{int(index)-1}_{keyword}")]
+                )
+                buttons.append(
                     [InlineKeyboardButton(f"🎶 𝙿𝚊𝚐𝚎𝚜 {int(index)}/{data['total']}", callback_data="pages")]
                 )
 
