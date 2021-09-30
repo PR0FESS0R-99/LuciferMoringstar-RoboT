@@ -64,7 +64,7 @@ async def filter(client, message):
                      InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='Something went wrong bruh Check your requested Movie Name it's correct...')
+            await client.send_message(chat_id=message.from_user.id, message='Something went wrong bruh Check your requested Movie Name it's correct...🤒')
             return
 
         if not btn:
