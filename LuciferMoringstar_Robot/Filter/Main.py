@@ -271,12 +271,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "help":
             buttons = [
                 [
-                    InlineKeyboardButton('Update Channel', url='https://t.me/GD_FILMCLUB'),
-                    InlineKeyboardButton('Request Group', url=f'https://t.me/KicchaRequest')
+                    InlineKeyboardButton('💬 Channel', url='https://t.me/GD_FILMCLUB'),
+                    InlineKeyboardButton('🗣️ Group', url=f'https://t.me/KicchaRequest')
                 ],
                 [
                     InlineKeyboardButton("🤔 Help", callback_data="help"),
                     InlineKeyboardButton("About 🤠", callback_data="about")
+                ],
+                [
+                    InlineKeyboardButton('close 🔐', callback_data='close_btn')
                 ]
                 ]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -284,12 +287,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Update Channel', url='https://t.me/GD_FILMCLUB'),
-                    InlineKeyboardButton('Request Group', url=f'https://t.me/KicchaRequest')
+                    InlineKeyboardButton('💬 Channel', url='https://t.me/GD_FILMCLUB'),
+                    InlineKeyboardButton('🗣️ Group', url=f'https://t.me/KicchaRequest')
                 ],
                 [
                     InlineKeyboardButton("🤔 Help", callback_data="help"),
                     InlineKeyboardButton("About 🤠", callback_data="about")
+                ],
+                [
+                    InlineKeyboardButton('close 🔐', callback_data='close_btn')
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
