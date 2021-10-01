@@ -84,10 +84,15 @@ async def start(bot, message):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Request Group', url=f'https://t.me/KicchaRequest')
+                        InlineKeyboardButton('🗣️ Group', url=f'https://t.me/KicchaRequest'),
+                        InlineKeyboardButton('💬Channel', url=f'https://t.me/GD_FILMCLUB')
                     ],
                     [
                         InlineKeyboardButton('🔍 Search again 🔎', switch_inline_query_current_chat='')
+                    ],
+                    [
+                        InlineKeyboardButton('📺 Tv Series 📺', url=f'https://t.me/TV_VIRISION'),
+                        InlineKeyboardButton('💻📱OTT Movies 📱💻', url=f'https://t.me/KR_ROCKERS_DVD_WEB_OTT_MOVIES')
                     ]
                     ]
                 await bot.send_cached_media(
