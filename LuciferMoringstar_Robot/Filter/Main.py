@@ -283,8 +283,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
                 ]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-
-
        elif query_data == "close":
            await update.message.delete()
 
@@ -303,8 +301,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
-
-
        elif query_data == "close":
            await update.message.delete()
 
