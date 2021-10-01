@@ -274,7 +274,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('💬 Channel', url='https://t.me/GD_FILMCLUB'),
                     InlineKeyboardButton('🗣️ Group', url=f'https://t.me/KicchaRequest')
                 ],
-                ]
+                [
                     InlineKeyboardButton("🤔Help", callback_data="help"),
                     InlineKeyboardButton("About🤠", callback_data="about")
                 ]
