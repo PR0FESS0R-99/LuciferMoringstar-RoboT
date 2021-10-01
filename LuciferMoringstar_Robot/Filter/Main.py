@@ -275,7 +275,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🗣️ Group', url=f'https://t.me/KicchaRequest')
                 ],
                 ]
-                    InlineKeyboardButton("About 🤠", callback_data="about"),
+                    InlineKeyboardButton("About 🤠", callback_data="about")
                 ]
                 ]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -287,7 +287,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('🗣️ Group', url=f'https://t.me/KicchaRequest')
                 ],
                 [
-                    InlineKeyboardButton("🤔 Help", callback_data="help"),
+                    InlineKeyboardButton("🤔 Help", callback_data="help")
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
