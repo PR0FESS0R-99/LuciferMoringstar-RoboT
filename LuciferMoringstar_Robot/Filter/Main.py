@@ -279,6 +279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("About 🤠", callback_data="about")
                 ],
                 [
+                    InlineKeyboardButton('Home ⚡', callback_data='start'),
                     InlineKeyboardButton('close 🔐', callback_data='close_btn')
                 ]
                 ]
@@ -295,6 +296,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton("About 🤠", callback_data="about")
                 ],
                 [
+                    InlineKeyboardButton('Home ⚡', callback_data='start'),
                     InlineKeyboardButton('close 🔐', callback_data='close_btn')
                 ]
                 ]
