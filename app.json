@@ -101,7 +101,7 @@
             "required": true
         },
         "ADMIN_ID": {
-            "description": "Control BroackCast",
+            "description": "Control BroadCast",
             "value": "",
             "required": true
         },
