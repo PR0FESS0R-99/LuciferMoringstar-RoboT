@@ -22,6 +22,9 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
 
+## Deploy to Railway
+<p><a href=https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot> <img src="https://img.shields.io/badge/Deploy%20To%20Railway-blueviolet?style=for-the-badge&logo=railway" width="200""/></a></p>
+
 #### Hard Way
 ```bash
 # Create virtual environment
