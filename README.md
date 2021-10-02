@@ -23,7 +23,12 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
 
 ## Deploy to Railway
-<p><a href=https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot> <img src="https://img.shields.io/badge/Deploy%20To%20Railway-blueviolet?style=for-the-badge&logo=railway" width="200""/></a></p>
+<p><a href=https://github.com//LuciferMoringstar_Robot> <img src="https://img.shields.io/badge/Deploy%20To%20Railway-blueviolet?style=for-the-badge&logo=railway" width="200""/></a></p>
+
+
+<p><a href=https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FPR0FESS0R-99%2FLuciferMoringstar_Robot&envs=
+API_ID%2CAPI_HASH%2CBOT_TOKEN%2CCHANNELS%2CAUTH_USERS%2CFORCES_SUB%2C
+ADMINS%2CSTART_MSG%2CUSE_CAPTION_FILTER%2COMDB_API_KEY%2CCUSTOM_FILE_CAPTION%2CAUTH_GROUPS%2CDATABASE_2%2CBOT_NAME%2CCOLLECTION_NAME%2CCACHE_TIME%2CBROADCAST%2CDATABASE_1%2CADMIN_ID%2CBROADCAST_CHANNEL&optionalEnvs=CHANNELS%2CADMINS%2CAUTH_USERS%2CFORCES_SUB%2CSTART_MSG&API_IDDesc=Get+From+my.telegram.org&API_HASHDesc=Get+from+my.telegram.org&BOT_TOKENDesc=Get+from%40Botfather&USE_CAPTION_FILTEResc=ID+of+Channel%2FGroup+where+the+bot+plays+Music.&OMDB_API_KEYDesc=Pyrogram+string+session+of+a+user+account&CUSTOM_FILE_CAPTIONDesc=Group+to+send+Playlist%2C+if+CHAT+is+a+Group%28%29&ADMINSDesc=+ID+of+users+who+can+use+admin+commands.&AUTH_USERSDesc=This+will+be+streamed+on+startups+and+restarts+of+bot.+You+can+use+either+any+STREAM_URL+or+a+direct+link+of+any+video+or+a+Youtube+Live+link.+You+can+also+use+YouTube+Playlist.Find+a+Telegram+Link+for+your+playlist+from+%40DumpPlaylist+or+get+a+PlayList+from++%40GetPlaylistBot.+&FORCES_SUBDesc=A+reply+to+those+who+message+the+USER+account+in+PM.+Leave+it+blank+if+you+do+not+need+this+feature.&START_MSGDesc=Pass+Y+If+you+want+to+make+%2Fplay+command+only+for+admins+of+CHAT.+By+default+%2Fplay+is+available+for+all&referralCode=PR0FESS0R-99> <img src="https://img.shields.io/badge/Deploy%20To%20Railway-blueviolet?style=for-the-badge&logo=railway" width="200""/></a></p>
 
 #### Hard Way
 ```bash
