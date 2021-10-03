@@ -22,7 +22,7 @@ DATABASE_NAME = 'LuciferMoringstar_Robot'
 COLLECTION_NAME = 'channel_files'  # If you are using the same database, then use different collection name for each bot
 
 # Messages
-START_MSG = """
+START_MSG = """<b>Hy {},
 **Hi, I'm Media Search bot**
 
 Here you can search files in inline mode. Just press follwing buttons and start searching.
