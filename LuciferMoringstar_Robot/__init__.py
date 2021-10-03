@@ -13,7 +13,7 @@ from .Channel import (
 HELP = """
 Basic Commads
 
-/start :- check am Alive
+/start :- check if am alive or dead!
 
 Bot Owner Only
 /broadcast Replay Any Message or Media
@@ -31,9 +31,9 @@ Bot Owner Only
 """
 
 ABOUT = """
-➥ Name :  Auto Filter With IMDB
+➥ Name :  Draz
     
-➥ Creator : [Muhammed RK](t.me/Mrk_YT)
+➥ Creator : [aze](t.me/iam_aze)
 
 ➥ Language : Python3
 
