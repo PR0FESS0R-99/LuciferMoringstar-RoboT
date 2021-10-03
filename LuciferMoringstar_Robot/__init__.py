@@ -11,19 +11,21 @@ from .Channel import (
 )
 
 HELP = """
-Basic Commads
+<u>Basic Commads</u>
 
-/start :- check am Alive
+/start : check if am alive or dead
+/about : About Me
 
-Bot Owner Only
-/broadcast Replay Any Message or Media
-/stats user Status
-/ban_user  click ban_user more info
-/unban_user click unban_user more info
-/banned_users Banned User Details
-/total How Many Files Added In Database
-/logger  Get Logs
-/delete Delete File From Database
+<u>Bot Owner Only</u>
+
+  /broadcast Replay Any Message or Media
+  /stats user Status
+  /ban_user  click ban_user more info
+  /unban_user click unban_user more info
+  /banned_users Banned User Details
+  /total How Many Files Added In Database
+  /logger  Get Logs
+  /delete Delete File From Database
 
 [➡️How To Add Old Files For database](https://youtu.be/mtu5hgW-l_o)
 
@@ -31,7 +33,7 @@ Bot Owner Only
 """
 
 ABOUT = """
-➥ Name :  Auto Filter With IMDB
+➥ Name : Auto Filter With IMDB
     
 ➥ Creator : [Muhammed RK](t.me/Mrk_YT)
 
