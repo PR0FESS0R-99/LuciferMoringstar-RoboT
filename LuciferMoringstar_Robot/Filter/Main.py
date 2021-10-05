@@ -279,7 +279,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('Update Channel', url='t.me/Mo_Tech_YT'),
                 InlineKeyboardButton('Source Code', url="https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot")
                 ],[
-                InlineKeyboardButton('💫Deploy Video💫, url=f"{TUTORIAL}")
+                InlineKeyboardButton('💫Deploy Video💫', url=f'{TUTORIAL}')
                 ]]
             await query.message.edit(text=f"{HELP}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
