@@ -130,7 +130,7 @@ async def group(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
         else:
-            LuciferMoringstar=await client.send_text(
+            LuciferMoringstar=await client.send_message(
             chat_id = message.chat.id,
             text=f"""
 👋Hey {message.from_user.mention}
