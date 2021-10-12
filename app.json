@@ -49,7 +49,7 @@
         },
         "START_MSG": {
             "description": "Welcome message for start command",
-            "value": "**Hi, I'm ADV Auto Filter Bot**",
+            "value": "**Hey {} I'm ADV Auto Filter Bot**",
             "required": false
         },
         "USE_CAPTION_FILTER": {
