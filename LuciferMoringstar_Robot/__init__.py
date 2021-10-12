@@ -11,31 +11,33 @@ from .Channel import (
 )
 
 HELP = """
-<u>Basic Commads</u>
+<b><u>Basic Commads</u></b>
 
-/start : check if am alive or dead
-/about : About Me
+➥ /start : check if am alive or dead
+➥ /about : About Me
+➥ /stats user Status
 
-<u>Bot Owner Only</u>
+<b><u>Bot Owner Only</u></b>
 
-  /broadcast Replay Any Message or Media
-  /stats user Status
-  /ban_user  click ban_user more info
-  /unban_user click unban_user more info
-  /banned_users Banned User Details
-  /total How Many Files Added In Database
-  /logger  Get Logs
-  /delete Delete File From Database
+➥ /broadcast Replay Any Message or Media
+➥ /ban_user  click ban_user more info
+➥ /unban_user click unban_user more info
+➥ /banned_users Banned User Details
+➥ /total How Many Files Added In Database
+➥ /logger  Get Logs
+➥ /delete Delete File From Database
 
-[➡️How To Add Old Files For database](https://youtu.be/mtu5hgW-l_o)
+<b>[➡️How To Add Old Files For database](https://youtu.be/mtu5hgW-l_o)
 
-@Mo_Tech_YT
+@Mo_Tech_YT>/b>
 """
 
 ABOUT = """
 ➥ Name : Auto Filter With IMDB
     
-➥ Creator : [Muhammed RK](t.me/Mrk_YT)
+➥ Credits : Subin
+
+➥ Editing : [Muhammed RK](t.me/Mrk_YT)
 
 ➥ Language : Python3
 
