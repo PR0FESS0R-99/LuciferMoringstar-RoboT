@@ -29,7 +29,7 @@ HELP = """
 
 <b>[➡️How To Add Old Files For database](https://youtu.be/mtu5hgW-l_o)
 
-@Mo_Tech_YT>/b>
+@Mo_Tech_YT></b>
 """
 
 ABOUT = """
