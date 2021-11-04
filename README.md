@@ -1,14 +1,8 @@
-<p align="center">
-  <mp4 src="assets/logo.jpg" alt="Rocky_autofilter_Robot">
-</p>
-
 
 ### [Rocky_autofilterBOT](https://telegram.dog/Rocky_autofilterBOT)
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/sachin9742s/Rocky_autofilter_Robot?style=social)
 <img src="https://img.shields.io/github/forks/sachin9742s/Rocky_autofilter_Robot?style=social"></img>
-## Video
-<a href="https://youtu.be/-xDQbsF-wek"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/-xDQbsF-wek?style=social">
 
 #### Added Features
 * Imdb posters for autofilter.
