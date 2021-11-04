@@ -4,8 +4,8 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQ
 from pyrogram import Client, filters
 import re
 from pyrogram.errors import UserNotParticipant
-from LuciferMoringstar_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
-from LuciferMoringstar_Robot import RATING, GENRES, RELEASE_INFO, HELP, ABOUT
+from Rocky_autofilter_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
+from Rocky_autofilter_Robot import RATING, GENRES, RELEASE_INFO, HELP, ABOUT
 import random
 BUTTONS = {}
 BOT = {}
@@ -53,15 +53,15 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n\n\n   **📤 Uploaded by:- {message.chat.title}\n **📆 Year:-** {random.choice(RELEASE_INFO)}**"
+        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n\n\n   **📤 Uploaded by:- {message.chat.title}**"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
                 file_id = file.file_id
                 filename = f"{file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}"),
-                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
+                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
             await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgIAAxkBAAIFNWFEzuIuzExr0aFG23qMtd7Z6NuSAALYDgACbKy4S3x0xJsbYPWIIAQ')
@@ -114,7 +114,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n\n\n**📤 Uploaded by:- {message.chat.title}\n **📆 Year:-** {random.choice(RELEASE_INFO)}**"
+        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n\n\n**📤 Uploaded by:- {message.chat.title}**"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
@@ -126,8 +126,8 @@ async def group(client, message):
                 file_id = file.file_id
                 filename = f"{file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}"),
-                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
+                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
             return
@@ -295,7 +295,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
-        elif query.data.startswith("pr0fess0r_99"):
+        elif query.data.startswith("sachin9742s"):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
