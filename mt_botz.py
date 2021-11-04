@@ -7,7 +7,7 @@ logging.getLogger().setLevel(logging.ERROR)
 
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
-from LuciferMoringstar_Robot import Media
+from Rocky_autofilter_Robot import Media
 from Config import SESSION, API_ID, API_HASH, BOT_TOKEN
 import pyromod.listen
 
@@ -20,7 +20,7 @@ class Bot(Client):
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
             workers=50,
-            plugins={"root": "LuciferMoringstar_Robot"},
+            plugins={"root": "Rocky_autofilter_Robot"},
             sleep_threshold=5,
         )
 
