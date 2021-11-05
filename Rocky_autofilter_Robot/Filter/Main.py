@@ -60,8 +60,8 @@ async def filter(client, message):
                 file_id = file.file_id
                 filename = f"{file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}"),
-                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}", callback_data=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
+                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", callback_data=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
             await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgIAAxkBAAIFNWFEzuIuzExr0aFG23qMtd7Z6NuSAALYDgACbKy4S3x0xJsbYPWIIAQ')
@@ -86,10 +86,10 @@ async def filter(client, message):
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=gd_film, reply_markup=InlineKeyboardMarkup(buttons))
 
             else:
-                await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(gd_film, reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -103,9 +103,9 @@ async def filter(client, message):
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=gd_film, reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(gd_film, reply_markup=InlineKeyboardMarkup(buttons))
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
@@ -114,7 +114,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n\n\n**📤 Uploaded by:- {message.chat.title}\n **📆 Year:-** {random.choice(RELEASE_INFO)}**"
+        gd_film = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n\n\n**📤 Uploaded by:- {message.chat.title}\n **📆 Year:-** {random.choice(RELEASE_INFO)}**"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
@@ -126,8 +126,8 @@ async def group(client, message):
                 file_id = file.file_id
                 filename = f"{file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}"),
-                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=pr0fess0r_99_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}", callback_data=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
+                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", callback_data=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
             return
@@ -150,9 +150,9 @@ async def group(client, message):
             if API_KEY:
                 poster=await get_poster(search)
             if poster:
-                await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo=poster, caption=gd_film, reply_markup=InlineKeyboardMarkup(buttons))
             else:
-                await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_text(gd_film, reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -166,9 +166,9 @@ async def group(client, message):
         if API_KEY:
             poster=await get_poster(search)
         if poster:
-            await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_photo(photo=poster, caption=gd_film, reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+            await message.reply_text(gd_film, reply_markup=InlineKeyboardMarkup(buttons))
 
     
 def get_size(size):
