@@ -7,7 +7,7 @@ logging.getLogger().setLevel(logging.ERROR)
 
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
-from LuciferMoringstar_Robot import Media
+from Rocky_autofilter_Robot import Media
 from Config import SESSION, API_ID, API_HASH, BOT_TOKEN
 import pyromod.listen
 
