@@ -130,7 +130,7 @@ async def start(bot, message):
                 ],[
                 InlineKeyboardButton("🧑‍💻 𝙼𝚢 𝙱𝚘𝚜𝚜", url="https://t.me/sachin_official_admin")
                 ],[
-                InlineKeyboardButton("📁 𝙲𝚑𝚊𝚗𝚗𝚎𝚕", url="https://t.me/GD_FILMCLUB"),
+                InlineKeyboardButton("📁 𝙲𝚑𝚊𝚗𝚗𝚎𝚕", url="https://t.me/gd_film"),
                 InlineKeyboardButton("📺 𝚃𝚟 𝚂𝚎𝚛𝚒𝚎𝚜", url="https://t.me/TV_VIRISION")
                 ],[
                 InlineKeyboardButton("🔍 𝚂𝚎𝚊𝚛𝚌𝚑 𝙰𝚐𝚊𝚒𝚗 🔎", switch_inline_query_current_chat='')
@@ -349,7 +349,7 @@ async def bot_info(bot, message):
     buttons = [
         [
             InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url='https://t.me/KicchaRequest'),
-            InlineKeyboardButton('💬 𝙲𝚑𝚊𝚗𝚗𝚎𝚕', url=f'https://t.me/GD_FILMCLUB')
+            InlineKeyboardButton('💬 𝙲𝚑𝚊𝚗𝚗𝚎𝚕', url=f'https://t.me/gd_film')
         ]
         ]
     await message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
