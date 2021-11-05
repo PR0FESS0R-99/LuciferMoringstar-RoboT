@@ -4,10 +4,10 @@ from pyrogram import Client, filters
 from pyrogram import StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from Config import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, TUTORIAL, BROADCAST_CHANNEL, DB_URL, SESSION, ADMIN_ID    
-from Rocky_autofilter_Robot.Utils import Media, get_file_details 
-from Rocky_autofilter_Robot.Broadcast import broadcast
-from Rocky_autofilter_Robot import ABOUT
-from Rocky_autofilter_Robot.Channel import handle_user_status
+from LuciferMoringstar_Robot.Utils import Media, get_file_details 
+from LuciferMoringstar_Robot.Broadcast import broadcast
+from LuciferMoringstar_Robot import ABOUT
+from LuciferMoringstar_Robot.Channel import handle_user_status
 from Database import Database
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
@@ -28,7 +28,7 @@ async def start(bot, message):
             f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
         )
     usr_cmdall1 = message.text
-    if usr_cmdall1.startswith("/start sachin9742s"):
+    if usr_cmdall1.startswith("/start pr0fess0r_99"):
         if AUTH_CHANNEL:
             invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
             try:
@@ -302,7 +302,7 @@ async def total(bot, message):
     msg = await message.reply("Processing...⏳", quote=True)
     try:
         total = await Media.count_documents()
-        await msg.edit(f'🗃️ Saved files: {total}')
+        await msg.edit(f'📁 Saved files: {total}')
     except Exception as e:
         logger.exception('Failed to check total files')
         await msg.edit(f'Error: {e}')
