@@ -15,7 +15,7 @@ HELP = """
 ○  it's Note Complicated...🤓
 
 ○  Search using inline mode
-This methord works on any chat, Just type @Allu_ArjunROBOT and then leave a space and search any movie you want...
+This methord works on any chat, Just type @Rocky_autofilterBOT and then leave a space and search any movie you want...
 
 ○ Available Commands
      
@@ -44,15 +44,15 @@ Bot Owner Only
 """
 
 ABOUT = """
-➥ Name :  [Allu Arjun RoBot](https://t.me/Allu_ArjunROBOT)
+➥ Name :  [Rocky_autofilter_Robot](https://t.me/Rocky_autofilterBOT)
 ➥ Creator : [Sachin S](https://t.me/sachin_official_admin)
 ➥ Credits : Everyone in this journey
 ➥ Language : Python3
 ➥ Library : Pyrogram Asyncio 1.13.0
 ➥ Server : [Heroku](https://herokuapp.com/)
-➥ Source Code : [👉 Click Here](https://github.com/sachin9742s/Allu_ArjunROBOTv3)
+➥ Source Code : [👉 Click Here](https://github.com/sachin9742s/Rocky_autofilter_Robot)
 ➥ Database : [MongoDB](https://www.mongodb.com/)
 ➥ Build Status : V3.1 [BETA]
 ➥ Request Group : [Kiccha Request](https://t.me/KicchaRequest)
-➥ Movie Channel :  [KICCHA REQUEST Channel](https://t.me/GD_FILMCLUB)
+➥ Movie Channel :  [KICCHA REQUEST Channel](https://t.me/gd_film)
 """
