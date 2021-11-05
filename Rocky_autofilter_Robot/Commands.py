@@ -28,7 +28,7 @@ async def start(bot, message):
             f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
         )
     usr_cmdall1 = message.text
-    if usr_cmdall1.startswith("/start pr0fess0r_99"):
+    if usr_cmdall1.startswith("/start sachin9742s"):
         if AUTH_CHANNEL:
             invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
             try:
