@@ -15,7 +15,7 @@ HELP = """
 ○  it's Note Complicated...🤓
 
 ○  Search using inline mode
-This methord works on any chat, Just type @Allu_ArjunROBOT and then leave a space and search any movie you want...
+This methord works on any chat, Just type @Rocky_autofilterBOT and then leave a space and search any movie you want...
 
 ○ Available Commands
      
