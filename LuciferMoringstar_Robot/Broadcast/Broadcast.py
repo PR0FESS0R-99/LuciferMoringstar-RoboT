@@ -1,4 +1,4 @@
-# (c) PR0FESS0R-99
+# (c) sachin9742s
 
 import asyncio
 import datetime
