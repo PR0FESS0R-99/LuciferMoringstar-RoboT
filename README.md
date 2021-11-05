@@ -1,7 +1,7 @@
-### [LuciferMoringstar_Robot](https://telegram.dog/LuciferMoringstar_Robot)
+### [Rocky_autofilter_Robot](https://telegram.dog/Rocky_autofilterBOT)
 
-![GitHub Repo stars](https://img.shields.io/github/stars/PR0FESS0R-99/LuciferMoringstar_Robot?style=social)
-<img src="https://img.shields.io/github/forks/PR0FESS0R-99/LuciferMoringstar_Robot?style=social"></img>
+![GitHub Repo stars](https://img.shields.io/github/stars/sachin9742s/Rocky_autofilter_Robot?style=social)
+<img src="https://img.shields.io/github/forks/sachin9742s/Rocky_autofilter_Robot?style=social"></img>
 ## Video
 <a href="https://youtu.be/-xDQbsF-wek"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/-xDQbsF-wek?style=social">
 
@@ -18,7 +18,7 @@
 
 #### Deploy To Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sachin9742s/Rocky_autofilter_Robot)
 
 #### Hard Way
 ```bash
@@ -45,13 +45,13 @@ Check [`sample_info.py`](sample_info.py) before editing [`Config.py`](Config.py)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `CHANNELS`: Username or ID of channel or group. Separate multiple IDs by space
 * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
-* `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/gBLTsH-IXr0)
-* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/gBLTsH-IXr0)
+* `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com).
+* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com).
 
 #### Optional Variables
 * `OMDB_API_KEY`: OMBD_API_KEY to generate imdb poster for filter results.Get it from [omdbapi.com](http://www.omdbapi.com/apikey.aspx)
 * `CUSTOM_FILE_CAPTION` : A custom caption for your files. You can format it with file_name, file_size, file_caption.(supports html formating)
-Example: `<b>Join [MT Bots](https://t.me/MT_Botz) for more useful bots</b>\n\n<code>{file_name}</code>\nSize{file_size}\n{file_caption}.`
+Example: `<b>Join [Kiccha Request](https://t.me/KicchaRequest) for more useful bots</b>\n\n<code>{file_name}</code>\nSize{file_size}\n{file_caption}.`
 * `AUTH_GROUPS` : ID of groups which bot should work as autofilter, bot can only work in thease groups. If not given , bot can be used in any group.
 * `COLLECTION_NAME`: Name of the collections. Defaults to Telegram_files. If you going to use same database, then use different collection name for each bot
 * `CACHE_TIME`: The maximum amount of time in seconds that the result of the inline query may be cached on the server
@@ -61,7 +61,7 @@ Example: `<b>Join [MT Bots](https://t.me/MT_Botz) for more useful bots</b>\n\n<c
 * `START_MSG`: Welcome message for start command.
 
 ##### Note
-* Currently [API used](http://www.omdbapi.com) here is allowing 1000 requests per day. [You may not get posters if its crossed](https://t.me/mt_botz). 
+* Currently [API used](http://www.omdbapi.com) here is allowing 1000 requests per day. 
 Once a poster is fetched from OMDB , poster is saved to DB to reduce duplicate requests.
 
 ## Tips
@@ -69,10 +69,10 @@ Once a poster is fetched from OMDB , poster is saved to DB to reduce duplicate r
 * If you don't want to create a channel or group, use your chat ID / username as the channel ID. When you send a file to a bot, it will be saved in the database.
 
 ## Thanks to 
-* [Pyrogram](https://github.com/pyrogram/pyrogram)
-* [Original Repo](https://github.com/Mahesh0253/Media-Search-bot)
-* [subinps](https://github.com/subinps/Media-Search-bot)
-* [Editing Muhammed Rk](https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
+* [Pyrogram](https://github.com/sachin9742s/pyrogram)
+* [Original Repo](https://github.com/sachin9742s/Media-Search-bot)
+* [subinps](https://github.com/sachin9742s/Media-Search-bot)
+* [Editing Muhammed Rk](https://github.com/sachin9742s/Rocky_autofilter_Robot)
 
 ## License
 Code released under [The GNU General Public License](LICENSE).
