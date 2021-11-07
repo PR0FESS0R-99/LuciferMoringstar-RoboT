@@ -1,7 +1,7 @@
 import os
 import logging
 import random
-from Rocky_autofilter_Robot import script
+from sample_info import script
 from pyrogram import Client, filters
 from pyrogram import StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
