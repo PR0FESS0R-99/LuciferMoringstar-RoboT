@@ -1,4 +1,4 @@
-class script(object):,
+class script(object):
 from Rocky_autofilter_Robot import environ,
 # Bot information
 SESSION = 'Rocky_autofilter_Robot'
