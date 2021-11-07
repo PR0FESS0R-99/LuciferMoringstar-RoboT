@@ -222,7 +222,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
                 buttons.append(
                     [InlineKeyboardButton("⌫ 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}"),
-                     InlineKeyboardButton(f"🎶 𝙿𝚊𝚐𝚎𝚜 {int(index)+2}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton(f"🗓️ {int(index)+2}/{data['total']}", callback_data="pages"),
                      InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 ≫", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
 
@@ -257,7 +257,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
                 buttons.append(
                     [InlineKeyboardButton("⌫ 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}"),
-                     InlineKeyboardButton(f"🎶 𝙿𝚊𝚐𝚎𝚜 {int(index)+2}/{data['total']}", callback_data="pages"),
+                     InlineKeyboardButton(f"🗓️ {int(index)+2}/{data['total']}", callback_data="pages"),
                      InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 ≫", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
 
@@ -292,7 +292,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
-        elif query.data.startswith("pr0fess0r_99"):
+        elif query.data.startswith("sachin9742s"):
             ident, file_id = query.data.split("#")
             filedetails = await get_file_details(file_id)
             for files in filedetails:
