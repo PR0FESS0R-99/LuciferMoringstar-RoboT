@@ -95,7 +95,7 @@ async def filter(client, message):
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="≫ 𝑵𝒆𝒙𝒕 𝑷𝒂𝒈𝒆 ≫",callback_data=f"next_0_{keyword}"),
+            [InlineKeyboardButton(text="≫ 𝑵𝒆𝒙𝒕 ≫",callback_data=f"next_0_{keyword}"),
              InlineKeyboardButton(text=f"🎶 𝙿𝚊𝚐𝚎𝚜 1/{data['total']}",callback_data="pages")]
         )
         poster=None
@@ -126,7 +126,7 @@ async def group(client, message):
                 filename = f"{file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
-                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
+                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
             return
@@ -158,7 +158,7 @@ async def group(client, message):
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="≫ 𝑵𝒆𝒙𝒕 𝑷𝒂𝒈𝒆 ≫",callback_data=f"next_0_{keyword}"),
+            [InlineKeyboardButton(text="≫ 𝑵𝒆𝒙𝒕 ≫",callback_data=f"next_0_{keyword}"),
              InlineKeyboardButton(text=f"🎶 𝙿𝚊𝚐𝚎𝚜 1/{data['total']}",callback_data="pages")]
         )
         poster=None
@@ -209,7 +209,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⌫ 𝐂𝐨𝐦𝐞 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}")]
+                    [InlineKeyboardButton("⌫ 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}")]
                     [InlineKeyboardButton(f"🎶 𝙿𝚊𝚐𝚎𝚜 {int(index)+2}/{data['total']}", callback_data="pages")]
                 )
 
@@ -221,9 +221,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⌫ 𝐂𝐨𝐦𝐞 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}"),
+                    [InlineKeyboardButton("⌫ 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}"),
                      InlineKeyboardButton(f"🎶 𝙿𝚊𝚐𝚎𝚜 {int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 𝑷𝒂𝒈𝒆 ≫", callback_data=f"next_{int(index)+1}_{keyword}")]
+                     InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 ≫", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
 
                 await query.edit_message_reply_markup( 
@@ -244,7 +244,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 𝑷𝒂𝒈𝒆 ≫", callback_data=f"next_{int(index)-1}_{keyword}")]
+                    [InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 ≫", callback_data=f"next_{int(index)-1}_{keyword}")]
                     [InlineKeyboardButton(f"🎶 𝙿𝚊𝚐𝚎𝚜 {int(index)}/{data['total']}", callback_data="pages")]
                 )
 
@@ -256,9 +256,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
-                    [InlineKeyboardButton("⌫ 𝐂𝐨𝐦𝐞 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}"),
+                    [InlineKeyboardButton("⌫ 𝐁𝐚𝐜𝐤", callback_data=f"back_{int(index)+1}_{keyword}"),
                      InlineKeyboardButton(f"🎶 𝙿𝚊𝚐𝚎𝚜 {int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 𝑷𝒂𝒈𝒆 ≫", callback_data=f"next_{int(index)+1}_{keyword}")]
+                     InlineKeyboardButton("≫ 𝑵𝒆𝒙𝒕 ≫", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
 
                 await query.edit_message_reply_markup( 
