@@ -37,6 +37,10 @@
             "description": "Username or ID of Admin. Separate multiple Admins by space.",
             "value": ""
         },
+        "PICS": {
+            "description": "Add some telegraph link of pictures .",
+            "required": false
+        },
         "AUTH_USERS": {
             "description": "Username or ID of users to give access of inline search. Separate multiple users by space.\nLeave it empty if you don't want to restrict bot usage.",
             "value": "",
