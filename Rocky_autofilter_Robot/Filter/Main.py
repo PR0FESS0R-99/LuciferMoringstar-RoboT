@@ -113,7 +113,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n\n\n**📤 Uploaded by:- {message.chat.title}"
+        mo_tech_yt = f"**🗂️ 𝐓𝐢𝐭𝐥𝐞:☞** {search}\n**⭐ 𝙍𝙖𝙩𝙞𝙣𝙜:☞** {random.choice(RATING)}\n**🎭 𝑮𝒆𝒏𝒓𝒆:☞** {random.choice(GENRES)}\n\n\n**📤 𝚄𝚙𝚕𝚘𝚊𝚍𝚎𝚍 𝙱𝚢:☞ {message.chat.title}"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
