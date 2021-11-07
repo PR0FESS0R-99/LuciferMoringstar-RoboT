@@ -39,7 +39,7 @@
         },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
-            "value": "",
+            "value": "**https://telegra.ph/file/08ed3c37fbb3df7e66f5f.jpg**",
             "required": false
         },
         "AUTH_USERS": {
