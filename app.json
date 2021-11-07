@@ -39,6 +39,7 @@
         },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
+            "value": "",
             "required": false
         },
         "AUTH_USERS": {
