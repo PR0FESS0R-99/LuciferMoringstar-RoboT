@@ -119,7 +119,7 @@ async def start(bot, message):
             )
         )
     else:
-        await message.send_message(
+        await message.reply_text(
             photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.first_name),
             parse_mode="Markdown",
