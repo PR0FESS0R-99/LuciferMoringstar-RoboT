@@ -1,3 +1,4 @@
+class script(object):
 from .Utils import (
    get_filter_results,
    get_file_details,
