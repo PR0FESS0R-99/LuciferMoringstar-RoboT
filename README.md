@@ -49,6 +49,7 @@ Check [`sample_info.py`](sample_info.py) before editing [`Config.py`](Config.py)
 * `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com).
 
 #### Optional Variables
+* `PICS`: Telegraph links of images to show in start message.( Multiple images can be used seperated by space )
 * `OMDB_API_KEY`: OMBD_API_KEY to generate imdb poster for filter results.Get it from [omdbapi.com](http://www.omdbapi.com/apikey.aspx)
 * `CUSTOM_FILE_CAPTION` : A custom caption for your files. You can format it with file_name, file_size, file_caption.(supports html formating)
 Example: `<b>Join [Kiccha Request](https://t.me/KicchaRequest) for more useful bots</b>\n\n<code>{file_name}</code>\nSize{file_size}\n{file_caption}.`
