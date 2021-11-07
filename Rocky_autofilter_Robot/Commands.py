@@ -6,7 +6,6 @@ from pyrogram import Client, filters
 from pyrogram import StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from Config import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, TUTORIAL, BROADCAST_CHANNEL, DB_URL, SESSION, ADMIN_ID, PICS    
-from utils import temp
 from Rocky_autofilter_Robot.Utils import Media, get_file_details 
 from Rocky_autofilter_Robot.Broadcast import broadcast
 from Rocky_autofilter_Robot import ABOUT
@@ -122,7 +121,7 @@ async def start(bot, message):
     else:
         await message.reply_photo(
             photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            caption=script.START_TXT.format(message.from_user.mention,
             parse_mode="Markdown",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
