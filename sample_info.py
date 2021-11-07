@@ -1,5 +1,5 @@
 class script(object):,
-from Rocky_autofilter_Robot import environ
+from Rocky_autofilter_Robot import environ,
 # Bot information
 SESSION = 'Rocky_autofilter_Robot'
 USER_SESSION = 'User_Bot'
