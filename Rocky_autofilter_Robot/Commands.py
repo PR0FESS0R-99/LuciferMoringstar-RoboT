@@ -1,9 +1,10 @@
 import os
 import logging
+import random
 from pyrogram import Client, filters
 from pyrogram import StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from Config import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, TUTORIAL, BROADCAST_CHANNEL, DB_URL, SESSION, ADMIN_ID    
+from Config import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, TUTORIAL, BROADCAST_CHANNEL, DB_URL, SESSION, ADMIN_ID, PICS    
 from Rocky_autofilter_Robot.Utils import Media, get_file_details 
 from Rocky_autofilter_Robot.Broadcast import broadcast
 from Rocky_autofilter_Robot import ABOUT
@@ -117,7 +118,8 @@ async def start(bot, message):
             )
         )
     else:
-        await message.reply_text(
+        await message.reply_photo(
+            photo=random.choice(PICS),
             START_MSG.format(message.from_user.first_name),
             parse_mode="Markdown",
             disable_web_page_preview=True,
