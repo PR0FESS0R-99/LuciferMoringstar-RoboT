@@ -1,11 +1,11 @@
 import os
-import logging
+import time
 import random
-from Script import script
+import logging
 from pyrogram import Client, filters
 from pyrogram import StopPropagation
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from Config import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, TUTORIAL, BROADCAST_CHANNEL, DB_URL, SESSION, ADMIN_ID, PICS    
+from Config import START_MSG, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, TUTORIAL, BROADCAST_CHANNEL, DB_URL, SESSION, ADMIN_ID    
 from Rocky_autofilter_Robot.Utils import Media, get_file_details 
 from Rocky_autofilter_Robot.Broadcast import broadcast
 from Rocky_autofilter_Robot import ABOUT
@@ -13,6 +13,24 @@ from Rocky_autofilter_Robot.Channel import handle_user_status
 from Database import Database
 from pyrogram.errors import UserNotParticipant
 logger = logging.getLogger(__name__)
+
+PHOTO = [
+    "https://telegra.ph/file/5c495a1525fb73d544852.jpg",
+    "https://telegra.ph/file/bfdaeb443200b1553c5da.jpg",
+    "https://telegra.ph/file/1b75ef578c37afcc32b49.jpg",
+    "https://telegra.ph/file/6703b21596725169d0e9c.jpg",
+    "https://telegra.ph/file/84dbd3c3d4d732ea196d1.jpg",
+    "https://telegra.ph/file/f811cafd2336471e9eda1.jpg",
+    "https://telegra.ph/file/9b6c3d3be46d305c4abb0.jpg",
+    "https://telegra.ph/file/08ed3c37fbb3df7e66f5f.jpg",
+    "https://telegra.ph/file/1f4bc8455e4f050197391.jpg",
+    "https://telegra.ph/file/793b5d2ecd2a686fb721a.jpg",
+    "https://telegra.ph/file/f117e07f41934686dd2ee.jpg",
+    "https://telegra.ph/file/0fe787e158498720f5389.jpg",
+    "https://telegra.ph/file/22adebbee0ee693df9ff1.jpg",
+    "https://telegra.ph/file/5db8b04d6ce0e1d121f2f.jpg",
+    "https://telegra.ph/file/140707fe22ea6453d1e95.jpg"
+]
 
 LOG_CHANNEL = BROADCAST_CHANNEL
 
@@ -47,14 +65,14 @@ async def start(bot, message):
                 ident, file_id = message.text.split("_-_-_-_")
                 await bot.send_message(
                     chat_id=message.from_user.id,
-                    text="**𝙿𝚕𝚎𝚊𝚜𝚎 𝙲𝚕𝚎𝚌𝚔 𝚃𝚑𝚒𝚜 𝙱𝚞𝚝𝚝𝚘𝚗 𝙹𝚘𝚒𝚗 𝙼𝚢 𝚄𝚙𝚍𝚊𝚝𝚎 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 𝙰𝚗𝚍 𝙲𝚕𝚎𝚌𝚔 𝚃𝚛𝚢 𝙰𝚐𝚊𝚒𝚗 𝙱𝚞𝚝𝚝𝚘𝚗 𝙰𝚗𝚍 𝚃𝚊𝚔𝚎 𝚈𝚘𝚞𝚛 𝚁𝚎𝚚𝚞𝚎𝚜𝚝 𝙼𝚘𝚟𝚒𝚎 𝚄𝚜𝚎 𝚃𝚑𝚒𝚜 𝙱𝚘𝚝...!**",
+                    text="**Please Join My Updates Channel to use this Bot!**",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("🤖 𝙹𝚘𝚒𝚗 𝙼𝚢 𝚄𝚙𝚍𝚊𝚝𝚎 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 🤖", url=invite_link.invite_link)
+                                InlineKeyboardButton("📢 Join Updates Channel 📢", url=invite_link.invite_link)
                             ],
                             [
-                                InlineKeyboardButton("🔄 𝚃𝚛𝚢 𝙰𝚐𝚊𝚒𝚗", callback_data=f"checksub#{file_id}")
+                                InlineKeyboardButton("🔄 Try Again", callback_data=f"checksub#{file_id}")
                             ]
                         ]
                     ),
@@ -86,15 +104,10 @@ async def start(bot, message):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url=f'https://t.me/KicchaRequest'),
-                        InlineKeyboardButton('💬 𝙲𝚑𝚊𝚗𝚗𝚎𝚕', url=f'https://t.me/GD_FILMCLUB')
+                        InlineKeyboardButton('♻️ Join Group ♻️', url='t.me/KicchaRequest')
                     ],
                     [
-                        InlineKeyboardButton('🔍 𝚂𝚎𝚊𝚛𝚌𝚑 𝙰𝚐𝚊𝚒𝚗 🔎', switch_inline_query_current_chat='')
-                    ],
-                    [
-                        InlineKeyboardButton('📺 𝚃𝚟 𝚂𝚎𝚛𝚒𝚎𝚜 📺', url=f'https://t.me/TV_VIRISION'),
-                        InlineKeyboardButton('💻📱 𝙾𝚃𝚃 𝙼𝚘𝚟𝚒𝚎𝚜📱💻', url=f'https://t.me/KR_ROCKERS_DVD_WEB_OTT_MOVIES')
+                        InlineKeyboardButton('🔍 Search again 🔎', switch_inline_query_current_chat='')
                     ]
                     ]
                 await bot.send_cached_media(
@@ -109,38 +122,68 @@ async def start(bot, message):
         invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
         await bot.send_message(
             chat_id=message.from_user.id,
-            text="**𝙿𝚕𝚎𝚊𝚜𝚎 𝙲𝚕𝚎𝚌𝚔 𝚃𝚑𝚒𝚜 𝙱𝚞𝚝𝚝𝚘𝚗 𝙹𝚘𝚒𝚗 𝙼𝚢 𝚄𝚙𝚍𝚊𝚝𝚎 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 𝙰𝚗𝚍 𝙲𝚕𝚎𝚌𝚔 𝚃𝚛𝚢 𝙰𝚐𝚊𝚒𝚗 𝙱𝚞𝚝𝚝𝚘𝚗 𝙰𝚗𝚍 𝚃𝚊𝚔𝚎 𝚈𝚘𝚞𝚛 𝚁𝚎𝚚𝚞𝚎𝚜𝚝 𝙼𝚘𝚟𝚒𝚎 𝚄𝚜𝚎 𝚃𝚑𝚒𝚜 𝙱𝚘𝚝...!**",
+            text="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🤖 𝙹𝚘𝚒𝚗 𝙼𝚢 𝚄𝚙𝚍𝚊𝚝𝚎 𝙲𝚑𝚊𝚗𝚗𝚎𝚕 🤖", url=invite_link.invite_link)
+                        InlineKeyboardButton("📢 Join Updates Channel 📢", url=invite_link.invite_link)
                     ]
                 ]
             )
         )
     else:
         await message.reply_photo(
-            photo=random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.first_name),
-            parse_mode="Markdown",
-            disable_web_page_preview=True,
+            photo=f"{random.choice(PHOTO)}",
+            caption=START_MSG.format(f"[{message.from_user.first_name}](tg://user?id={message.from_user.id})"), 
             reply_markup=InlineKeyboardMarkup(
-                [[
-                InlineKeyboardButton("🎙  Add Me To Your Group ➕", url="https://t.me/Rocky_autofilterBOT?startgroup=true"),
-                ],[
-                InlineKeyboardButton("🗣️ 𝙶𝚛𝚘𝚞𝚙", url="https://t.me/KicchaRequest"),
-                InlineKeyboardButton("💻 𝙲𝚘𝚕𝚕𝚎𝚌𝚝𝚒𝚘𝚗", url="https://t.me/KR_ROCKERS_DVD_WEB_OTT_MOVIES")
-                ],[
-                InlineKeyboardButton("🧑‍💻 𝙼𝚢 𝙱𝚘𝚜𝚜", url="https://t.me/sachin_official_admin")
-                ],[
-                InlineKeyboardButton("📁 𝙲𝚑𝚊𝚗𝚗𝚎𝚕", url="https://t.me/gd_film"),
-                InlineKeyboardButton("📺 𝚃𝚟 𝚂𝚎𝚛𝚒𝚎𝚜", url="https://t.me/TV_VIRISION")
-                ],[
-                InlineKeyboardButton("🔍 𝚂𝚎𝚊𝚛𝚌𝚑 𝙰𝚐𝚊𝚒𝚗 🔎", switch_inline_query_current_chat='')
-                ],[
-                InlineKeyboardButton("🤔 𝙷𝚎𝚕𝚙", callback_data="help"),
-                InlineKeyboardButton("𝙰𝚋𝚘𝚞𝚝 🤠", callback_data="about")
-                ]]
+                [
+                    [
+                        InlineKeyboardButton
+                            (
+                                "🗣️ 𝙶𝚛𝚘𝚞𝚙", url="https://t.me/KicchaRequest"
+                            ),
+                        InlineKeyboardButton
+                            (
+                                "💻 𝙲𝚘𝚕𝚕𝚎𝚌𝚝𝚒𝚘𝚗", url="https://t.me/KR_ROCKERS_DVD_WEB_OTT_MOVIES"
+                            )
+                    ],
+                    [
+                        InlineKeyboardButton
+                            (
+                                "🧑‍💻 𝙼𝚢 𝙱𝚘𝚜𝚜", url="https://t.me/sachin_official_admin"
+                            )
+                    ],
+                    [
+                        InlineKeyboardButton
+                            (
+                                "📁 𝙲𝚑𝚊𝚗𝚗𝚎𝚕", url="https://t.me/gd_film"
+                            ),
+                        InlineKeyboardButton
+                            (
+                                "📺 𝚃𝚟 𝚂𝚎𝚛𝚒𝚎𝚜", url="https://t.me/TV_VIRISION"
+                            )
+                
+                    ],
+                    [
+                        InlineKeyboardButton
+                            (
+                                "🔍 𝚂𝚎𝚊𝚛𝚌𝚑 𝙰𝚐𝚊𝚒𝚗 🔎", switch_inline_query_current_chat=''
+                            )
+                    ],
+                    [
+                        InlineKeyboardButton
+                            (
+                                "🤔 𝙷𝚎𝚕𝚙", callback_data="help"
+                            ),
+                        InlineKeyboardButton
+                            (
+                                "𝙰𝚋𝚘𝚞𝚝 🤠", callback_data="about"
+                            )
+                    ],
+                    [
+                     InlineKeyboardButton("🎙️  Add Me To Your Group ➕", url="https://t.me/Rocky_autofilterBOT?startgroup=true")
+                    ]
+                ]
             )
         )
         StopPropagation
@@ -188,11 +231,8 @@ async def broadcast_handler_open(_, m):
 
 @Client.on_message(filters.private & filters.command("stats"))
 async def sts(c, m):
-    if m.from_user.id not in ADMIN_ID:
-        await m.delete()
-        return
     await m.reply_text(
-        text=f"**Total Users in Database 📂:** `{await db.total_users_count()}`\n\n**Total Users with Notification Enabled 🔔 :** `{await db.total_notif_users_count()}`",
+        text=f"**Total Users in Database 📂:** `{await db.total_users_count()}``",
         parse_mode="Markdown",
         quote=True
     )
@@ -351,8 +391,10 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url='https://t.me/KicchaRequest'),
-            InlineKeyboardButton('💬 𝙲𝚑𝚊𝚗𝚗𝚎𝚕', url=f'https://t.me/gd_film')
+            InlineKeyboardButton
+                (
+                     '♻️ GROUP ♻️', url='t.me/KicchaRequest'
+                )
         ]
-        ]
+    ]
     await message.reply(text=f"{ABOUT}", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
