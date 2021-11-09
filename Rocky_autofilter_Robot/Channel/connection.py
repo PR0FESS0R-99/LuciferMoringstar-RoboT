@@ -1,6 +1,6 @@
 from pyrogram import filters, Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from database.connections_mdb import add_connection, all_connections, if_active, delete_connection
+from Rocky_autofilter_Robot.connections_mdb import add_connection, all_connections, if_active, delete_connection
 from info import ADMINS
 
 @Client.on_message((filters.private | filters.group) & filters.command('connect'))
