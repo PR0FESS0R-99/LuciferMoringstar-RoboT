@@ -53,7 +53,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n\n\n   **📤 Uploaded by:- {message.chat.title}\n **📆 Year:-** {random.choice(RELEASE_INFO)}**"
+        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n**👤 Requested By:** {message.from_user.mention}\n\n\n   **📤 Uploaded by:- {message.chat.title}"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
@@ -63,7 +63,18 @@ async def filter(client, message):
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"), InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
-            await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgIAAxkBAAIFNWFEzuIuzExr0aFG23qMtd7Z6NuSAALYDgACbKy4S3x0xJsbYPWIIAQ')
+            await client.send_photo(
+            chat_id = message.chat.id,
+            photo="https://telegra.ph/file/328fc84d36e29e7b42869.jpg",
+ caption="<b>Couldn't Find This Movie.Try Again..! And Admins will add it Soon 🔜🥺</b>",
+            reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton("📞 Contact Admin", url='t.me/sachin_official_admin')
+                    ]
+                ]
+            )
+        )
             return
 
         if not btn:
@@ -113,7 +124,7 @@ async def group(client, message):
     if 2 < len(message.text) < 50:    
         btn = []
         search = message.text
-        mo_tech_yt = f"┏━━━━━━━━━━━━━━━━\n┣🗂️ 𝐓𝐢𝐭𝐥𝐞:☞ {search}\n┣\n┣⭐ 𝙍𝙖𝙩𝙞𝙣𝙜:☞ {random.choice(RATING)}\n┣\n┣🎭 𝑮𝒆𝒏𝒓𝒆:☞ {random.choice(GENRES)}\n┣\n┗━━━━━━━━━━━━━━━━\n\n\n**📤 𝚄𝚙𝚕𝚘𝚊𝚍𝚎𝚍 𝙱𝚢:☞ {message.chat.title}\n\n✪༺ ──•◈•─ ─•◈•──༻✪"
+        mo_tech_yt = f"**👤 ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝔹𝕪:☞** {message.from_user.mention}\n┏━━━━━━━━━━━━━━━━\n┣🗂️ 𝐓𝐢𝐭𝐥𝐞:☞ {search}\n┣\n┣⭐ 𝙍𝙖𝙩𝙞𝙣𝙜:☞ {random.choice(RATING)}\n┣\n┣🎭 𝑮𝒆𝒏𝒓𝒆:☞ {random.choice(GENRES)}\n┣\n┗━━━━━━━━━━━━━━━━\n\n\n**📤 𝚄𝚙𝚕𝚘𝚊𝚍𝚎𝚍 𝙱𝚢:☞ {message.chat.title}\n\n✪༺ ──•◈•─ ─•◈•──༻✪"
         nyva=BOT.get("username")
         if not nyva:
             botusername=await client.get_me()
