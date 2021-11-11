@@ -1,3 +1,7 @@
+<p align="center">
+<img src="https://telegra.ph/file/93abacec2d5bcde68b1c3.jpg" alt="Eva Maria Logo">
+</p>
+
 ### [Rocky_autofilter_Robot](https://telegram.dog/Rocky_autofilterBOT)
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/sachin9742s/Rocky_autofilter_Robot?style=social)
