@@ -65,5 +65,5 @@ logger - Get log file
 ## Contributions
 Contributions are welcome.
 
-## Thanks to [Pyrogram](https://github.com/pyrogram/pyrogram)
+
 
