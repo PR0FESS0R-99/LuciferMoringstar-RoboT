@@ -1,14 +1,22 @@
-# [Media Search bot](https://github.com/Mahesh0253/Media-Search-bot)
+creators 👇
 
-* Index channel or group files for inline search.
-* When you post file on telegram channel or group this bot will save that file in database, so you can search easily in inline mode.
-* Supports document, video and audio file formats with caption support.
+creator : kings (https://t.me/kingsontelegram )
 
 
+channel : cinema club ( https://t.me/cinemafest2021 )
+
+
+owner : kingss ( t.me/OWNEROFKINGS )
+
+
+thank you to mo tech
 
 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+
+
+
 
 
 ### Hard Way
