@@ -2,11 +2,13 @@
 from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
+from OMDB import get_movie_info
 import re
 from pyrogram.errors import UserNotParticipant
 from Rocky_autofilter_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
 from Rocky_autofilter_Robot import RATING, GENRES, RELEASE_INFO, HELP, ABOUT
 import random
+import asyncio
 BUTTONS = {}
 BOT = {}
 
@@ -48,6 +50,8 @@ async def filter(client, message):
                 disable_web_page_preview=True
             )
             return
+    title = message.text
+    movie_info = get_movie_info(title) 
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
     if 2 < len(message.text) < 100:    
@@ -99,7 +103,7 @@ async def filter(client, message):
                 await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
 
             else:
-                await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo="https://telegra.ph/file/392b4ecbb4f9d8be8482a.jpg", caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -119,6 +123,8 @@ async def filter(client, message):
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
+    title = message.text
+    movie_info = get_movie_info(title) 
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
     if 2 < len(message.text) < 50:    
@@ -140,6 +146,23 @@ async def group(client, message):
                      InlineKeyboardButton(text=f"{get_size(file.file_size)}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
+            Rocky_autofilter_Robot=await client.send_message(
+            chat_id = message.chat.id,
+            text=f"""
+                 👋Hey {message.from_user.mention}
+<b>Admins Will Add It Soon </b> 
+Or Check Your Spelling """,
+            parse_mode="html",
+            reply_markup=InlineKeyboardMarkup( 
+                [ 
+                    [ 
+                         InlineKeyboardButton("🔍 Search Google 🔎", url='https://www.imdb.com/search/') 
+                    ] 
+                ] 
+           ) 
+        )
+            await asyncio.sleep(10) # in seconds 
+            await Rocky_autofilter_Robot.delete()
             return
         if not btn:
             return
@@ -162,7 +185,7 @@ async def group(client, message):
             if poster:
                 await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
             else:
-                await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+                await message.reply_photo(photo="https://telegra.ph/file/392b4ecbb4f9d8be8482a.jpg", caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
             return
 
         data = BUTTONS[keyword]
@@ -320,7 +343,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url=f'https://t.me/KicchaRequest')
+                        InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url=f'https://t.me/KicchaRequest'),
+                        InlineKeyboardButton('Update Channel', url='https://t.me/KR_ROCKERS_DVD_WEB_OTT_MOVIES')
                     ]
                     ]
                 
@@ -351,7 +375,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url=f'https://t.me/KicchaRequest')
+                        InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url=f'https://t.me/KicchaRequest'),
+                        InlineKeyboardButton('Update Channel', url='https://t.me/KR_ROCKERS_DVD_WEB_OTT_MOVIES')
                     ]
                     ]
                 
