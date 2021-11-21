@@ -1,12 +1,12 @@
 creators 👇
 
-creator : kings (https://t.me/kingsontelegram )
+creator : [kings] (https://t.me/kingsontelegram )
 
 
-channel : cinema club ( https://t.me/cinemafest2021 )
+channel : [ cinema club] ( https://t.me/cinemafest2021 )
 
 
-owner : kingss ( t.me/OWNEROFKINGS )
+owner : [kings]( t.me/OWNEROFKINGS )
 
 
 thank you to mo tech
