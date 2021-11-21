@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://telegra.ph/file/93abacec2d5bcde68b1c3.jpg" alt="Eva Maria Logo">
+<img src="https://telegra.ph/file/392b4ecbb4f9d8be8482a.jpg" alt="Eva Maria Logo">
 </p>
 
 ### [Rocky_autofilter_Robot](https://telegram.dog/Rocky_autofilterBOT)
