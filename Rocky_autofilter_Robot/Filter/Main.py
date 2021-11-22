@@ -64,7 +64,7 @@ async def filter(client, message):
                 file_id = file.file_id
                 filename = f"{file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"), InlineKeyboardButton(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),(text=f"[{get_size(file.file_size)}]", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
             await client.send_photo(
@@ -143,7 +143,7 @@ async def group(client, message):
                 filename = f"{file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
-                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data="https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}")]
+                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data="https://telegram.dog/?start=sachin9742s_-_-_-_{file_id}")]
                 )
         else:
             Rocky_autofilter_Robot=await client.send_message(
