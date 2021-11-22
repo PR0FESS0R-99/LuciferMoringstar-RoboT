@@ -57,7 +57,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"🎞️ Title: <a href={imdb['url']}>{imdb.get('title')}\n 🎭 Genres: {imdb.get('genres')}\n 📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n 🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10\n🗃️ Total Files : {leng}\n 📑 Total Page : 1/{index_val + 1}/{len(results) if len(results) < max_pages else max_pages}\n 👤 Requested By : {update.from_user.mention}\n 🖋 StoryLine: <code>{imdb.get('plot')} </code>""",
+        mo_tech_yt = f"**👤 ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝔹𝕪:☞** {message.from_user.mention}\n┏━━━━━━━━━━━━━━━━\n┣🗂️ 𝐓𝐢𝐭𝐥𝐞:☞ {search}\n┣\n┣⭐ 𝙍𝙖𝙩𝙞𝙣𝙜:☞ {random.choice(RATING)}\n┣\n┣🎭 𝑮𝒆𝒏𝒓𝒆:☞ {random.choice(GENRES)}\n┣\n┗━━━━━━━━━━━━━━━━\n\n\n**📤 𝚄𝚙𝚕𝚘𝚊𝚍𝚎𝚍 𝙱𝚢:☞ {message.chat.title}\n\n✪༺ ──•◈•─ ─•◈•──༻✪"
         files = await get_filter_results(query=search)
         if files:
             for file in files:
