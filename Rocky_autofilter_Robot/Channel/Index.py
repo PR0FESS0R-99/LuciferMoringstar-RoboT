@@ -112,3 +112,20 @@ try:
                 reply_to_message_id=update.message_id,
                 parse_mode="html"
             )
+
+        except Exception as e:
+          print(e)
+
+          try:
+              await bot.send_message(
+                chat_id = update.chat.id,
+                text=f"""↪️ Requested: {query}
+🗃️ Total Files : {(len_results)}
+📑 Total Page : 1/{len_result if len_result < max_pages else max_pages}
+👤 Requested By : {update.from_user.mention}
+☑️ Chat : {update.chat.title}
+""",
+                reply_markup=reply_markup,
+                parse_mode="html",
+                reply_to_message_id=update.message_id
+            )
