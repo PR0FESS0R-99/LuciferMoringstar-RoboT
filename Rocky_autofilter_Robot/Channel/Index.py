@@ -6,7 +6,6 @@ from Config import ADMINS
 import os
 from Rocky_autofilter_Robot.Utils import save_file
 from Rocky_autofilter_Robot import imdb, add_filter, find_filter, get_filters, delete_filter, count_filters, Database, active_connection, add_user, all_users,  parser, split_quotes, IMDBCONTROL, google_search  
-import
 import pyromod.listen
 logger = logging.getLogger(__name__)
 lock = asyncio.Lock()
