@@ -65,6 +65,7 @@ async def filter(client, message):
                 filename = f"{file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}",callback_data=f"sachin9742s#{file_id}")]
+                    )
         else:
             await client.send_photo(
             chat_id = message.chat.id,
@@ -143,7 +144,7 @@ async def group(client, message):
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
                      InlineKeyboardButton(callback_data=f"sachin9742s#{file_id}")]
-                    )
+                )
         else:
             Rocky_autofilter_Robot=await client.send_message(
             chat_id = message.chat.id,
