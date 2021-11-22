@@ -1,9 +1,10 @@
 # (c) KICCHA REQUEST
 from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL
+from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from OMDB import get_movie_info
-import re
+import re, time, asyncio
 from pyrogram.errors import UserNotParticipant
 from Rocky_autofilter_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
 from Rocky_autofilter_Robot import RATING, GENRES, RELEASE_INFO, HELP, ABOUT
@@ -57,7 +58,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        mo_tech_yt = f"**🗂️ Title:-** {search}\n**⭐ Rating:-** {random.choice(RATING)}\n**🎭 Genre:-** {random.choice(GENRES)}\n**👤 Requested By:** {message.from_user.mention}\n\n\n   **📤 Uploaded by:- {message.chat.title}"
+        mo_tech_yt = f"🎞️ Title: <a href={imdb['url']}>{imdb.get('title')}\n 🎭 Genres: {imdb.get('genres')}\n 📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n 🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10\n🗃️ Total Files : {leng}\n 📑 Total Page : 1/{index_val + 1}/{len(results) if len(results) < max_pages else max_pages}\n 👤 Requested By : {update.from_user.mention}\n 🖋 StoryLine: <code>{imdb.get('plot')} </code>""",
         files = await get_filter_results(query=search)
         if files:
             for file in files:
