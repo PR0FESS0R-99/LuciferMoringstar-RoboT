@@ -4,7 +4,7 @@ from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from Config import ADMINS
 import os
-from Rocky_autofilter_Robot.Utils import save_file
+from LuciferMoringstar_Robot.Utils import save_file
 import pyromod.listen
 logger = logging.getLogger(__name__)
 lock = asyncio.Lock()
@@ -79,7 +79,7 @@ async def index_files(bot, message):
             else:
                 await msg.edit(f'Total {total_files} Saved To DataBase!')
 
-RATING = ["5.1 | IMDB", "6.2 | IMDB", "7.3 | IMDB", "8.4 | IMDB", "9.5 | IMDB", "10.6 | IMDB", ]
+RATING = ["5.1 | IMDB", "6.2 | IMDB", "7.3 | IMDB", "8.4 | IMDB", "9.5 | IMDB", ]
 GENRES = ["fun, fact",
          "Thriller, Comedy",
          "Drama, Comedy",
