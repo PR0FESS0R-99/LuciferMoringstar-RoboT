@@ -6,7 +6,7 @@ from OMDB import get_movie_info
 import re
 from pyrogram.errors import UserNotParticipant
 from Rocky_autofilter_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
-from Rocky_autofilter_Robot import RATING, GENRES, RELEASE_INFO, HELP, ABOUT, imdb, add_filter, find_filter, get_filters, delete_filter, count_filters, Database, active_connection, add_user, all_users,  parser, split_quotes, IMDBCONTROL, google_search  
+from Rocky_autofilter_Robot import RATING, GENRES, RELEASE_INFO, HELP, ABOUT
 import random
 import asyncio
 BUTTONS = {}
