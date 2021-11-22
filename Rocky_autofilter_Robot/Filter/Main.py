@@ -1,14 +1,12 @@
 # (c) KICCHA REQUEST
 from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL
-from pyrogram.errors import FloodWait, UserNotParticipant
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from OMDB import get_movie_info
-import re, time, asyncio
+import re
 from pyrogram.errors import UserNotParticipant
 from Rocky_autofilter_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
 from Rocky_autofilter_Robot import RATING, GENRES, RELEASE_INFO, HELP, ABOUT
-from database import Database, donlee_imdb, remove_emoji
 import random
 import asyncio
 BUTTONS = {}
