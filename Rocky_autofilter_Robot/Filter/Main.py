@@ -143,7 +143,7 @@ async def group(client, message):
                 filename = f"{file.file_name}"
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
-                     InlineKeyboardButton(text=f", callback_data=f"sachin9742s#{file_id}")]
+                     InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'files_#{file.file_id}',)]
                 )
         else:
             Rocky_autofilter_Robot=await client.send_message(
