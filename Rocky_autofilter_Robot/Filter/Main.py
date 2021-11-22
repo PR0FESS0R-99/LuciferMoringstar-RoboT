@@ -8,6 +8,7 @@ import re, time, asyncio
 from pyrogram.errors import UserNotParticipant
 from Rocky_autofilter_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
 from Rocky_autofilter_Robot import RATING, GENRES, RELEASE_INFO, HELP, ABOUT
+from database1 import Database, donlee_imdb, remove_emoji
 import random
 import asyncio
 BUTTONS = {}
