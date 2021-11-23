@@ -110,8 +110,8 @@ async def filter(client, message):
         buttons = data['buttons'][0].copy()
 
         buttons.append(
-            [InlineKeyboardButton(text="≫ 𝑵𝒆𝒙𝒕 ≫",callback_data=f"next_0_{keyword}"),
-             InlineKeyboardButton(text=f"🎶 𝙿𝚊𝚐𝚎𝚜 1/{data['total']}",callback_data="pages")]
+            [InlineKeyboardButton(text=f"🎶 𝙿𝚊𝚐𝚎𝚜 1/{data['total']}",callback_data="pages"),
+             InlineKeyboardButton(text="≫ 𝑵𝒆𝒙𝒕 ≫",callback_data=f"next_0_{keyword}")]
         )
         poster=None
         if API_KEY:
@@ -142,7 +142,7 @@ async def group(client, message):
                 file_id = file.file_id
                 filename = f"{file.file_name}"
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{nyva}?start=sachin9742s_-_-_-_{file_id}"),
+                    [InlineKeyboardButton(text=f"{filename}",callback_data=f"sachin9742s#{file_id}"),
                      InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'files_#{file.file_id}',)]
                 )
         else:
