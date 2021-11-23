@@ -149,9 +149,11 @@ async def group(client, message):
             Rocky_autofilter_Robot=await client.send_message(
             chat_id = message.chat.id,
             text=f"""
-                 👋Hey {message.from_user.mention}
+                 ✋𝙷𝙸 {message.from_user.mention} 𝚂𝚘𝚛𝚛𝚢, 𝙽𝚘 𝙼𝚘𝚟𝚒𝚎 𝚁𝚎𝚕𝚊𝚝𝚎𝚍 𝚃𝚘 𝚃𝚑𝚎 𝙶𝚒𝚟𝚎𝚗 𝚆𝚘𝚛𝚐 𝚆𝚊𝚜 𝙵𝚘𝚞𝚗𝚍 🥺
+
 <b>Admins Will Add It Soon </b> 
-Or Check Your Spelling """,
+
+𝙿𝚕𝚎𝚊𝚜𝚎 𝙲𝚕𝚒𝚌𝚔 𝙱𝚞𝚝𝚝𝚘𝚗 𝚃𝚘 𝙸𝚖𝚍𝚋 𝙶𝚘𝚘𝚐𝚕𝚎 𝙰𝚗𝚍 𝙲𝚘𝚗𝚏𝚒𝚛𝚖 𝚃𝚑𝚎 𝙲𝚘𝚛𝚛𝚎𝚌𝚝 𝚂𝚙𝚎𝚕𝚕𝚒𝚗𝚐 𝙿𝚕𝚎𝚊𝚜𝚎 🙏 """,
             parse_mode="html",
             reply_markup=InlineKeyboardMarkup( 
                 [ 
