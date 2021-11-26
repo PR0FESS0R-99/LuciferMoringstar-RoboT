@@ -4,8 +4,6 @@ import datetime
 
 from Config import DB_URL, SESSION
 
-db = Database(DB_URL, SESSION)
-
 
 async def handle_user_status(bot, cmd):
     chat_id = cmd.from_user.id
