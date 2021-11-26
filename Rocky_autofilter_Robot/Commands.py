@@ -63,7 +63,7 @@ async def start(bot, message):
                     return
             except UserNotParticipant:
                 ident, file_id = message.text.split("_-_-_-_")
-                await bot.reply_photo(
+                await bot.send_photo(
                     photo=f"{random.choice(PHOTO)}",
                     chat_id=message.from_user.id,
                     text="** 👋H𝙴𝙻𝙻𝙾 {},\nPlease Join My Updates Channel And Click Try Again Button to use this Bot!\n\n\n Welcome to:- [𝐑𝐨𝐜𝐤𝐲 𝐀𝐮𝐭𝐨 𝐅𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭](https://t.me/Rocky_autofilterBOT)**",
