@@ -3,7 +3,6 @@
 import datetime
 
 from Config import DB_URL, SESSION
-from Database import Database
 
 db = Database(DB_URL, SESSION)
 
