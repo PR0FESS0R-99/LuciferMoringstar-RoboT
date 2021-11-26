@@ -1,4 +1,4 @@
-# ©PANDITHAN
+# (c) PR0FESS0R-99
 import pymongo
 
 from info import DATABASE_URI, DATABASE_NAME
