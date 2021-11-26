@@ -63,16 +63,15 @@ async def start(bot, message):
                     return
             except UserNotParticipant:
                 ident, file_id = message.text.split("_-_-_-_")
-                await bot.send_message(
+                await bot.reply_photo(
+                    photo=f"{random.choice(PHOTO)}",
                     chat_id=message.from_user.id,
-                    text="**Please Join My Updates Channel to use this Bot!**",
+                    text="** 👋H𝙴𝙻𝙻𝙾 {},\nPlease Join My Updates Channel And Click Try Again Button to use this Bot!\n\n\n Welcome to:- [𝐑𝐨𝐜𝐤𝐲 𝐀𝐮𝐭𝐨 𝐅𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭](https://t.me/Rocky_autofilterBOT)**",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("📢 Join Updates Channel 📢", url=invite_link.invite_link)
-                            ],
-                            [
-                                InlineKeyboardButton("🔄 Try Again", callback_data=f"checksub#{file_id}")
+                                InlineKeyboardButton("🔌 Join Channel", url=invite_link.invite_link),
+                                InlineKeyboardButton("Try Again ⏳", callback_data=f"checksub#{file_id}")
                             ]
                         ]
                     ),
