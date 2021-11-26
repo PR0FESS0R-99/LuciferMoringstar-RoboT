@@ -70,7 +70,7 @@ async def start(bot, message):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url=f'https://t.me/KicchaRequest')
+                                InlineKeyboardButton('🗣️ Kiccha Request 𝙶𝚛𝚘𝚞𝚙 🗣️', url=f'https://t.me/KicchaRequest')
                             ],
                             [
                                 InlineKeyboardButton("🔌 Join Channel", url=invite_link.invite_link),
