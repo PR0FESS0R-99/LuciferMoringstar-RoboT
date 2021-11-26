@@ -1,3 +1,7 @@
+Very Sempil Bot Rocky Autofilter Robot
+##[![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=welcome+To+Rocky-autofilter-Robot!;created+by+Sachin!;A+simple+autofilter+Bot!;Auto+filter+with+double+button!;start+message+with+pic!;and+all+futures!)
+</p>
+
 <p align="center">
 <img src="https://telegra.ph/file/392b4ecbb4f9d8be8482a.jpg" alt="Eva Maria Logo">
 </p>
