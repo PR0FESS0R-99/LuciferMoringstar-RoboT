@@ -1,6 +1,7 @@
 {
     "name": "Rocky_autofilter_Robot",
     "description": "When you going to send file on telegram channel this bot will save that in database, So you can search that easily in inline mode",
+    "logo": "https://telegra.ph/file/87fd3f1437dbd06644b20.jpg",
     "keywords": [
       "telegram",
       "auto-filter",
@@ -39,8 +40,7 @@
         },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
-            "value": "**https://telegra.ph/file/08ed3c37fbb3df7e66f5f.jpg**",
-            "required": false
+            "value": ""
         },
         "AUTH_USERS": {
             "description": "Username or ID of users to give access of inline search. Separate multiple users by space.\nLeave it empty if you don't want to restrict bot usage.",
