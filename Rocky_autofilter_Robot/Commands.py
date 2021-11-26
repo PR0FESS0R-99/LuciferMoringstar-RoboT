@@ -66,9 +66,12 @@ async def start(bot, message):
                 await bot.send_photo(
                     photo=f"{random.choice(PHOTO)}",
                     chat_id=message.from_user.id,
-                    caption="** 👋H𝙴𝙻𝙻𝙾 {message.from_user.mention},\nPlease Join My Updates Channel And Click Try Again Button to use this Bot!\n\n\n Welcome to:- [𝐑𝐨𝐜𝐤𝐲 𝐀𝐮𝐭𝐨 𝐅𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭](https://t.me/Rocky_autofilterBOT)**",
+                    caption="** 👋H𝙴𝙻𝙻𝙾 {message.from_user.mention}\nPlease Join My Updates Channel And Click Try Again Button to use this Bot!\n\n\n Welcome to:- [𝐑𝐨𝐜𝐤𝐲 𝐀𝐮𝐭𝐨 𝐅𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭](https://t.me/Rocky_autofilterBOT)**",
                     reply_markup=InlineKeyboardMarkup(
                         [
+                            [
+                                InlineKeyboardButton('🗣️ 𝙶𝚛𝚘𝚞𝚙', url=f'https://t.me/KicchaRequest')
+                            ],
                             [
                                 InlineKeyboardButton("🔌 Join Channel", url=invite_link.invite_link),
                                 InlineKeyboardButton("Try Again ⏳", callback_data=f"checksub#{file_id}")
