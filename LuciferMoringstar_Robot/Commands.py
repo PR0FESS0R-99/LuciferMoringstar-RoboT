@@ -200,9 +200,10 @@ async def ban(c, m):
         return
     if len(m.command) == 1:
         await m.reply_text(
-            f"Use this command to ban 🛑 any user from the bot 🤖.\n\nUsage:\n\n`/ban_user user_id ban_duration ban_reason`\n\nEg: `/ban_user 1234567 28 You misused me.`\n This will ban user with id `1234567` for `28` days for the reason `You misused me`.",
+            'Use this command to ban 🛑 any user from the bot 🤖.\n\nUsage:\n\n`/ban_user user_id ban_duration ban_reason`\n\nEg: `/ban_user 1234567 28 You misused me.`\n This will ban user with id `1234567` for `28` days for the reason `You misused me`.',
             quote=True,
         )
+
         return
 
     try:
@@ -240,9 +241,10 @@ async def unban(c, m):
         return
     if len(m.command) == 1:
         await m.reply_text(
-            f"Use this command to unban 😃 any user.\n\nUsage:\n\n`/unban_user user_id`\n\nEg: `/unban_user 1234567`\n This will unban user with id `1234567`.",
+            'Use this command to unban 😃 any user.\n\nUsage:\n\n`/unban_user user_id`\n\nEg: `/unban_user 1234567`\n This will unban user with id `1234567`.',
             quote=True,
         )
+
         return
 
     try:
@@ -250,7 +252,7 @@ async def unban(c, m):
         unban_log_text = f"Unbanning user 🤪 {user_id}"
 
         try:
-            await c.send_message(user_id, f"Your ban was lifted!")
+            await c.send_message(user_id, 'Your ban was lifted!')
             unban_log_text += "\n\n✅ User notified successfully! ✅"
         except BaseException:
             traceback.print_exc()

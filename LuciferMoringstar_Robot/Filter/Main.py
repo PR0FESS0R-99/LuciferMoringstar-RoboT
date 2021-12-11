@@ -210,7 +210,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
         typed = query.message.reply_to_message.from_user.id
     except:
         typed = query.from_user.id
-        pass
     if (clicked == typed):
 
         if query.data.startswith("next"):
@@ -227,30 +226,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons.append(
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
-                )
-
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
             else:
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)+1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)+1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
-                )
+            buttons.append(
+                [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages")]
+            )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
-
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("back"):
             ident, index, keyword = query.data.split("_")
             try:
@@ -265,28 +254,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 buttons.append(
                     [InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
-                )
-
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return   
             else:
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
                     [InlineKeyboardButton("⏪ BACK", callback_data=f"back_{int(index)-1}_{keyword}"),InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{int(index)-1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
-                )
+            buttons.append(
+                [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages")]
+            )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data == "help":
             buttons = [[
                 InlineKeyboardButton('Update Channel', url='t.me/Mo_Tech_YT'),
@@ -326,7 +307,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         InlineKeyboardButton('💫 DEPLOY VIDEO 💫', url=f'{TUTORIAL}')
                     ]
                     ]
-                
+
                 await query.answer()
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
@@ -357,7 +338,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         InlineKeyboardButton('🖥️ How To Own 🖥️', url=f'{TUTORIAL}')
                     ]
                     ]
-                
+
                 await query.answer()
                 await client.send_cached_media(
                     chat_id=query.from_user.id,

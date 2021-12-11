@@ -170,7 +170,7 @@ async def is_subscribed(bot, query):
     except Exception as e:
         logger.exception(e)
     else:
-        if not user.status == 'kicked':
+        if user.status != 'kicked':
             return True
 
     return False
@@ -213,7 +213,6 @@ async def get_poster(movie):
                 await get_all(a.get("Search"))
         except Exception as e:
             logger.exception(e)
-            pass
     return poster
 
 

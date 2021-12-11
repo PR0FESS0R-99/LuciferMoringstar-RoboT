@@ -20,10 +20,7 @@ async def index_files(bot, message):
             last_msg = await bot.ask(text = "Forward me last message of a channel which I should save to my database.\n\nYou can forward posts from any public channel, but for private channels bot should be an admin in the channel.\n\nMake sure to forward with quotes (Not as a copy)", chat_id = message.from_user.id)
             try:
                 last_msg_id = last_msg.forward_from_message_id
-                if last_msg.forward_from_chat.username:
-                    chat_id = last_msg.forward_from_chat.username
-                else:
-                    chat_id=last_msg.forward_from_chat.id
+                chat_id = last_msg.forward_from_chat.username or last_msg.forward_from_chat.id
                 await bot.get_messages(chat_id, last_msg_id)
                 break
             except Exception as e:
@@ -49,7 +46,6 @@ async def index_files(bot, message):
                             )
                     except Exception as e:
                         print(e)
-                        pass
                     try:
                         for file_type in ("document", "video", "audio"):
                             media = getattr(message, file_type, None)
@@ -63,7 +59,6 @@ async def index_files(bot, message):
                         total_files += 1
                     except Exception as e:
                         print(e)
-                        pass
                     current+=1
                     nyav+=1
                     if nyav == 20:

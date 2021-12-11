@@ -15,7 +15,7 @@ CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 
 BROADCAST_CHANNEL = int(os.environ.get("BROADCAST_CHANNEL", ""))
-ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
+ADMIN_ID = {int(x) for x in os.environ.get("ADMIN_ID", "").split()}
 DB_URL = os.environ.get("DATABASE_1", "")
 BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST", True))
 
@@ -43,11 +43,5 @@ START_MSG = environ.get('START_MSG', default_start_msg)
 
 FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "")
 OMDB_API_KEY = environ.get("OMDB_API_KEY", "http://www.omdbapi.com/?i=tt3896198&apikey=4f08a979")
-if FILE_CAPTION.strip() == "":
-    CUSTOM_FILE_CAPTION=None
-else:
-    CUSTOM_FILE_CAPTION=FILE_CAPTION
-if OMDB_API_KEY.strip() == "":
-    API_KEY=None
-else:
-    API_KEY=OMDB_API_KEY
+CUSTOM_FILE_CAPTION = None if FILE_CAPTION.strip() == "" else FILE_CAPTION
+API_KEY = None if OMDB_API_KEY.strip() == "" else OMDB_API_KEY
