@@ -57,6 +57,10 @@ async def start(bot, message):
                             [
                                 InlineKeyboardButton("🔌 ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=invite_link.invite_link),
                                 InlineKeyboardButton("ᴛʀʏ ᴀɢᴀɪɴ ⏳", callback_data=f"checksub#{file_id}")
+                            ],
+                            [
+                                InlineKeyboardButton('♻️ Group 1', url='t.me/KicchaRequest'),
+                                InlineKeyboardButton('Group 2 ♻️', url='t.me/RockyRequest')
                             ]
                         ]
                     ),
