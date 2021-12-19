@@ -25,8 +25,5 @@ COLLECTION_NAME = 'channel_files'  # If you are using the same database, then us
 START_MSG = """
 **Hi, I'm Media Search bot**
 
-Here you can search files in inline mode. Just press follwing buttons and start searching.
-"""
-
-SHARE_BUTTON_TEXT = 'Checkout {username} for searching files'
+Developer= @SDBUB7 
 INVITE_MSG = 'Please join @.... to use this bot'
