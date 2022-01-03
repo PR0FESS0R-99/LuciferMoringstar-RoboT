@@ -2,7 +2,7 @@
 
 import datetime
 
-from Config import DB_URL, SESSION
+from Config import DB_URL, SESSION, BOT_USERNAME
 from Database import Database
 
 db = Database(DB_URL, SESSION)
@@ -11,8 +11,6 @@ db = Database(DB_URL, SESSION)
 async def handle_user_status(bot, cmd):
     chat_id = cmd.from_user.id
     if not await db.is_user_exist(chat_id):
-        data = await bot.get_me()
-        BOT_USERNAME = data.username
         await db.add_user(chat_id)
         await bot.send_message(
             LOG_CHANNEL,
