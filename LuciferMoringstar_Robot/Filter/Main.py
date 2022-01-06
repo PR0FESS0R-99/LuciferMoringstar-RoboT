@@ -1,12 +1,12 @@
 # (c) PR0FESS0R-99
-from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL, SESSION, BOT_USERNAME
+from Config import AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, API_KEY, AUTH_GROUPS, TUTORIAL, SESSION, BOT_USERNAME, SEPLLING_MODE, SEPLLING_MODE_TEXT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
-import re
+import re, random, asyncio
 from pyrogram.errors import UserNotParticipant
 from LuciferMoringstar_Robot import get_filter_results, get_file_details, is_subscribed, get_poster
 from LuciferMoringstar_Robot import RATING, GENRES, HELP, ABOUT
-import random
+ 
 BUTTONS = {}
 BOT = {}
 
@@ -86,7 +86,6 @@ async def filter(client, message):
                 poster=await get_poster(search)
             if poster:
                 await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
-
             else:
                 await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
             return
@@ -107,6 +106,7 @@ async def filter(client, message):
             await message.reply_photo(photo=poster, caption=mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
         else:
             await message.reply_text(mo_tech_yt, reply_markup=InlineKeyboardMarkup(buttons))
+
 
 @Client.on_message(filters.text & filters.group & filters.incoming & filters.chat(AUTH_GROUPS) if AUTH_GROUPS else filters.text & filters.group & filters.incoming)
 async def group(client, message):
@@ -129,20 +129,16 @@ async def group(client, message):
                 btn.append(
                     [InlineKeyboardButton(text=f"{filename}", url=f"https://telegram.dog/{BOT_USERNAME}?start=pr0fess0r_99_-_-_-_{file_id}")]
                 )
-        else:
-            LuciferMoringstar=await client.send_message(
-            chat_id = message.chat.id,
-            text=f"""
-👋Hey {message.from_user.mention}
-If this movie is not in our database you will not get that movie..
-Otherwise, the spelling of the name of the requested movie may not be correct...
-So you go to google and check the spelling of the name of the movie you want.
-ഈ സിനിമ ഞങ്ങളുടെ ഡാറ്റാബേസിൽ ഇല്ലെങ്കിൽ നിങ്ങൾക്ക് ഈ സിനിമ ലഭിക്കില്ല
-അല്ലെങ്കിൽ, അഭ്യർത്ഥിച്ച സിനിമയുടെ പേരിന്റെ അക്ഷരവിന്യാസം ശരിയായിരിക്കില്ല ...
-അതിനാൽ നിങ്ങൾ ഗൂഗിളിൽ പോയി നിങ്ങൾക്ക് ആവശ്യമുള്ള സിനിമയുടെ പേരിന്റെ സ്പെല്ലിംഗ് പരിശോധിക്കുക""",
-            parse_mode="html",
-            reply_to_message_id=message.message_id
-        )
+        else: 
+            if SEPLLING_MODE == "on":
+                LuciferMoringstar_Robot=await client.send_message(
+                    chat_id = message.chat.id,
+                    text=SEPLLING_MODE_TEXT.format(message.from_user.first_name),
+                    parse_mode="html",
+                    reply_to_message_id=message.message_id
+                )
+                await asyncio.sleep(60) 
+                await LuciferMoringstar_Robot.delete()
             return
         if not btn:
             return
