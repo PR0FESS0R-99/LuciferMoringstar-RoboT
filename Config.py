@@ -24,7 +24,7 @@ BROADCAST_AS_COPY = bool(environ.get("BROADCAST", True))
 
 # Seplling Mode
 SEPLLING_MODE = environ.get("SEPLLING_MODE_ON_OR_OFF", "on").lower()
-SEPLLING_MODE_TEXT = environ.get("SEPLLING_MODE_ON_OR_OFF")
+SEPLLING_MODE_TEXT = environ.get("SEPLLING_MODE_TEXT")
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
