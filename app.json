@@ -22,15 +22,15 @@
             "value": ""
         },
         "API_ID": {
-            "description": "Get this value from https://my.telegram.org",
+            "description": "Get this value from https://my.telegram.org or @MT_MytelegramOrg_Bot",
             "value": ""
         },
         "API_HASH": {
-            "description": "Get this value from https://my.telegram.org",
+            "description": "Get this value from https://my.telegram.org or @MT_MytelegramOrg_Bot",
             "value": ""
         },
         "CHANNELS": {
-            "description": "Username or ID of channel or group. Separate multiple IDs by space.",
+            "description": "Username or ID of channel or group. Separate multiple IDs by space. @MT_ID_Bot",
             "value": ""
         },
         "ADMINS": {
@@ -77,8 +77,8 @@
             "value": ""
         },
         "BOT_NAME": {
-            "description": "Name of the database in mongoDB. For more help watch this video - https://youtu.be/dsuTn4qV2GA",
-           "value": "LuciferMoringstar_Robot"
+            "description": "Enter Your Bot Name",
+           "value": "LuciferMoringstar Robot"
         },
         "BOT_USERNAME": {
             "description": "your Bot User Name from @Botfather (Without @) eg LuciferMoringstar_robot",
@@ -107,6 +107,16 @@
         "ADMIN_ID": {
             "description": "Control BroadCast",
             "value": "",
+            "required": true
+        },
+        "SEPLLING_MODE_ON_OR_OFF": {
+            "description": "Spelling Mode on or off",
+            "value": "on",
+            "required": true
+        },
+        "SEPLLING_MODE_TEXT": {
+            "description": "Seplling Mode Text",
+            "value": "Check Seplling",
             "required": true
         },
         "BROADCAST_CHANNEL": {
