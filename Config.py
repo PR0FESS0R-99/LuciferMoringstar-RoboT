@@ -4,13 +4,13 @@ from os import environ
 
 id_pattern = re.compile(r'^.\d+$')
 
-# Bot information
-BOT_USERNAME = environ.get('BOT_USERNAME', 'LuciferMoringstar_Robot')
 
+# Bot Settings
 SESSION = environ.get('SESSION', 'LuciferMoringstar_Robot')
 API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
+BOT_USERNAME = environ.get('BOT_USERNAME', 'LuciferMoringstar_Robot')
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -18,8 +18,13 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 
 BROADCAST_CHANNEL = int(os.environ.get("BROADCAST_CHANNEL", ""))
 ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
-DB_URL = os.environ.get("DATABASE_1", "")
-BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST", True))
+DB_URL = environ.get("DATABASE_1", "")
+BROADCAST_AS_COPY = bool(environ.get("BROADCAST", True))
+
+
+# Seplling Mode
+SEPLLING_MODE = environ.get("SEPLLING_MODE_ON_OR_OFF", "on").lower()
+SEPLLING_MODE_TEXT = environ.get("SEPLLING_MODE_ON_OR_OFF")
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
