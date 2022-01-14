@@ -1,4 +1,4 @@
-https://github.com/PR0FESS0R-99/pyrogram/archive/master.zip
+https://github.com/subinps/pyrogram/archive/inline-m.zip
 tgcrypto==1.2.2
 pymongo[srv]==3.11.4
 motor==2.4.0
