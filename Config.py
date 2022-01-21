@@ -21,6 +21,8 @@ ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
 DB_URL = environ.get("DATABASE_1", "")
 BROADCAST_AS_COPY = bool(environ.get("BROADCAST", True))
 
+# Photo Mode
+PICS = (environ.get('PICS', 'https://telegra.ph/file/467eea43b4d6cf2243e72.jpg https://telegra.ph/file/d8ae8025d8d63b789d5b0.jpg https://telegra.ph/file/66fd880cb8729cf95d8f3.jpg')).split()
 
 # Seplling Mode
 SEPLLING_MODE = environ.get("SEPLLING_MODE_ON_OR_OFF", "on").lower()
@@ -43,10 +45,10 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 # Messages
 default_start_msg = """
 **Hi, I'm Auto Filter V3**
-
 Here you can search files in Inline mode as well as PM, Use the below buttons to search files or send me the name of file to search.
 """
 START_MSG = environ.get('START_MSG', default_start_msg)
+START_IMG = environ.get("START_IMG", "")
 
 FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "")
 OMDB_API_KEY = environ.get("OMDB_API_KEY", "http://www.omdbapi.com/?i=tt3896198&apikey=4f08a979")
