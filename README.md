@@ -21,7 +21,7 @@
 
 #### Deploy To Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://github.com/soorajmelepuram/LuciferMoringstar_Robot)
 
 
 #### Hard Way
