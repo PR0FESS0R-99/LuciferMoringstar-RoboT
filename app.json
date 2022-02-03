@@ -16,7 +16,7 @@
       "inline"
     ],
     "website": "https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot",
-    "repository": "https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot",
+    "repository": "https://github.com/soorajmelepuram/LuciferMoringstar_Robot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
