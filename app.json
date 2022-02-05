@@ -1,7 +1,8 @@
 {
     "name": "LuciferMoringstar_Robot",
     "description": "Super Fast Telegram Auto Filter Bot",
-    "logo": "https://telegra.ph/file/467eea43b4d6cf2243e72.jpg",
+    "logo": "https://telegra.ph/file/aabbe1b1f267be91206c5.jpg",
+    "stack": "container",
     "keywords": [
       "best",
       "telegarm",
