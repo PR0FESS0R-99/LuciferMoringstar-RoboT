@@ -1,0 +1,10 @@
+------ [ Spell Check ] ------
+
+Get User Name 👉 {mention}
+Get Request Text {query}
+
+Hello 👋〘 {mention} 〙,
+
+Couldn't Find {query}?  Please Click Your Request Movie Name"""
+
+------ [ END ] ------

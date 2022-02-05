@@ -1,0 +1,17 @@
+------ [ File Caption ] ------
+
+Get File Name 👉 {file_name}
+Get File Size 👉 {file_size}
+Get File Caption 👉 {file_caption}
+
+Example :-
+
+Title <code>{file_name}</code>
+
+Size {file_size}
+
+{file_caption}
+
+🔘 Join [MoTech Channel](t.me/Mo_Tech_YT)
+
+------ [ END ] ------
