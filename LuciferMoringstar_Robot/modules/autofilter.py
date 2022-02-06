@@ -69,7 +69,7 @@ async def group_filters(client, message):
                 await asyncio.sleep(1000)
                 await dell.edit(f"⚙️ Filter For {search} Closed 🗑️")
             else:
-                dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=LuciferMoringstar.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=message.chat.title), reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)
+                dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=LuciferMoringstar.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=message.chat.title), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
                 await asyncio.sleep(1000)
                 await dell.edit(f"⚙️ Filter For {search} Closed 🗑️")
             return
@@ -98,7 +98,7 @@ async def group_filters(client, message):
             await asyncio.sleep(1000)
             await dell.edit(f"⚙️ Filter For {search} Closed 🗑️")
         else:
-            dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=LuciferMoringstar.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=message.chat.title), reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)
+            dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=LuciferMoringstar.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=message.chat.title), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
             await asyncio.sleep(1000)
             await dell.edit(f"⚙️ Filter For {search} Closed 🗑️")
 
@@ -161,7 +161,7 @@ async def pm_autofilter(client, message):
                 await asyncio.sleep(1000)
                 await dell.edit(f"⚙️ Filter For {search} Closed 🗑️")
             else:
-                dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=LuciferMoringstar.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=message.chat.title), reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)
+                dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=LuciferMoringstar.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=message.chat.title), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
                 await asyncio.sleep(1000)
                 await dell.edit(f"⚙️ Filter For {search} Closed 🗑️")
 
@@ -188,6 +188,6 @@ async def pm_autofilter(client, message):
             await asyncio.sleep(1000)
             await dell.edit(f"⚙️ Filter For {search} Closed 🗑️")
         else:
-            dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=LuciferMoringstar.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=message.chat.title), reply_markup=InlineKeyboardMarkup(button), disable_web_page_preview=True)
+            dell=await message.reply_photo(photo=random.choice(BOT_PICS), caption=LuciferMoringstar.GET_MOVIE_2.format(query=search, mention=message.from_user.mention, chat=message.chat.title), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
             await asyncio.sleep(1000)
             await dell.edit(f"⚙️ Filter For {search} Closed 🗑️")
