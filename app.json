@@ -45,7 +45,8 @@
         },
         "PICS": {
             "description": "Add some telegraph link of pictures .",
-            "value": ""
+            "value": "",
+            "required": false
         },
         "START_MSG": {
             "description": "Welcome message for start command More Information Check Readme.md",
@@ -59,8 +60,7 @@
         },
         "DATABASE_URI": {
             "description": "Mongodb from https://youtu.be/gBLTsH-IXr0",
-            "value": "",
-            "required": true
+            "value": ""
         },
         "SPELL_MODE": {
             "description": "Spelling Mode on or off",
@@ -74,8 +74,7 @@
         },
         "LOG_CHANNEL": {
             "description": "Log Channel Use Private Channel Id -100×××× from @MT_ID_Bot",
-            "value": "",
-            "required": true
+            "value": ""
         },
         "DEV_NAME": {
             "description": "Creator Name or Username ",
