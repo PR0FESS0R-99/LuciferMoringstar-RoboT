@@ -14,11 +14,11 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
         typed = query.message.reply_to_message.from_user.id
     except:
         typed = query.from_user.id
-        pass
+
     if (clicked == typed):
 
 
-# ---------- 🔘 [ | 𝗚𝗥𝗢𝗨𝗣 𝗙𝗜𝗟𝗧𝗘𝗥𝗦 | ] 🔘 ---------- #
+# # ---------- 🔘 [ | 𝗚𝗥𝗢𝗨𝗣 𝗙𝗜𝗟𝗧𝗘𝗥𝗦 | ] 🔘 ---------- # #
 
         if query.data.startswith("nextgroup"):
             ident, index, keyword = query.data.split("_")
@@ -109,7 +109,7 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
                 )
                 return
 
-# ---------- 🔘 [ | 𝗕𝗢𝗧 𝗣𝗠 𝗙𝗜𝗟𝗧𝗘𝗥𝗦 | ] 🔘 ---------- #
+# # ---------- 🔘 [ | 𝗕𝗢𝗧 𝗣𝗠 𝗙𝗜𝗟𝗧𝗘𝗥𝗦 | ] 🔘 ---------- # #
 
 
         elif query.data.startswith("nextbot"):
