@@ -6,5 +6,5 @@ Get Request Text {query}
 Hello 👋〘 {mention} 〙,
 
 Couldn't Find {query}?  Please Click Your Request Movie Name"""
-
+CHECK THE SPELLING YOU TYPE OR THE MOVIE IS NOT IN OUR DATA BASE PLEASE LET KNOW THE ADMIN IF NOT IN THE DATABASE @SPK_ADMIN_BOT
 ------ [ END ] ------
