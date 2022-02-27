@@ -312,6 +312,9 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
         elif query.data == "pages":
             await query.answer()
 
+        elif query.data == "close":
+            await query.message.delete()
+
     else:
         await query.answer("Please Request",show_alert=True)
 
