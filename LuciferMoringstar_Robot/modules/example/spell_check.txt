@@ -6,5 +6,6 @@ Get Request Text {query}
 Hello 👋〘 {mention} 〙,
 
 Couldn't Find {query}?  Please Click Your Request Movie Name"""
-
+GOOGLILE ൽ പോയി വേണ്ട സിനിമയുടെ
+NAME COPY ചെയ്ത് PASTE ചെയ്യടാ കുട്ടാ
 ------ [ END ] ------
