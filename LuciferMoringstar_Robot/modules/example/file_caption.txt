@@ -1,16 +1,16 @@
 ------ [ File Caption ] ------
 
-Get File Name 👉 {file_name}
-Get File Size 👉 {file_size}
-Get File Caption 👉 {file_caption}
+Get File Name 👉 {title}
+Get File Size 👉 {size}
+Get File Caption 👉 {caption}
 
 Example :-
 
-Title <code>{file_name}</code>
+Title <code>{title}</code>
 
-Size {file_size}
+Size {size}
 
-{file_caption}
+{caption}
 
 🔘 Join [MoTech Channel](t.me/Mo_Tech_YT)
 
