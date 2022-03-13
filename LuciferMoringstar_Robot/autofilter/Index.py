@@ -86,7 +86,7 @@ async def send_for_index(bot, message):
                                      callback_data=f'index#accept#{chat_id}#{last_msg_id}#{message.from_user.id}')
             ],
             [
-                InlineKeyboardButton('close', callback_data='close_data'),
+                InlineKeyboardButton('close', callback_data='close'),
             ]
         ]
         reply_markup = InlineKeyboardMarkup(buttons)
