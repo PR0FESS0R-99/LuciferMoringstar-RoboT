@@ -33,12 +33,12 @@ async def save_file(media):
 
     # TODO: Find better way to get same file_id for same media to avoid duplicates
     file_id, file_ref = unpack_new_file_id(media.file_id)
-
+    file_name = re.sub(r"(_|\-|\.|\+)", " ", str(media.file_name))
     try:
         file = Media(
             file_id=file_id,
             file_ref=file_ref,
-            file_name=media.file_name,
+            file_name=file_name,
             file_size=media.file_size,
             file_type=media.file_type,
             mime_type=media.mime_type,
@@ -46,13 +46,19 @@ async def save_file(media):
         )
     except ValidationError:
         logger.exception('Error occurred while saving file in database')
+        return False, 2
     else:
         try:
             await file.commit()
-        except DuplicateKeyError:
-            logger.warning(media.file_name + " is already saved in database")
+        except DuplicateKeyError:      
+            logger.warning(
+                f'{getattr(media, "file_name", "NO_FILE")} is already saved in database'
+            )
+
+            return False, 0
         else:
-            logger.info(media.file_name + " is saved in database")
+            logger.info(f'{getattr(media, "file_name", "NO_FILE")} is saved to database')
+            return True, 1
 
 
 async def get_search_results(query, file_type=None, max_results=10, offset=0):
