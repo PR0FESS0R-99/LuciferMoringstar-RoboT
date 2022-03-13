@@ -36,12 +36,12 @@ async def answer(bot, query):
     for file in files:
         title=file.file_name
         size=get_size(file.file_size)    
-        f_caption=CUSTOM_FILE_CAPTION.format(file_name=title, size=size, file_caption=file.caption)
+        caption=CUSTOM_FILE_CAPTION.format(title=title, size=size, caption=file.caption)
         results.append(
             InlineQueryResultCachedDocument(
                 title=file.file_name,
                 file_id=file.file_id,
-                caption=f_caption,
+                caption=caption,
                 description=f'Size: {get_size(file.file_size)}\nType: {file.file_type}',
                 reply_markup=reply_markup))
 
