@@ -39,7 +39,7 @@ BUTTONS = {}
 CURRENT = int(environ.get("SKIP", 2))
 CANCEL = False
 FORCES_SUB = int(FORCE) if FORCE and id_pattern.search(FORCE) else FORCE
-DATABASE_NAME = environ.get("DATABASE_NAME", 'Gofilefhjrobot')
+DATABASE_NAME = environ.get("DATABASE_NAME", 'LuciferMoringstar_Robot')
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 # ==================================
 # About Bot 🤖
