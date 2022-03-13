@@ -201,7 +201,7 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
             files = files_[0]
             title = files.file_name
             size=get_size(files.file_size)
-            f_caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, file_caption=files.caption)
+            caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=files.caption)
 
             try:
                 if FORCES_SUB and not await is_subscribed(client, query):
@@ -211,7 +211,7 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
                     await client.send_cached_media(
                         chat_id=query.from_user.id,
                         file_id=file_id,
-                        caption=f_caption
+                        caption=caption
                         )
                     await query.answer('🤖 Check PM, I have Sent Files In Pm 🤖',show_alert = True)
             except UserIsBlocked:
@@ -233,7 +233,7 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
                 title = files.file_name
                 size=get_size(files.file_size)
                 
-                f_caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, file_caption=files.caption)
+                caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=files.caption)
 
                 buttons = [[
                   InlineKeyboardButton('🧑‍💻 How To Own 🧑‍💻', url='https://t.me/Mo_Tech_Group')
@@ -243,7 +243,7 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
                     file_id=file_id,
-                    caption=f_caption,
+                    caption=caption,
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
 
