@@ -36,7 +36,7 @@ async def answer(bot, query):
     for file in files:
         title=file.file_name
         size=get_size(file.file_size)    
-        caption=CUSTOM_FILE_CAPTION.format(title=title, size=size, caption=file.caption)
+        caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=file.caption)
         results.append(
             InlineQueryResultCachedDocument(
                 title=file.file_name,
