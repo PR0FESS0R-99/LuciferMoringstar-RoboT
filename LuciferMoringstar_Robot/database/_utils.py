@@ -1,6 +1,7 @@
 import logging, os, traceback
 
 from pyrogram.errors import UserNotParticipant, FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
+from config import FORCES_SUB
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
