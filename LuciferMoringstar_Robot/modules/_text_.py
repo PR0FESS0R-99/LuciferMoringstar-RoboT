@@ -1,11 +1,12 @@
-autofilter_text = """
+class module(object):
+    autofilter_text = """
 😋 <u>𝐀𝐮𝐭𝐨𝐅𝐢𝐥𝐭𝐞𝐫</u> :-
 
 Auto Filter is the feature to filter and save all the files automatically from channel to group. This mostly used in group to get movies with name
  
 **[🥀 Maintained By {team}]({team_link})**"""
 
-ban_text = """
+    ban_text = """
 🧑‍🚒 <u>𝐁𝐚𝐧 𝐔𝐬𝐞𝐫</u> :-
 
 Some People Need To Be Publicly Banned: Spammers, Annkyances, Or Just Trolls...! This Module Allows You To Do That Easily By Exposing Same Commo Actions, So EveryOne Will See!
@@ -17,7 +18,7 @@ Some People Need To Be Publicly Banned: Spammers, Annkyances, Or Just Trolls...!
 
 **[🥀 Maintained By {team}]({team_link})**"""
 
-mute_text = """
+    mute_text = """
 🤐 <u>𝐌𝐮𝐭𝐞 𝐔𝐬𝐞𝐫</u> :-
 
 Some People Need To Be Publicly Muted: Spammers, Annkyances, Or Just Trolls...! This Module Allows You To Do That Easily By Exposing Same Commo Actions, So EveryOne Will See!
@@ -29,7 +30,7 @@ Some People Need To Be Publicly Muted: Spammers, Annkyances, Or Just Trolls...! 
 
 **[🥀 Maintained By {team}]({team_link})**"""
 
-pin_message = """
+    pin_message = """
 📌 <u>𝐏𝐢𝐧 𝐌𝐞𝐬𝐬𝐚𝐠𝐞</u> :-
 
 All The Pin Related Commands Can Be Found Here; Keep Your Chat Up To Date On The Latest News With A Simple Pinned Message..!
