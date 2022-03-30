@@ -1,4 +1,4 @@
-import re
+import re, os
 from os import environ
 from translation import LuciferMoringstar
 id_pattern = re.compile(r'^.\d+$')
@@ -41,6 +41,11 @@ CANCEL = False
 FORCES_SUB = int(FORCE) if FORCE and id_pattern.search(FORCE) else FORCE
 DATABASE_NAME = environ.get("DATABASE_NAME", 'LuciferMoringstar_Robot')
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
+# ==================================
+
+team_name = os.environ.get('team_name', 'Mo Tech 🇮🇳')
+team_link = os.environ.get('team_link', 't.me/Mo_Tech_YT')
+
 # ==================================
 # About Bot 🤖
 class bot_info(object):
