@@ -7,6 +7,8 @@ from translation import LuciferMoringstar
 from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS
 
 
+from LuciferMoringstar_Robot.modules._text_ import module
+
 @LuciferMoringstar_Robot.on_callback_query()
 async def cb_handler(client: LuciferMoringstar_Robot, query):
     clicked = query.from_user.id
@@ -16,7 +18,6 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
         typed = query.from_user.id
 
     if (clicked == typed):
-
 
 # # ---------- 🔘 [ | 𝗚𝗥𝗢𝗨𝗣 𝗙𝗜𝗟𝗧𝗘𝗥𝗦 | ] 🔘 ---------- # #
 
@@ -298,8 +299,25 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
              ]]               
             await query.message.edit(text=LuciferMoringstar.PR0FESS0R_99.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
+
+        elif query.data == "autofilter":
+            buttons = [[ InlineKeyboardButton('🔙 Back', callback_data="help") ]]          
+            await query.message.edit(module.autofilter_text.format(team=team_name, team_link=team_link), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "ban":
+            buttons = [[ InlineKeyboardButton('🔙 Back', callback_data="help") ]]          
+            await query.message.edit(module.ban_text.format(team=team_name, team_link=team_link), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "mute":
+            buttons = [[ InlineKeyboardButton('🔙 Back', callback_data="help") ]]          
+            await query.message.edit(module.mute_text.format(team=team_name, team_link=team_link), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
+        elif query.data == "pin":
+            buttons = [[ InlineKeyboardButton('🔙 Back', callback_data="help") ]]          
+            await query.message.edit(module.pin_message.format(team=team_name, team_link=team_link), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+
         elif query.data == "pages":
-            await query.answer()
+            await query.answer("Mm")
 
         elif query.data == "close":
             await query.message.delete()
