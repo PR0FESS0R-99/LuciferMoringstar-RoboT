@@ -48,7 +48,7 @@ async def index_files(client, query):
     await index_files_to_db(int(lst_msg_id), chat, msg, bot)
 
 
-@luciferMoringstar_robot.on_message((filter.forwarded | (filter.regex("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")) & filters.text ) & filter.private & filter.incoming)
+@luciferMoringstar_robot.on_message((filter.forwarded | (filter.regex("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")) & filter.text ) & filter.private & filter.incoming)
 async def send_for_index(bot, message):
     if message.text:
         regex = re.compile("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")
