@@ -13,41 +13,6 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 lock = asyncio.Lock()
 
-async def index_files(client, query):
-    bot = client
-    if query.data.startswith('index_cancel'):
-        lucifer_temp.CANCEL = True
-        return await query.answer("Cancelling Indexing")
-    _, raju, chat, lst_msg_id, from_user = query.data.split("#")
-    if raju == 'reject':
-        await query.message.delete()
-        await bot.send_message(int(from_user),
-                               f'Your Submission for indexing {chat} has been decliened by our moderators.',
-                               reply_to_message_id=int(lst_msg_id))
-        return
-
-    if lock.locked():
-        return await query.answer('Wait until previous process complete.', show_alert=True)
-    msg = query.message
-
-    await query.answer('Processing...⏳', show_alert=True)
-    if int(from_user) not in ADMINS:
-        await bot.send_message(int(from_user),
-                               f'Your Submission for indexing {chat} has been accepted by our moderators and will be added soon.',
-                               reply_to_message_id=int(lst_msg_id))
-    await msg.edit(
-        "Starting Indexing",
-        reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
-        )
-    )
-    try:
-        chat = int(chat)
-    except:
-        chat = chat
-    await index_files_to_db(int(lst_msg_id), chat, msg, bot)
-
-
 @luciferMoringstar_robot.on_message((filter.forwarded | (filter.regex("(https://)?(t\.me/|telegram\.me/|telegram\.dog/)(c/)?(\d+|[a-zA-Z_0-9]+)/(\d+)$")) & filter.text ) & filter.private & filter.incoming)
 async def send_for_index(bot, message):
     if message.text:
