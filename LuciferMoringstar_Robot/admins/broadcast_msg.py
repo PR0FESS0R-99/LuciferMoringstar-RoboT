@@ -5,7 +5,8 @@
 
 import asyncio, aiofiles, aiofiles.os, datetime, traceback, random, string, time, os
 from pyrogram import Client as lucifermoringstar_robot, filters as filter
-from LuciferMoringstar_Robot.database.broadcast_db import Database
+from LuciferMoringstar_Robot.database.users_chats_db import db
+from LuciferMoringstar_Robot.database._utils import send_msg
 from random import choice
 from config import ADMINS
 
