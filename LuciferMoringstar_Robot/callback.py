@@ -2,7 +2,7 @@ from pyrogram import Client as lucifermoringstar_robot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserIsBlocked, PeerIdInvalid
 
-from LuciferMoringstar.admins.index_files import index_files
+from LuciferMoringstar_Robot.admins.index_files import index_files
 from LuciferMoringstar_Robot.database.autofilter_db import get_file_details
 from LuciferMoringstar_Robot.database._utils import get_size, is_subscribed
 from translation import LuciferMoringstar
