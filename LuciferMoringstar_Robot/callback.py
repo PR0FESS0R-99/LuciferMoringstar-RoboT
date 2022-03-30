@@ -7,6 +7,8 @@ from pyrogram.errors import UserIsBlocked, PeerIdInvalid
 from LuciferMoringstar_Robot.admins.index_files import index_files_to_db
 from LuciferMoringstar_Robot.database.autofilter_db import get_file_details
 from LuciferMoringstar_Robot.database._utils import get_size, is_subscribed
+from LuciferMoringstar_Robot.database._utils import lucifer_temp
+
 from translation import LuciferMoringstar
 from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS, team_name, team_link
 
@@ -329,7 +331,7 @@ async def cb_handler(client: lucifermoringstar_robot, query):
         elif query.data.startswith("index"):
             bot = client 
             if query.data.startswith('index_cancel'):
-                temp.CANCEL = True
+                lucifer_temp.CANCEL = True
                 return await query.answer("Cancelling Indexing")
             _, raju, chat, lst_msg_id, from_user = query.data.split("#")
             if raju == 'reject':
