@@ -2,11 +2,6 @@ autofilter_text = """
 😋 <u>𝐀𝐮𝐭𝐨𝐅𝐢𝐥𝐭𝐞𝐫</u> :-
 
 Auto Filter is the feature to filter and save all the files automatically from channel to group. This mostly used in group to get movies with name
-
-📚 <u>𝐀𝐯𝐚𝐢𝐥𝐚𝐛𝐥𝐞 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬</u> :-
-
-★ /autofilter [on] - Enable auto filter in the chat.
-★ /autofilter [off] - Disable auto filter in the chat
  
 **[🥀 Maintained By {team}]({team_link})**"""
 
