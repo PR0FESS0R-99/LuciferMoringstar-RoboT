@@ -59,7 +59,7 @@ async def send_msg(user_id, message):
 
 # ~~~~ Collections ~~~~ #
 
-class bot_info(object):
+class lucifer_temp(object):
     ME = None # User Id
     U_NAME = None # Username
     B_NAME = None # Full Name 
