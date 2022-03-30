@@ -1,4 +1,4 @@
-import logging, os
+import logging, os, traceback
 
 from pyrogram.errors import UserNotParticipant, FloodWait, InputUserDeactivated, UserIsBlocked, PeerIdInvalid
 
