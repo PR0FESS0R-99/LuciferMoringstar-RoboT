@@ -3,10 +3,7 @@ from config import START_MSG, FORCES_SUB, BOT_PICS, ADMINS, bot_info, DEV_NAME
 from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from translation import LuciferMoringstar
-from LuciferMoringstar_Robot.database.broadcast_db import Database
-
-db = Database()
-
+from LuciferMoringstar_Robot.database.users_chats_db import db
 
 @LuciferMoringstar_Robot.on_message(Worker.private & Worker.command(["start"]))
 async def start_message(bot, message):
