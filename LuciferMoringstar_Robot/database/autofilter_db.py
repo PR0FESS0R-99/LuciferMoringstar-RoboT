@@ -127,21 +127,6 @@ async def get_file_details(query):
     filedetails = await cursor.to_list(length=1)
     return filedetails
 
-
-async def is_subscribed(bot, query):
-    try:
-        user = await bot.get_chat_member(FORCES_SUB, query.from_user.id)
-    except UserNotParticipant:
-        pass
-    except Exception as e:
-        logger.exception(e)
-    else:
-        if not user.status == 'kicked':
-            return True
-
-    return False
-
-
 def encode_file_id(s: bytes) -> str:
     r = b""
     n = 0
