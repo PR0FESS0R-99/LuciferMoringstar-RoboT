@@ -1,6 +1,8 @@
-from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker
+from pyrogram import Client as lucifermoringstar_robot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserIsBlocked, PeerIdInvalid
+
+from LuciferMoringstar.admins.index_files import index_files
 from LuciferMoringstar_Robot.database.autofilter_db import get_file_details
 from LuciferMoringstar_Robot.database._utils import get_size, is_subscribed
 from translation import LuciferMoringstar
@@ -8,8 +10,8 @@ from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME
 
 from LuciferMoringstar_Robot.modules._text_ import module
 
-@LuciferMoringstar_Robot.on_callback_query()
-async def cb_handler(client: LuciferMoringstar_Robot, query):
+@lucifermoringstar_robot.on_callback_query()
+async def cb_handler(client: lucifermoringstar_robot, query):
     clicked = query.from_user.id
     try:
         typed = query.message.reply_to_message.from_user.id
@@ -315,11 +317,17 @@ async def cb_handler(client: LuciferMoringstar_Robot, query):
             buttons = [[ InlineKeyboardButton('🔙 Back', callback_data="help") ]]          
             await query.message.edit(module.pin_message.format(team=team_name, team_link=team_link), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
+        elif query.data == "close":
+            await query.message.delete()
+
+# ---------- ⚠️ [ | Other | ] ⚠️ ---------- #
+
+        elif query.data.startswith("index"):
+            await index_files(query, client)
+
         elif query.data == "pages":
             await query.answer("@LuciferMoringstar_Robot")
 
-        elif query.data == "close":
-            await query.message.delete()
 
     else:
         await query.answer("Please Request",show_alert=True)
