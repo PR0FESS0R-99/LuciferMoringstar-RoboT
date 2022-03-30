@@ -1,14 +1,18 @@
+import asyncio 
+
 from pyrogram import Client as lucifermoringstar_robot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserIsBlocked, PeerIdInvalid
 
-from LuciferMoringstar_Robot.admins.index_files import index_files
+from LuciferMoringstar_Robot.admins.index_files import index_files_to_db
 from LuciferMoringstar_Robot.database.autofilter_db import get_file_details
 from LuciferMoringstar_Robot.database._utils import get_size, is_subscribed
 from translation import LuciferMoringstar
 from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS, team_name, team_link
 
 from LuciferMoringstar_Robot.modules._text_ import module
+
+lock = asyncio.Lock()
 
 @lucifermoringstar_robot.on_callback_query()
 async def cb_handler(client: lucifermoringstar_robot, query):
@@ -323,7 +327,41 @@ async def cb_handler(client: lucifermoringstar_robot, query):
 # ---------- ⚠️ [ | Other | ] ⚠️ ---------- #
 
         elif query.data.startswith("index"):
-            await index_files(query, client)
+            bot = client 
+            if query.data.startswith('index_cancel'):
+                temp.CANCEL = True
+                return await query.answer("Cancelling Indexing")
+            _, raju, chat, lst_msg_id, from_user = query.data.split("#")
+            if raju == 'reject':
+                await query.message.delete()
+                await client.send_message(int(from_user),
+                                       f'Your Submission for indexing {chat} has been decliened by our moderators.',
+                                       reply_to_message_id=int(lst_msg_id))
+                return
+
+  
+            if lock.locked():
+                return await query.answer('Wait until previous process complete.', show_alert=True)
+            msg = query.message
+            await query.answer('Processing...⏳', show_alert=True)
+            if int(from_user) not in ADMINS:
+                await bot.send_message(int(from_user),
+                                       f'Your Submission for indexing {chat} has been accepted by our moderators and will be added soon.',
+                                       reply_to_message_id=int(lst_msg_id))
+            await msg.edit(
+                "Starting Indexing",
+                reply_markup=InlineKeyboardMarkup(
+                  [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
+                  )
+            )
+            try:
+                chat = int(chat)
+            except:
+                chat = chat
+            await index_files_to_db(int(lst_msg_id), chat, msg, bot)
+
+
+
 
         elif query.data == "pages":
             await query.answer("@LuciferMoringstar_Robot")
