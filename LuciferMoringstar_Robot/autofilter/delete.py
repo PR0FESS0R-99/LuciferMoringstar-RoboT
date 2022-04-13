@@ -13,7 +13,7 @@ async def delete(bot, message):
     if reply and reply.media:
         msg = await message.reply("Processing...⏳", quote=True)
     else:
-        await message.reply('Reply To File With /delete Which You Want To Delete', quote=True)
+        await message.reply('Reply to file with /delete which you want to delete', quote=True)
         return
 
     for file_type in ("document", "video", "audio"):
@@ -21,7 +21,7 @@ async def delete(bot, message):
         if media is not None:
             break
     else:
-        await msg.edit('This Is Not Supported File Format')
+        await msg.edit('This is not supported file format')
         return
 
     result = await Media.collection.delete_one({
@@ -30,9 +30,9 @@ async def delete(bot, message):
         'mime_type': media.mime_type
     })
     if result.deleted_count:
-        await msg.edit('File Is Successfully Deleted From Database')
+        await msg.edit('File is successfully deleted from database')
     else:
-        await msg.edit('File Not Found In Database')
+        await msg.edit('File not found in database')
 
 
 @LuciferMoringstar_Robot.on_message(Worker.command('deleteall') & Worker.user(ADMINS))
