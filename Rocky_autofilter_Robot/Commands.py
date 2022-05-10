@@ -123,26 +123,6 @@ async def start(bot, message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton
-                            (
-                                "Search Here", switch_inline_query_current_chat=''
-                            ),
-                        InlineKeyboardButton
-                            (
-                                "Channel 🔰", url="https://t.me/KR_ROCKERS_DVD_WEB_OTT_MOVIES"
-                            )
-                    ],
-                    [
-                        InlineKeyboardButton
-                            (
-                                "⚙Help", callback_data="help"
-                            ),
-                        InlineKeyboardButton
-                            (
-                                "About😎", callback_data="about"
-                            )
-                    ], 
-                    [
                       InlineKeyboardButton("➕ Add Me To Your Group ➕", url="https://t.me/Rocky_autofilterBOT?startgroup=ture") 
                     ]
                 ]
