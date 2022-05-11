@@ -1,12 +1,12 @@
-# (c) [Muhammed] @PR0FESS0R-99
-# (s) @Mo_Tech_YT , @Mo_Tech_Group, @MT_Botz
+# (c) [Muhammed] @sachin9742s
+# (s) @Kiccha_OTT , @Kiccharequest, @Kiccha_OTT
 # Copyright permission under MIT License
-# All rights reserved by PR0FESS0R-99
+# All rights reserved by sachin9742s
 
 import asyncio, aiofiles, aiofiles.os, datetime, traceback, random, string, time, os
-from pyrogram import Client as lucifermoringstar_robot, filters as filter
-from LuciferMoringstar_Robot.database.users_chats_db import db
-from LuciferMoringstar_Robot.database._utils import send_msg
+from pyrogram import Client as Rocky_autofilter_Robot, filters as filter
+from Rocky_autofilter_Robot.database.users_chats_db import db
+from Rocky_autofilter_Robot.database._utils import send_msg
 from random import choice
 from config import ADMINS
 
@@ -14,7 +14,7 @@ class config(object):
     broadcast_ids = {} # don't change this..!!
 # https://github.com/PR0FESS0R-99/Broadcast-Bot
 
-@lucifermoringstar_robot.on_message(filter.private & filter.command(["broadcast", "send"]) & filter.user(ADMINS) & filter.reply)
+@Rocky_autofilter_Robot.on_message(filter.private & filter.command(["broadcast", "send"]) & filter.user(ADMINS) & filter.reply)
 async def send_broadcast(client, message):
     all_users = await db.get_all_users()
     broadcast_msg = message.reply_to_message
