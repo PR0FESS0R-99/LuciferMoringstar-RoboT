@@ -1,11 +1,11 @@
 import os
-from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker
-from LuciferMoringstar_Robot.database.autofilter_db import save_file
+from pyrogram import Client as Rocky_autofilter_Robot, filters as Worker
+from Rocky_autofilter_Robot.database.autofilter_db import save_file
 from config import CHANNELS, ADMINS
 
 media_filter = Worker.document | Worker.video | Worker.audio
 
-@LuciferMoringstar_Robot.on_message(Worker.chat(CHANNELS) & media_filter)
+@Rocky_autofilter_Robot.on_message(Worker.chat(CHANNELS) & media_filter)
 async def media(bot, message):
 
     for file_type in ("document", "video", "audio"):
@@ -20,7 +20,7 @@ async def media(bot, message):
     await save_file(media)
 
 
-@LuciferMoringstar_Robot.on_message(Worker.command('channel') & Worker.user(ADMINS))
+@Rocky_autofilter_Robot.on_message(Worker.command('channel') & Worker.user(ADMINS))
 async def channel_info(bot, message):
     
     if isinstance(CHANNELS, (int, str)):
