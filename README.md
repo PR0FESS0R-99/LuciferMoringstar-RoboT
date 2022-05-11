@@ -1,78 +1,55 @@
-### [Rocky_autofilter_Robot](https://telegram.dog/Rocky_autofilterBOT)
+<p align="center">
+  <img src="Rocky_autofilter_Robot/modules/logo/Rocky_autofilter_Robot-Logo.jpeg" alt="Rocky_autofilter_Robot Logo">
+</p>
 
-![GitHub Repo stars](https://img.shields.io/github/stars/sachin9742s/Rocky_autofilter_Robot?style=social)
-<img src="https://img.shields.io/github/forks/sachin9742s/Rocky_autofilter_Robot?style=social"></img>
-## Video
-<a href="https://youtu.be/-xDQbsF-wek"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/-xDQbsF-wek?style=social">
+<p align="center">
+  <a href="https://t.me/Kiccha_OTT">ROCKY AUTOFILTER ROBOT</a>
+</p>
 
-#### Added Features
-* Imdb posters for autofilter.
-* Imdb rating for autofilter.
-* Custom captions for your files.
-* Index command to index all the files in a given channel (No USER_SESSION Required).
-* Ability to Index Public Channels without being admin.
-* Support Auto-Filter (Both in PM and in Groups)
-* Once files saved in Database , exists until you manually deletes. (No Worry if post gets deleted from source channel.)
-* Added Force subscribe (Only channel subscribes can use the bot)
-* Ability to restrict groups(AUTH_GROUPS)
+<img src="https://img.shields.io/github/stars/PR0FESS0R-99/LuciferMoringstar-Robot?style=social" /> <img src="https://img.shields.io/github/forks/PR0FESS0R-99/LuciferMoringstar-Robot?style=social" />
 
-#### Deploy To Heroku
+### 🔘 <a href="https://github.com/sachin9742s/Rocky_autofilter_Robot/tree/sachin9742s/Rocky_autofilter_Robot/modules">𝗔𝗱𝗱𝗲𝗱 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀</a> 🔘
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/sachin9742s/Rocky_autofilter_Robot)
+- [x] IMDB Poster
+- [x] IMDB Rating
+- [x] Index Files
+- [x] Media Search
+- [x] AutoFilter 
+- [x] Via Mode
+- [x] Broadcast 
+- [x] Random Pics
+- [x] Check Spell
+- [x] Welcome
+- [x] Status
+- [x] Custom Caption
 
-#### Hard Way
-```bash
-# Create virtual environment
-python3 -m venv env
+### 🧑‍💻 𝗗𝗲𝗽𝗹𝗼𝘆 𝗧𝗼 𝗛𝗲𝗿𝗼𝗸𝘂 👨‍💻
+<a href="https://heroku.com/deploy?template=https://github.com/sachin9742s/Rocky_autofilter_Robot"><img src="https://github.com/sachin9742s/Rocky_autofilter_Robot/blob/Rocky_autofilter_Robot/Rocky_autofilter_Robot/modules/logo/Rocky_autofilter_Robot-Deploy-To-Heroku.jpg" alt="sachin9742s" border="0" height="125" width="200" align="center" /></a>
 
-# Activate virtual environment
-env\Scripts\activate.bat # For Windows
-source env/bin/activate # For Linux or MacOS
 
-# Install Packages
-pip3 install -r requirements.txt
+### 📍 𝗥𝗲𝗾𝘂𝗶𝗿𝗲𝗱
 
-# Edit info.py with variables as given below then run bot
-python3 bot.py
-```
-Check [`sample_info.py`](sample_info.py) before editing [`Config.py`](Config.py) file
-
-### Variables
-
-#### Required Variables
 * `BOT_TOKEN`: Create a bot using [@BotFather](https://telegram.dog/BotFather), and get the Telegram API token.
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `CHANNELS`: Username or ID of channel or group. Separate multiple IDs by space
 * `ADMINS`: Username or ID of Admin. Separate multiple Admins by space
-* `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com).
-* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com).
+* `DATABASE_URI`: [mongoDB](https://www.mongodb.com) URI. Get this value from [mongoDB](https://www.mongodb.com). For more help watch this.
 
-#### Optional Variables
-* `OMDB_API_KEY`: OMBD_API_KEY to generate imdb poster for filter results.Get it from [omdbapi.com](http://www.omdbapi.com/apikey.aspx)
-* `CUSTOM_FILE_CAPTION` : A custom caption for your files. You can format it with file_name, file_size, file_caption.(supports html formating)
-Example: `<b>Join [Kiccha Request](https://t.me/KicchaRequest) for more useful bots</b>\n\n<code>{file_name}</code>\nSize{file_size}\n{file_caption}.`
-* `AUTH_GROUPS` : ID of groups which bot should work as autofilter, bot can only work in thease groups. If not given , bot can be used in any group.
-* `COLLECTION_NAME`: Name of the collections. Defaults to Telegram_files. If you going to use same database, then use different collection name for each bot
+* `FORCE_SUB`: ID of channel. Without subscribing this channel users cannot use bot.
+* `AUTH_GROUPS` : Id Of Groups Which Bot Should Work As Autofilter, Bot Can Only Work In Thease Groups. If Not Given , Bot Can Be Used In Any Group.
+* `AUTH_USERS`: Username Or Id Of Users To Give Access Of Inline Search. Separate Multiple Users By Space. Leave It Empty If You Don't Want To Restrict Bot Usage.
+* `START_MSG`: Welcome Message For Start Command Eg [Click Here](https://github.com/sachin9742s/Rocky_autofilter_Robot/blob/Rocky_autofilter_Robot/Rocky_autofilter_Robot/modules/example/start_msg)
+* `CUSTOM_FILE_CAPTION` : A Custom Caption For Your Files. Eg [Click Here](https://github.com/sachin9742s/Rocky_autofilter_Robot/blob/Rocky_autofilter_Robot/Rocky_autofilter_Robot/modules/example/file_caption.txt)
+* `PICS`: Telegraph Random Photo Eg [Click Here](https://github.com/sachin9742s/Rocky_autofilter_Robot/blob/Rocky_autofilter_Robot/Rocky_autofilter_Robot/modules/example/photo.txt)
+* `DEV_NAME` : Developer Name
+* `SPELL_MODE` : Seplling Mode On Or Off
+* `SPELL_MODE_TEXT` : Set Coutom Spelling Mode Text Eg [Click Here](https://github.com/sachin9742s/Rocky_autofilter_Robot/blob/Rocky_autofilter_Robot/Rocky_autofilter_Robot/modules/example/spell_check.txt)
+
 * `CACHE_TIME`: The maximum amount of time in seconds that the result of the inline query may be cached on the server
+* `DATABASE_NAME`: Name of the database in [mongoDB](https://www.mongodb.com). For more help watch this [video](https://youtu.be/gBLTsH-IXr0)
+* `COLLECTION_NAME`: Name of the collections. Defaults to Telegram_files. If you going to use same database, then use different collection name for each bot
 * `USE_CAPTION_FILTER`: Whether bot should use captions to improve search results. (True/False)
-* `AUTH_USERS`: Username or ID of users to give access of inline search. Separate multiple users by space. Leave it empty if you don't want to restrict bot usage.
-* `AUTH_CHANNEL`: ID of channel. Without subscribing this channel users cannot use bot.
-* `START_MSG`: Welcome message for start command.
 
-##### Note
-* Currently [API used](http://www.omdbapi.com) here is allowing 1000 requests per day. 
-Once a poster is fetched from OMDB , poster is saved to DB to reduce duplicate requests.
 
-## Tips
-* You can use `|` to separate query and file type while searching for specific type of file. For example: `Avengers | video`
-* If you don't want to create a channel or group, use your chat ID / username as the channel ID. When you send a file to a bot, it will be saved in the database.
 
-## Thanks to 
-* [Pyrogram](https://github.com/sachin9742s/pyrogram)
-* [Original Repo](https://github.com/sachin9742s/Media-Search-bot)
-* [subinps](https://github.com/sachin9742s/Media-Search-bot)
-* [Editing Muhammed Rk](https://github.com/sachin9742s/Rocky_autofilter_Robot)
-
-## License
-Code released under [The GNU General Public License](LICENSE).
