@@ -1,14 +1,14 @@
 import logging
-from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker, emoji
+from pyrogram import Client as Rocky_autofilter_Robot, filters as Worker, emoji
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, InlineQueryResultCachedDocument
-from LuciferMoringstar_Robot.database._utils import get_size, is_subscribed
-from LuciferMoringstar_Robot.database.autofilter_db import get_search_results
+from Rocky_autofilter_Robot.database._utils import get_size, is_subscribed
+from Rocky_autofilter_Robot.database.autofilter_db import get_search_results
 from config import CACHE_TIME, AUTH_USERS, FORCES_SUB, CUSTOM_FILE_CAPTION
 logger = logging.getLogger(__name__)
 cache_time = 0 if AUTH_USERS or FORCES_SUB else CACHE_TIME
 
 
-@LuciferMoringstar_Robot.on_inline_query(Worker.user(AUTH_USERS) if AUTH_USERS else None)
+@Rocky_autofilter_Robot.on_inline_query(Worker.user(AUTH_USERS) if AUTH_USERS else None)
 async def answer(bot, query):
 
     if FORCES_SUB and not await is_subscribed(bot, query):
@@ -78,8 +78,8 @@ async def answer(bot, query):
 
 def get_reply_markup(query):
     buttons = [[
-        InlineKeyboardButton('Support Group', url='t.me/Mo_Tech_Group'),
-        InlineKeyboardButton('More Botz', url='t.me/MT_Botz')
+        InlineKeyboardButton('Support Group', url='t.me/Kiccharequest'),
+        InlineKeyboardButton('Channel', url='t.me/Kiccha_OTT')
         ],[
         InlineKeyboardButton('🔍 Search again 🔎', switch_inline_query_current_chat=query)
         ]]
