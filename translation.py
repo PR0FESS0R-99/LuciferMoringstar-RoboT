@@ -1,4 +1,4 @@
-class LuciferMoringstar(object):
+class Rocky_autofilter_Robot(object):
 
     DEFAULT_MSG = """👋Hello {mention}.....!!!\nIt's Power Full [{bot_name}](t.me/{bot_username}) Here 😎\nAdd Me To Your Group And Make Sure I'm an Admin There! \nAnd Enjoy My Pever Show.....!!!🤪"""
 
@@ -7,29 +7,27 @@ class LuciferMoringstar(object):
     ABOUT_MSG = """
 🤖 My Name [{bot_name}](t.me/{bot_username})
 
-🧑 My Dev : [PR0FESS0R-99](t.me/PR0FESS0R_99)
+🧑 My Dev : [Sachin S](t.me/sachin_official_admin)
 
 🧑 My Creator : {dev_name}
 
-📦 My Source : [Click Here](https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
+📦 My Source : [Click Here](https://github.com/sachin9742s/Rocky_autofilter_Robot)
 
-📺 My Tutorial : [Ckick Here](https://youtu.be/FCU_XJmyG_U)
+🗃️ My Library : Pyrogram
 
-🗃️ My Library : [Pyrogram](https://youtu.be/Af055Eozk9s)
+🖇️ My Language : Python3
 
-🖇️ My Language : [Python3](https://youtu.be/Af055Eozk9s)
+🗃️ My Database : Mongodb
 
-🗃️ My Database : [Mongodb](https://youtu.be/gBLTsH-IXr0)
+🗳️ My Server : Heroku
 
-🗳️ My Server : [Heroku](https://youtu.be/xcZD55td6Vw)
+🏷️ My Updates : [KR OTT](t.me/Kiccha_OTT)
 
-🏷️ My Updates : [Mo Tech](t.me/Mo_Tech_YT)
-
-🗣️ My Support : [Any Doubt](t.me/Mo_Tech_Group)"""
+🗣️ My Support : [KR](t.me/Kiccharequest)"""
 
     FILE_CAPTIONS = """Hello 👋 {mention}\n\n📁Title {title}\n\n🔘Size {size}"""
 
-    PR0FESS0R_99 = """
+    Sachin9742s = """
 **ADMINS COMMANDS**
 
  » /broadcast - Reply Any Media Or Message
@@ -39,7 +37,7 @@ class LuciferMoringstar(object):
  » /logger - Get Bot Logs
  » /channel - Add Channel List"""
 
-    ADD_YOUR_GROUP = """**__ഞാൻ ജോലി ചെയ്യുന്ന ഗ്രൂപ്പിൽ ചേരൂ, നിങ്ങൾക്ക് ആവശ്യമുള്ള എല്ലാ സിനിമകളും ആ ഗ്രൂപ്പിൽ അഭ്യർത്ഥിക്കാം! ഇവിടെ അഭ്യർത്തിക്കരുത്..😤__**"""
+    ADD_YOUR_GROUP = """**𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 𝐑𝐨𝐜𝐤𝐲 𝐀𝐮𝐭𝐨 𝐅𝐢𝐥𝐭𝐞𝐫 𝐁𝐨𝐭 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂 𝙸𝙽 𝙶𝚁𝙾𝚄𝙿𝚂, 𝙸𝚃'𝚂 𝚅𝙴𝚁𝚈 𝙴𝙰𝚂𝚈. 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙼𝙰𝙺𝙴 𝙼𝙴 𝙰𝙳𝙼𝙸𝙽, 𝚃𝙷𝙰𝚃𝚂 𝙰𝙻𝙻, 𝙸'𝙻𝙻 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂 𝚃𝙷𝙴𝚁𝙴 🤓**"""
     SPELL_CHECK = """
 **Hello 👋{mention}**,
 
