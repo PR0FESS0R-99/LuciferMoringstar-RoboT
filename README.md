@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="Rocky_autofilter_Robot/modules/logo/Rocky_autofilter_Robot-Logo.jpeg" alt="Rocky_autofilter_Robot Logo">
+  <img https://github.com/sachin9742s/Rocky_autofilter_Robot/blob/master/Rocky_autofilter_Robot/modules/logo/Rocky-autofilter-Robot-Robot-Logo.jpg" alt="Rocky_autofilter_Robot Logo">
 </p>
 
 <p align="center">
