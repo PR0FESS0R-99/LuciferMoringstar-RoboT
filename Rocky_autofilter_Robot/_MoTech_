@@ -1,0 +1,14 @@
+# Start Message Demo
+
+Get User Name 👉 {mention}
+Get Bot Name 👉 {bot_name}
+Get Bot User Name 👉 {bot_username}
+
+Example Message :-
+
+👋Hello {mention}.....!!!
+It's Power Full [{bot_name}](t.me/{bot_username}) Here 😎
+Add Me To Your Group And Make Sure I'm an Admin There!
+And Enjoy My Pever Show.....!!!🤪
+
+------ [ END ] ------
