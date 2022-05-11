@@ -1,13 +1,13 @@
 import re, asyncio, random
-# from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker
+# from pyrogram import Client as Rocky_autofilter_Robot, filters as Worker
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from LuciferMoringstar_Robot.database._utils import get_size, split_list
-from LuciferMoringstar_Robot.database.autofilter_db import get_filter_results, get_poster
+from Rocky_autofilter_Robot.database._utils import get_size, split_list
+from Rocky_autofilter_Robot.database.autofilter_db import get_filter_results, get_poster
 from config import BUTTONS, bot_info, SPELL_MODE, SET_SPEL_M, SUPPORT, BOT_PICS
 from translation import LuciferMoringstar
 
 
-#@LuciferMoringstar_Robot.on_message(Worker.text & Worker.group & Worker.incoming & Worker.chat(AUTH_GROUPS) if AUTH_GROUPS else Worker.text & Worker.group & Worker.incoming)
+#@Rocky_autofilter_Robot.on_message(Worker.text & Worker.group & Worker.incoming & Worker.chat(AUTH_GROUPS) if AUTH_GROUPS else Worker.text & Worker.group & Worker.incoming)
 async def group_filters(client, message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
@@ -37,7 +37,7 @@ async def group_filters(client, message):
                     reply_markup=reply_markup                 
                 )
                 await asyncio.sleep(60) 
-                await LuciferMoringstar_delete.delete()
+                await Rocky_autofilter_Robot_delete.delete()
             return
         if not btn:
             return
@@ -113,7 +113,7 @@ async def group_filters(client, message):
 
 
 
-#@LuciferMoringstar_Robot.on_message(Worker.text & Worker.private & Worker.incoming & Worker.chat(AUTH_GROUPS) if AUTH_GROUPS else Worker.text & Worker.group & Worker.incoming)
+#@Rocky_autofilter_Robot.on_message(Worker.text & Worker.private & Worker.incoming & Worker.chat(AUTH_GROUPS) if AUTH_GROUPS else Worker.text & Worker.group & Worker.incoming)
 async def pm_autofilter(client, message):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", message.text):
         return
