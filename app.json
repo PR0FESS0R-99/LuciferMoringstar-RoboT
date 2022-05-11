@@ -1,36 +1,32 @@
 {
     "name": "Rocky_autofilter_Robot",
-    "description": "When you going to send file on telegram channel this bot will save that in database, So you can search that easily in inline mode",
+    "description": "Super Fast Telegram Auto Filter Bot",
+    "logo": "https://te.legra.ph/file/b181e05df785a59803545.jpg",
+    "stack": "container",
     "keywords": [
-      "telegram",
-      "auto-filter",
-      "filter",
       "best",
-      "indian",
-      "pyrogram",
-      "media",
-      "search",
-      "channel",
-      "index",
-      "inline"
+      "telegarm",
+      "auto",
+      "filter",
+      "bot"
     ],
-    "website": "https://github.com/sachin9742s/Rocky_autofilter_Robot",
+    "website": "https://youtube.com/c/MoTech_YT",
     "repository": "https://github.com/sachin9742s/Rocky_autofilter_Robot",
     "env": {
         "BOT_TOKEN": {
-            "description": "Your bot token.",
+            "description": "Your Bot Token From https://youtu.be/cB4UduCcNWs",
             "value": ""
         },
         "API_ID": {
-            "description": "Get this value from https://my.telegram.org",
+            "description": "Get this value from https://youtu.be/5eEsvLAKVc0 or @MT_MytelegramOrg_Bot",
             "value": ""
         },
         "API_HASH": {
-            "description": "Get this value from https://my.telegram.org",
+            "description": "Get this value from https://youtu.be/5eEsvLAKVc0 or @MT_MytelegramOrg_Bot",
             "value": ""
         },
         "CHANNELS": {
-            "description": "Username or ID of channel or group. Separate multiple IDs by space.",
+            "description": "Username or ID of channel or group. Separate multiple IDs by space. @MT_ID_Bot",
             "value": ""
         },
         "ADMINS": {
@@ -47,23 +43,13 @@
             "value": "",
             "required": false
         },
-        "START_MSG": {
-            "description": "Welcome message for start command",
-            "value": "**Hi, I'm ADV Auto Filter Bot**",
-            "required": false
-        },
-        "USE_CAPTION_FILTER": {
-            "description": "Whether bot should use captions to improve search results. (True False)",
-            "value": "False",
-            "required": false
-        },
-        "OMDB_API_KEY": {
-            "description": "Your OMBD API KEY, Fill if you want to generate a imdb poster of movie in autofilter.",
+        "PICS": {
+            "description": "Add some telegraph link of pictures .",
             "value": "",
             "required": false
         },
-        "CUSTOM_FILE_CAPTION": {
-            "description": "A custom file caption for your files. formatable with , file_name, file_caption, file_size, Read Readme.md for better understanding.",
+        "START_MSG": {
+            "description": "Welcome message for start command More Information Check Readme.md",
             "value": "",
             "required": false
         },
@@ -72,42 +58,32 @@
             "value": "",
             "required": false
         },
-        "DATABASE_2": {
-            "description": "mongoDB URI. Get this value from https://www.mongodb.com.",
+        "DATABASE_URI": {
+            "description": "Mongodb from https://youtu.be/gBLTsH-IXr0",
             "value": ""
         },
-        "BOT_NAME": {
-            "description": "Name of the database in mongoDB.",
-            "value": "Rocky_autofilter_Robot"
+        "SPELL_MODE": {
+            "description": "Spelling Mode on or off",
+            "value": "on",
+            "required": true
         },
-        "COLLECTION_NAME": {
-            "description": "Name of the collections. Defaults to Telegram_files. If you are using the same database, then use different collection name for each bot",
-            "value": "Telegram_files",
-            "required": false
-        },
-        "CACHE_TIME": {
-            "description": "The maximum amount of time in seconds that the result of the inline query may be cached on the server",
-            "value": "300",
-            "required": false
-        },
-        "BROADCAST": {
-            "description": "Value should be True or False. Broadcast with Forward Tag or as Copy.(Without Forward Tag)",
-            "value": "True",
-            "required": false
-        },
-        "DATABASE_1": {
-            "description": "mongoDB URI. Get this value from https://www.mongodb.com.",
+        "SPELL_MODE_TEXT": {
+            "description": "Seplling Mode Text For More Info Check Readme.md",
             "value": "",
             "required": true
         },
-        "ADMIN_ID": {
-            "description": "Control BroackCast",
-            "value": "",
+        "LOG_CHANNEL": {
+            "description": "Log Channel Use Private Channel Id -100×××× from @MT_ID_Bot",
+            "value": ""
+        },
+        "DEV_NAME": {
+            "description": "Creator Name or Username ",
+            "value": "sachin_official_admin",
             "required": true
         },
-        "BROADCAST_CHANNEL": {
-            "description": "ID of a Channel (user Notification)",
-            "value": "",
+        "SUPPORT": {
+            "description": "Your Group Link Private or Public Link (with t.me or https://t.me)",
+            "value": "https://telegram.dog/Kiccharequest",
             "required": true
         }
     },
