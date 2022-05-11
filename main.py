@@ -7,20 +7,20 @@ logging.getLogger().setLevel(logging.ERROR)
 
 from pyrogram import Client, __version__
 from pyrogram.raw.all import layer
-from LuciferMoringstar_Robot.database.autofilter_db import Media
+from Rocky_autofilter_Robot.database.autofilter_db import Media
 from config import API_ID, API_HASH, B_KEYS, bot_info
 import pyromod.listen
 
-class LuciferMoringstar(Client):
+class Rocky_autofilter_Robot(Client):
 
     def __init__(self):
         super().__init__(
-            "LuciferMoringstar_Robot",
+            "Rocky_autofilter_Robot",
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=B_KEYS,
             workers=50,
-            plugins={"root": "LuciferMoringstar_Robot"},
+            plugins={"root": "Rocky_autofilter_Robot"},
             sleep_threshold=5,
         )
 
@@ -38,5 +38,5 @@ class LuciferMoringstar(Client):
         print("Bot stopped. Bye.")
 
 
-app = LuciferMoringstar()
+app = Rocky_autofilter_Robot()
 app.run()
