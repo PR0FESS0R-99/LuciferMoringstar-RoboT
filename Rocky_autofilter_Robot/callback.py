@@ -1,23 +1,23 @@
 import asyncio 
 
-from pyrogram import Client as lucifermoringstar_robot
+from pyrogram import Client as Rocky_autofilter_Robot
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserIsBlocked, PeerIdInvalid
 
-from LuciferMoringstar_Robot.admins.index_files import index_files_to_db
-from LuciferMoringstar_Robot.database.autofilter_db import get_file_details
-from LuciferMoringstar_Robot.database._utils import get_size, is_subscribed
-from LuciferMoringstar_Robot.database._utils import lucifer_temp
+from Rocky_autofilter_Robot.admins.index_files import index_files_to_db
+from Rocky_autofilter_Robot.database.autofilter_db import get_file_details
+from Rocky_autofilter_Robot.database._utils import get_size, is_subscribed
+from Rocky_autofilter_Robot.database._utils import lucifer_temp
 
-from translation import LuciferMoringstar
+from translation import Rocky_autofilter_Robot
 from config import BUTTONS, FORCES_SUB, CUSTOM_FILE_CAPTION, START_MSG, DEV_NAME, bot_info, ADMINS, team_name, team_link
 
-from LuciferMoringstar_Robot.modules._text_ import module
+from Rocky_autofilter_Robot.modules._text_ import module
 
 lock = asyncio.Lock()
 
-@lucifermoringstar_robot.on_callback_query()
-async def cb_handler(client: lucifermoringstar_robot, query):
+@Rocky_autofilter_Robot.on_callback_query()
+async def cb_handler(client: Rocky_autofilter_Robot, query):
     clicked = query.from_user.id
     try:
         typed = query.message.reply_to_message.from_user.id
@@ -201,7 +201,7 @@ async def cb_handler(client: lucifermoringstar_robot, query):
 # ---------- 📁 [ | 𝗚𝗘𝗧 𝗙𝗜𝗟𝗘𝗦 | ] 📁 ---------- #
 
 
-        elif query.data.startswith("lucifermoringstar_robot"):
+        elif query.data.startswith("Rocky_autofilter_Robot"):
             ident, file_id = query.data.split("#")
             files_ = await get_file_details(file_id)
             if not files_:
@@ -244,7 +244,7 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                 caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=files.caption)
 
                 buttons = [[
-                  InlineKeyboardButton('🧑‍💻 How To Own 🧑‍💻', url='https://t.me/Mo_Tech_Group')
+                  InlineKeyboardButton('🧑‍💻 How To Own 🧑‍💻', url='https://t.me/Kiccharequest')
                   ]]                 
                 
                 await query.answer()
@@ -267,8 +267,8 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                  InlineKeyboardButton("ℹ️ Help", callback_data="help"),
                  InlineKeyboardButton("😎 About", callback_data="about") 
                  ],[
-                 InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/FCU_XJmyG_U"),
-                 InlineKeyboardButton("🤖 Update", url="https://t.me/Mo_Tech_Group")
+                 InlineKeyboardButton("🗳 Channel", url="https://t.me/Kiccha_OTT"),
+                 InlineKeyboardButton("🤖 Update", url="https://t.me/Kiccharequest")
                  ]]
             else:
                 buttons = [[
@@ -277,8 +277,8 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                  InlineKeyboardButton("ℹ️ Help", callback_data="bot_owner"),
                  InlineKeyboardButton("😎 About", callback_data="about") 
                  ],[
-                 InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/FCU_XJmyG_U"),
-                 InlineKeyboardButton("🤖 Update", url="https://t.me/Mo_Tech_Group")
+                 InlineKeyboardButton("🗳 Channel", url="https://t.me/Kiccha_OTT"),
+                 InlineKeyboardButton("🤖 Update", url="https://t.me/Kiccharequest")
                  ]]               
             await query.message.edit(text=START_MSG.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
@@ -287,14 +287,14 @@ async def cb_handler(client: lucifermoringstar_robot, query):
               InlineKeyboardButton("🏠 Home", callback_data="start"),
               InlineKeyboardButton("About 😎", callback_data="about")
               ]]               
-            await query.message.edit(text=LuciferMoringstar.HELP_MSG.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=Rocky_autofilter_Robot.HELP_MSG.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "about":
             buttons = [[
              InlineKeyboardButton("🏠 Home", callback_data="start"),
              InlineKeyboardButton("Close 🗑️", callback_data="close")
              ]]               
-            await query.message.edit(text=LuciferMoringstar.ABOUT_MSG.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=Rocky_autofilter_Robot.ABOUT_MSG.format(mention=query.from_user.mention, bot_name=bot_info.BOT_NAME, bot_username=bot_info.BOT_USERNAME, dev_name=DEV_NAME), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
         elif query.data == "close":
             await query.message.delete()
@@ -304,7 +304,7 @@ async def cb_handler(client: lucifermoringstar_robot, query):
              InlineKeyboardButton('🏠 Home', callback_data="start"),
              InlineKeyboardButton('About 😎', callback_data="about")
              ]]               
-            await query.message.edit(text=LuciferMoringstar.PR0FESS0R_99.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text=Rocky_autofilter_Robot.sachin9742s.format(mention=query.from_user.mention), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
         elif query.data == "autofilter":
@@ -366,7 +366,7 @@ async def cb_handler(client: lucifermoringstar_robot, query):
 
 
         elif query.data == "pages":
-            await query.answer("@LuciferMoringstar_Robot")
+            await query.answer("@Rocky_autofilter_Robot")
 
 
     else:
