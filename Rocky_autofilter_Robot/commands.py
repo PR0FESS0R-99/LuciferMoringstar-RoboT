@@ -1,11 +1,11 @@
 import random 
 from config import START_MSG, FORCES_SUB, BOT_PICS, ADMINS, bot_info, DEV_NAME
-from pyrogram import Client as LuciferMoringstar_Robot, filters as Worker
+from pyrogram import Client as Rocky_autofilter_Robot, filters as Worker
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from translation import LuciferMoringstar
-from LuciferMoringstar_Robot.database.users_chats_db import db
+from translation import Rocky_autofilter_Robot
+from Rocky_autofilter_Robot.database.users_chats_db import db
 
-@LuciferMoringstar_Robot.on_message(Worker.private & Worker.command(["start"]))
+@Rocky_autofilter_Robot.on_message(Worker.private & Worker.command(["start"]))
 async def start_message(bot, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id)
@@ -17,8 +17,8 @@ async def start_message(bot, message):
              InlineKeyboardButton("ℹ️ Help", callback_data="help"),
              InlineKeyboardButton("😎 About", callback_data="about") 
              ],[
-             InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/OTqZmADyOjU"),
-             InlineKeyboardButton("🤖 Support", url="https://t.me/Mo_Tech_YT")
+             InlineKeyboardButton("🗳 Channel", url="https://Kiccha_OTT"),
+             InlineKeyboardButton("🤖 Support", url="https://t.me/Kiccharequest")
              ]]
         else:
             buttons = [[
@@ -27,16 +27,16 @@ async def start_message(bot, message):
              InlineKeyboardButton("ℹ️ Help", callback_data="bot_owner"),
              InlineKeyboardButton("😎 About", callback_data="about") 
              ],[
-             InlineKeyboardButton("🗳 Deploy", url="https://youtu.be/OTqZmADyOjU"),
-             InlineKeyboardButton("🤖 Support", url="https://t.me/Mo_Tech_Group")
+             InlineKeyboardButton("🗳 Channel", url="https://Kiccha_OTT"),
+             InlineKeyboardButton("🤖 Support", url="https://t.me/Kiccharequest")
              ]]    
         await message.reply_photo(photo = random.choice(BOT_PICS), caption=START_MSG.format(mention = message.from_user.mention, bot_name = bot_info.BOT_NAME, bot_username = bot_info.BOT_USERNAME), reply_markup=InlineKeyboardMarkup(buttons))
         
     elif len(message.command) ==2 and message.command[1] in ["subscribe"]:
-        FORCES=["https://telegra.ph/file/b2acb2586995d0e107760.jpg"]
+        FORCES=["https://te.legra.ph/file/b181e05df785a59803545.jpg"]
         invite_link = await bot.create_chat_invite_link(int(FORCES_SUB))
         button=[[
-         InlineKeyboardButton("🔔 SUBSCRIBE 🔔", url=invite_link.invite_link)
+         InlineKeyboardButton("🔔 Join Channel 🔔", url=invite_link.invite_link)
          ]]
         reply_markup = InlineKeyboardMarkup(button)
         await message.reply_photo(
@@ -46,7 +46,7 @@ async def start_message(bot, message):
         )
         return
    
-@LuciferMoringstar_Robot.on_message(Worker.private & Worker.command(["help"]))
+@Rocky_autofilter_Robot.on_message(Worker.private & Worker.command(["help"]))
 async def help(bot, message):
     button = [[
      InlineKeyboardButton("🏠 Home", callback_data="start"),
@@ -57,7 +57,7 @@ async def help(bot, message):
         caption=LuciferMoringstar.HELP_MSG.format(mention=message.from_user.mention),
         reply_markup=InlineKeyboardMarkup(button))
       
-@LuciferMoringstar_Robot.on_message(Worker.private & Worker.command(["about"]))
+@Rocky_autofilter_Robot.on_message(Worker.private & Worker.command(["about"]))
 async def about(bot, message):
     button = [[
      InlineKeyboardButton("🏠 Home", callback_data="start"),
