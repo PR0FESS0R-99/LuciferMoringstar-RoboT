@@ -1,7 +1,6 @@
 <p align="center">
-  <img https://github.com/sachin9742s/Rocky_autofilter_Robot/blob/master/Rocky_autofilter_Robot/modules/logo/Rocky-autofilter-Robot-Robot-Logo.jpg" alt="Rocky_autofilter_Robot Logo">
+  <img src="https://github.com/sachin9742s/Rocky_autofilter_Robot/blob/master/Rocky_autofilter_Robot/modules/logo/Rocky-autofilter-Robot-Robot-Logo.jpg" alt="Rocky Autofilter Robot Logo">
 </p>
-
 <p align="center">
   <a href="https://t.me/Kiccha_OTT">ROCKY AUTOFILTER ROBOT</a>
 </p>
