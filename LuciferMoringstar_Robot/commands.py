@@ -69,23 +69,3 @@ async def about(bot, message):
         reply_markup=InlineKeyboardMarkup(button))
         
 
-
-@lucifermoringstar_robot.on_message(filters.private & filters.command(["pmautofilter"]))
-async def pmafoffon(bot, message):
-
-    cmd=message.command[1]
-    if cmd == "on":
-        if message.chat.id in temp.PMAF_OFF:
-            temp.PMAF_OFF.remove(message.chat.id)
-                await message.reply("𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝚃𝙸𝚁𝙽𝙴𝙳 𝙾𝙵𝙵")  
-        else:
-            await message.reply("𝙰𝙻𝚁𝙴𝙰𝙳𝚈 𝙾𝙽 𝙸𝙽 𝚃𝙷𝙸𝚂 𝙲𝙷𝙰𝚃..!")                           
-    elif cmd == "off":
-        if message.chat.id in temp.PMAF_OFF:
-            await message.reply("𝙰𝙻𝚁𝙴𝙰𝙳𝚈 𝙾𝙵𝙵 𝙿𝙼 𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁..!")                                             
-        else:
-            temp.PMAF_OFF.append(message.chat.id)
-            await message.reply(" 𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝚃𝙸𝚁𝙽𝙴𝙳 𝙾𝙵𝙵..")
-    else:
-        await message.reply("𝚄𝚂𝙴 𝙲𝙾𝚁𝚁𝙴𝙲𝚃 𝙵𝙾𝚁𝙼𝙰𝚃..!\n    𝚄𝚂𝙴 𝙲𝙾𝚁𝚁𝙴𝙲𝚃 𝙵𝙾𝚁𝙼𝙰𝚃.!\n\n• /pmautofilter on\n• /pmautofilter off")   
-
