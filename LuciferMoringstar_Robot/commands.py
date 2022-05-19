@@ -41,7 +41,7 @@ async def start(bot: lucifermoringstar_robot, update):
 
     if len(update.command) ==2 and update.command[1] in ["subscribe"]:
         FORCES=["https://telegra.ph/file/b2acb2586995d0e107760.jpg"]
-        invite_link = await bot.create_chat_invite_link(int(-1001538956907))
+        invite_link = await bot.create_chat_invite_link(-1001538956907)
         button=[[
          InlineKeyboardButton("🔔 SUBSCRIBE 🔔", url=invite_link.invite_link)
          ]]

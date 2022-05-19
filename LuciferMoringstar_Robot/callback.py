@@ -62,14 +62,6 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                      InlineKeyboardButton(f"📃 {int(index)+2}/{data['total']}", callback_data="pages"),
                      InlineKeyboardButton("🗑️", callback_data="close")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{temp.Bot_Username}")]
-                )
-
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
             else:
                 buttons = data['buttons'][int(index)+1].copy()
 
@@ -80,15 +72,14 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                      InlineKeyboardButton("➡", callback_data=f"nextgroup_{int(index)+1}_{keyword}")]
                 )
 
-                buttons.append(
-                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{temp.Bot_Username}")]
-                )
+            buttons.append(
+                [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{temp.Bot_Username}")]
+            )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("backgroup"):
             ident, index, keyword = query.data.split("_")
             try:
@@ -105,14 +96,6 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                      InlineKeyboardButton("🗑️", callback_data="close"),
                      InlineKeyboardButton("➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{temp.Bot_Username}")]
-                )
-
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return   
             else:
                 buttons = data['buttons'][int(index)-1].copy()
 
@@ -122,15 +105,14 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                      InlineKeyboardButton("🗑️", callback_data="close"),
                      InlineKeyboardButton("➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{temp.Bot_Username}")]
-                )
+            buttons.append(
+                [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{temp.Bot_Username}")]
+            )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("nextbot"):
             ident, index, keyword = query.data.split("_")
             try:
@@ -148,10 +130,6 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                      InlineKeyboardButton("🗑️", callback_data="close")]
                 )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
             else:
                 buttons = data['buttons'][int(index)+1].copy()
 
@@ -162,11 +140,10 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                      InlineKeyboardButton("➡", callback_data=f"nextbot_{int(index)+1}_{keyword}")]
                 )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("backbot"):
             ident, index, keyword = query.data.split("_")
             try:
@@ -184,10 +161,6 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                      InlineKeyboardButton("➡", callback_data=f"nextbot_{int(index)-1}_{keyword}")]
                 )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return   
             else:
                 buttons = data['buttons'][int(index)-1].copy()
 
@@ -197,11 +170,10 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                      InlineKeyboardButton("🗑️", callback_data="close"),
                      InlineKeyboardButton("➡", callback_data=f"nextbot_{int(index)-1}_{keyword}")]
                 )
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("settings"):
             ident, set_type, status, grp_id = query.data.split("#")
             grpid = await active_connection(str(query.from_user.id))
@@ -321,7 +293,7 @@ async def cb_handler(client: lucifermoringstar_robot, query):
         elif query.data == "files_delete":
             await Media.collection.drop()
             await query.message.edit('𝚂𝚄𝙲𝙲𝙴𝚂𝙵𝚄𝙻𝙻𝚈 𝙳𝙴𝙻𝙴𝚃𝙴𝙳 𝙰𝙻𝙻 𝚃𝙷𝙴 𝙸𝙽𝙳𝙴𝚇𝙴𝙳 𝙵𝙸𝙻𝙴𝚂..')
-          
+
         elif query.data == "autofilter":
             await query.message.edit(autofilter_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ 𝙱𝙰𝙲𝙺 ⇇", callback_data="help") ]] ))
 
@@ -350,28 +322,15 @@ async def cb_handler(client: lucifermoringstar_robot, query):
             if groupids is None:
                 await query.message.edit("𝚃𝙷𝙴𝚁𝙴 𝙰𝚁𝙴 𝙽𝙾 𝙰𝙲𝚃𝙸𝚅𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂..! 𝙲𝙾𝙽𝙽𝙴𝙲𝚃 𝚃𝙾 𝚂𝙰𝙼𝙴 𝙶𝚁𝙾𝚄𝙿𝚂 𝙵𝙸𝚁𝚂𝚃")
             return await query.answer('Piracy Is Crime')
-            buttons = []
-            for groupid in groupids:
-                try:
-                    ttl = await client.get_chat(int(groupid))
-                    title = ttl.title
-                    active = await if_active(str(userid), str(groupid))
-                    act = " - ACTIVE" if active else ""
-                    buttons.append([InlineKeyboardButton(f"{title}{act}", callback_data=f"groupcb:{groupid}:{act}")])                
-                except:
-                    pass
-            if buttons:
-                await query.message.edit("𝚈𝙾𝚄𝚁 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝙶𝚁𝙾𝚄𝙿 𝙳𝙴𝚃𝙰𝙸𝙻𝚂:\n\n", reply_markup=InlineKeyboardMarkup(buttons))
-            
         elif "deletecb" in query.data:
             await query.answer()
             user_id = query.from_user.id
             group_id = query.data.split(":")[1]
             delcon = await delete_connection(str(user_id), str(group_id))
             if delcon:
-                await query.message.edit("𝚂𝚄𝙲𝙲𝙴𝚂𝚂𝙵𝚄𝙻𝙻𝚈 𝙳𝙴𝙻𝙴𝚃𝙴𝙳 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽")           
+                await query.message.edit("𝚂𝚄𝙲𝙲𝙴𝚂𝚂𝙵𝚄𝙻𝙻𝚈 𝙳𝙴𝙻𝙴𝚃𝙴𝙳 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽")
             else:
-                await query.message.edit(f"𝚂𝙾𝙼𝙴 𝙴𝚁𝚁𝙾𝚁 𝙾𝙲𝙲𝚄𝚁𝚁𝙴𝙳..!")
+                await query.message.edit("𝚂𝙾𝙼𝙴 𝙴𝚁𝚁𝙾𝚁 𝙾𝙲𝙲𝚄𝚁𝚁𝙴𝙳..!")
             return await query.answer('Piracy Is Crime')
 
         elif "disconnect" in query.data:
@@ -386,10 +345,10 @@ async def cb_handler(client: lucifermoringstar_robot, query):
 
             if mkinact:
                 await query.message.edit(f"𝙳𝙸𝚂𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝙵𝚁𝙾𝙼 **{title}**")
-            
+
             else:
-                await query.message.edit(f" 𝚂𝙾𝙼𝙴 𝙴𝚁𝚁𝙾𝚁 𝙾𝙲𝙲𝚄𝚁𝚁𝙴𝙳..!")
-            
+                await query.message.edit(" 𝚂𝙾𝙼𝙴 𝙴𝚁𝚁𝙾𝚁 𝙾𝙲𝙲𝚄𝚁𝚁𝙴𝙳..!")
+
         elif "connectcb" in query.data:
             await query.answer()
             group_id = query.data.split(":")[1]
@@ -442,7 +401,7 @@ async def cb_handler(client: lucifermoringstar_robot, query):
                         return 
                 else:
                     await query.message.edit("𝙸𝙰𝙼 𝙽𝙾𝚃 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝚃𝙾 𝙰𝙽𝚈 𝙶𝚁𝙾𝚄𝙿..!\n 𝙲𝙷𝙴𝙲𝙺 /connections 𝙾𝚁 𝙲𝙾𝙽𝙽𝙴𝙲𝚃 𝚃𝙾 𝙰𝙽𝚈 𝙶𝚁𝙾𝚄𝙿𝚂", quote=True)
-                
+
                     return
 
             elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:

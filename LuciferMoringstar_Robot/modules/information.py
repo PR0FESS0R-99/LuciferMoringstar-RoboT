@@ -58,7 +58,7 @@ async def showid(client, update):
 async def who_is(client, message):
     # https://github.com/SpEcHiDe/PyroGramBot/blob/master/pyrobot/plugins/admemes/whois.py#L19
     status_message = await message.reply_text("`𝙵𝙴𝚃𝙲𝙷𝙸𝙽𝙶 𝚄𝚂𝙴𝚁 𝙸𝙽𝙵𝙾...`")
-    await status_message.edit("`𝙿𝚁𝙾𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝚄𝚂𝙴𝚁 𝙸𝙽𝙵𝙾...`")    
+    await status_message.edit("`𝙿𝚁𝙾𝙲𝙴𝚂𝚂𝙸𝙽𝙶 𝚄𝚂𝙴𝚁 𝙸𝙽𝙵𝙾...`")
     from_user = None
     from_user_id, _ = extract_user(message)
     try:
@@ -91,15 +91,14 @@ async def who_is(client, message):
             message_out_str += f"<b>➲𝙹𝙾𝙸𝙽𝙴𝙳 𝚃𝙷𝙸𝚂 𝙲𝙷𝙰𝚃 𝙾𝙽: <code>{joined_date}</code>\n"            
         except UserNotParticipant:
             pass
-    chat_photo = from_user.photo
-    if chat_photo:
+    if chat_photo := from_user.photo:
         local_user_photo = await client.download_media(message=chat_photo.big_file_id)
-        
+
         buttons = [[
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(photo=local_user_photo, reply_markup=reply_markup, caption=message_out_str)        
+        await message.reply_photo(photo=local_user_photo, reply_markup=reply_markup, caption=message_out_str)
         os.remove(local_user_photo)
     else:
         buttons = [[

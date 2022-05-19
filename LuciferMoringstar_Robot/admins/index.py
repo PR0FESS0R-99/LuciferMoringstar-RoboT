@@ -78,10 +78,10 @@ async def send_for_index(bot, message):
         match = regex.match(message.text)
         if not match:
             return await message.reply('Invalid link')
-        chat_id = match.group(4)
-        last_msg_id = int(match.group(5))
+        chat_id = match[4]
+        last_msg_id = int(match[5])
         if chat_id.isnumeric():
-            chat_id  = int(("-100" + chat_id))
+            chat_id = int(f"-100{chat_id}")
     elif message.forward_from_chat.type == enums.ChatType.CHANNEL:
         last_msg_id = message.forward_from_message_id
         chat_id = message.forward_from_chat.username or message.forward_from_chat.id
@@ -151,7 +151,7 @@ async def set_skip_number(bot, message):
         except:
             return await message.reply("Skip number should be an integer.")
         await message.reply(f"Successfully set SKIP number as {skip}")
-        temp.CURRENT = int(skip)
+        temp.CURRENT = skip
     else:
         await message.reply("Give me a skip number")
 

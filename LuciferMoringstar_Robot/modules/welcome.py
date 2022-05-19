@@ -34,7 +34,11 @@ MENTION = "𝙷𝙴𝙻𝙻𝙾 {mention} 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 
 async def welcome(client, update):
     settings = await get_settings(update.chat.id)
     welcometext = settings["welcometext"]
-    new_members = [MENTION.format(update.from_user.mention) for i in update.new_chat_members]
+    new_members = [
+        MENTION.format(update.from_user.mention)
+        for _ in update.new_chat_members
+    ]
+
     dell = await update.reply_text(welcometext.format(    first_name = update.from_user.first_name, last_name = update.from_user.last_name, username = f"@{update.from_user.username}" or None, group_name = update.chat.title, mention = new_members), disable_web_page_preview=True)
     await asyncio.sleep(1000)
     await dell.delete()

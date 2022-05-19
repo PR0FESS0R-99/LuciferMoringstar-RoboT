@@ -34,7 +34,7 @@ from database.autofilter_mdb import get_filter_results
 async def group_filters(client, update):
     if re.findall("((^\/|^,|^!|^\.|^[\U0001F600-\U000E007F]).*)", update.text):
         return
-    if 2 < len(update.text) < 100:    
+    if 2 < len(update.text) < 100:
         btn = []
         search = update.text
         settings = await get_settings(update.chat.id)
@@ -48,24 +48,19 @@ async def group_filters(client, update):
             await spell.delete()
             return
 
-        if files:
-            for file in files:
-                file_id = file.file_id
-                filesize = f"[{get_size(file.file_size)}]"
-                filename = f"{file.file_name}"
-                if settings["button"]:
-                    btn.append(
-                        [InlineKeyboardButton(text=f"{filename}", callback_data=f"luciferGP#{file_id}")]
-                    )
-                else:
-                    btn.append(
-                        [InlineKeyboardButton(text=f"{filesize}", callback_data=f"luciferGP#{file_id}"),
-                         InlineKeyboardButton(text=f"{filename}", callback_data=f"luciferGP#{file_id}")]
-                    )
-        else:
-            await client.send_sticker(chat_id=update.from_user.id, sticker='CAADBQADMwIAAtbcmFelnLaGAZhgBwI')
-            return
-
+        for file in files:
+            file_id = file.file_id
+            filesize = f"[{get_size(file.file_size)}]"
+            filename = f"{file.file_name}"
+            if settings["button"]:
+                btn.append(
+                    [InlineKeyboardButton(text=f"{filename}", callback_data=f"luciferGP#{file_id}")]
+                )
+            else:
+                btn.append(
+                    [InlineKeyboardButton(text=f"{filesize}", callback_data=f"luciferGP#{file_id}"),
+                     InlineKeyboardButton(text=f"{filename}", callback_data=f"luciferGP#{file_id}")]
+                )
         if not btn:
             return
 
@@ -78,20 +73,31 @@ async def group_filters(client, update):
             }
         else:
             buttons = btn
-            buttons.append(
-                [InlineKeyboardButton(text="📃 Pages 1/1",callback_data="pages"),
-                 InlineKeyboardButton("Close 🗑️", callback_data="close")]
-            )
-            buttons.append(
-                [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{temp.Bot_Username}")]
+            buttons.extend(
+                (
+                    [
+                        InlineKeyboardButton(
+                            text="📃 Pages 1/1", callback_data="pages"
+                        ),
+                        InlineKeyboardButton(
+                            "Close 🗑️", callback_data="close"
+                        ),
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="🤖 CHECK MY PM 🤖",
+                            url=f"https://telegram.dog/{temp.Bot_Username}",
+                        )
+                    ],
+                )
             )
 
             if settings["photo"]:
                 await client.send_photo(chat_id=update.chat.id, photo=random.choice(PICS), caption=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting="hi"), reply_markup=InlineKeyboardMarkup(buttons))
             else:
                 await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting="hi"), reply_markup=InlineKeyboardMarkup(buttons))
-        
- 
+
+
             return
 
         data = BUTTONS[keyword]
@@ -101,7 +107,7 @@ async def group_filters(client, update):
 
         data = BUTTONS[keyword]
         buttons = data['buttons'][0].copy()
-    
+
         buttons.append(
             [InlineKeyboardButton(text=f"📃 1/{data['total']}",callback_data="pages"),
              InlineKeyboardButton("🗑️", callback_data="close"),
@@ -111,7 +117,7 @@ async def group_filters(client, update):
         buttons.append(
             [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{temp.Bot_Username}")]
         )
-        
+
         if settings["photo"]:
             await client.send_photo(chat_id=update.chat.id, photo=random.choice(PICS), caption=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting="hi"), reply_markup=InlineKeyboardMarkup(buttons))
         else:
