@@ -17,7 +17,7 @@
       "settings"
     ],
     "website": "https://youtube.com/c/MoTech_YT",
-    "repository": "https://github.com/PR0FESS0R-99/NewUpdateLucifer",
+    "repository": "https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/tree/new",
         "BOT_TOKEN": {
             "description": "Your bot token.",
             "required": true
