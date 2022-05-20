@@ -11,7 +11,7 @@
       "bot"
     ],
     "website": "https://youtube.com/c/MoTech_YT",
-    "repository": "https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot",
+    "repository": "https://github.com/Zahidnam/LuciferMoringstar-Robot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your Bot Token From https://youtu.be/cB4UduCcNWs",
