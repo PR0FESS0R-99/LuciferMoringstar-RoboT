@@ -35,7 +35,7 @@ async def is_subscribed(bot, query):
     except Exception as e:
         logger.exception(e)
     else:
-        if not user.status == 'kicked':
+        if user.status != 'kicked':
             return True
 
     return False

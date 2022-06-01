@@ -22,7 +22,7 @@ async def media(bot, message):
 
 @Rocky_autofilter_Robot.on_message(Worker.command('channel') & Worker.user(ADMINS))
 async def channel_info(bot, message):
-    
+
     if isinstance(CHANNELS, (int, str)):
         channels = [CHANNELS]
     elif isinstance(CHANNELS, list):

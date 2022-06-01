@@ -20,7 +20,7 @@ async def send_broadcast(client, message):
     broadcast_msg = message.reply_to_message
 
     while True:
-        broadcast_id = ''.join([random.choice(string.ascii_letters) for i in range(3)])
+        broadcast_id = ''.join([random.choice(string.ascii_letters) for _ in range(3)])
         if not config.broadcast_ids.get(broadcast_id):
             break
 
@@ -72,7 +72,7 @@ async def send_broadcast(client, message):
         config.broadcast_ids.pop(broadcast_id)
     completed_in = datetime.timedelta(seconds=int(time.time()-start_time))
 
-    await asyncio.sleep(3)    
+    await asyncio.sleep(3)
     await out.delete()
 
     if failed == 0:

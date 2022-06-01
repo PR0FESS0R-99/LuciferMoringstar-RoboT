@@ -7,7 +7,11 @@ MESSAGE = "{} Welcome to {}!"
 @Rocky_autofilter_Robot.on_message(Worker.new_chat_members)
 async def welcome(client, message):
 
-    new_members = [MENTION.format(message.from_user.mention) for i in message.new_chat_members]
+    new_members = [
+        MENTION.format(message.from_user.mention)
+        for _ in message.new_chat_members
+    ]
+
 
     text = MESSAGE.format(emoji.SPARKLES, ", ".join(new_members))
 

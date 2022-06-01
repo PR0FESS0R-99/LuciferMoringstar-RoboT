@@ -25,7 +25,6 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
         typed = query.from_user.id
 
     if (clicked == typed):
-
 # # ---------- 🔘 [ | 𝗚𝗥𝗢𝗨𝗣 𝗙𝗜𝗟𝗧𝗘𝗥𝗦 | ] 🔘 ---------- # #
 
         if query.data.startswith("nextgroup"):
@@ -42,37 +41,24 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
                 buttons.append(
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backgroup_{int(index)+1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
-                )
-                buttons.append(
-                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
-                )
-
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
             else:
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backgroup_{int(index)+1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)+1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
-                )
-                buttons.append(
-                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
-                )
+            buttons.append(
+                [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
+                 InlineKeyboardButton("Close 🗑️", callback_data="close")]
+            )
+            buttons.append(
+                [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
+            )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("backgroup"):
             ident, index, keyword = query.data.split("_")
             try:
@@ -87,39 +73,23 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
                 buttons.append(
                     [InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
-                )
-                buttons.append(
-                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
-                )
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return   
             else:
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backgroup_{int(index)-1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextgroup_{int(index)-1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
-                )
-                buttons.append(
-                    [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
-                )
-
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
-# # ---------- 🔘 [ | 𝗕𝗢𝗧 𝗣𝗠 𝗙𝗜𝗟𝗧𝗘𝗥𝗦 | ] 🔘 ---------- # #
-
-
+            buttons.append(
+                [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
+                 InlineKeyboardButton("Close 🗑️", callback_data="close")]
+            )
+            buttons.append(
+                [InlineKeyboardButton(text="🤖 CHECK MY PM 🤖", url=f"https://telegram.dog/{bot_info.BOT_USERNAME}")]
+            )
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("nextbot"):
             ident, index, keyword = query.data.split("_")
             try:
@@ -134,31 +104,21 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
                 buttons.append(
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backbot_{int(index)+1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
-                )
-
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
             else:
                 buttons = data['buttons'][int(index)+1].copy()
 
                 buttons.append(
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backbot_{int(index)+1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextbot_{int(index)+1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
-                )
+            buttons.append(
+                [InlineKeyboardButton(f"📃 Pages {int(index)+2}/{data['total']}", callback_data="pages"),
+                 InlineKeyboardButton("Close 🗑️", callback_data="close")]
+            )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("backbot"):
             ident, index, keyword = query.data.split("_")
             try:
@@ -173,34 +133,21 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
                 buttons.append(
                     [InlineKeyboardButton("Next Page ➡", callback_data=f"nextbot_{int(index)-1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
-                )
-
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return   
             else:
                 buttons = data['buttons'][int(index)-1].copy()
 
                 buttons.append(
                     [InlineKeyboardButton("🔙 Back Page", callback_data=f"backbot_{int(index)-1}_{keyword}"),InlineKeyboardButton("Next Page ➡", callback_data=f"nextbot_{int(index)-1}_{keyword}")]
                 )
-                buttons.append(
-                    [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
-                     InlineKeyboardButton("Close 🗑️", callback_data="close")]
-                )
+            buttons.append(
+                [InlineKeyboardButton(f"📃 Pages {int(index)}/{data['total']}", callback_data="pages"),
+                 InlineKeyboardButton("Close 🗑️", callback_data="close")]
+            )
 
-                await query.edit_message_reply_markup( 
-                    reply_markup=InlineKeyboardMarkup(buttons)
-                )
-                return
-
-# ---------- 📁 [ | 𝗚𝗘𝗧 𝗙𝗜𝗟𝗘𝗦 | ] 📁 ---------- #
-
-
+            await query.edit_message_reply_markup( 
+                reply_markup=InlineKeyboardMarkup(buttons)
+            )
+            return
         elif query.data.startswith("Rocky_autofilter_Robot"):
             ident, file_id = query.data.split("#")
             files_ = await get_file_details(file_id)
@@ -229,8 +176,6 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
             except Exception as e:
                 await query.answer(url=f"https://t.me/{bot_info.BOT_USERNAME}?start=subscribe")
 
-# ---------- 📁 [ | 𝗣𝗠 𝗙𝗜𝗟𝗘𝗦 | ] 📁 ---------- #
-
         elif query.data.startswith("pmfile"):
             if FORCES_SUB and not await is_subscribed(client, query):
                 await query.answer("I Like Your Smartness, But Don't Be Oversmart 😒",show_alert=True)
@@ -240,13 +185,13 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
             for files in filedetails:
                 title = files.file_name
                 size=get_size(files.file_size)
-                
+
                 caption=CUSTOM_FILE_CAPTION.format(mention=query.from_user.mention, title=title, size=size, caption=files.caption)
 
                 buttons = [[
                   InlineKeyboardButton('🧑‍💻 How To Own 🧑‍💻', url='https://t.me/Kiccharequest')
                   ]]                 
-                
+
                 await query.answer()
                 await client.send_cached_media(
                     chat_id=query.from_user.id,
@@ -254,9 +199,6 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
                     caption=caption,
                     reply_markup=InlineKeyboardMarkup(buttons)
                     )
-
-
-# ---------- 📁 [ | 𝗠𝗢𝗗𝗨𝗟𝗘𝗦 | ] 📁 ---------- #
 
 
         elif query.data == "start":
@@ -323,11 +265,6 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
             buttons = [[ InlineKeyboardButton('🔙 Back', callback_data="help") ]]          
             await query.message.edit(module.pin_message.format(team=team_name, team_link=team_link), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
-        elif query.data == "close":
-            await query.message.delete()
-
-# ---------- ⚠️ [ | Other | ] ⚠️ ---------- #
-
         elif query.data.startswith("index"):
             bot = client 
             if query.data.startswith('index_cancel'):
@@ -341,7 +278,7 @@ async def cb_handler(client: Rocky_autofilter_Robot, query):
                                        reply_to_message_id=int(lst_msg_id))
                 return
 
-  
+
             if lock.locked():
                 return await query.answer('Wait until previous process complete.', show_alert=True)
             msg = query.message

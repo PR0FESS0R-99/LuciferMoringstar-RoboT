@@ -11,8 +11,7 @@ def get_movie_info(movieTitle):
     if response.get("Response") != "True":
         return None
 
-    movie_info = {}
-    movie_info["title"] = response.get("Title")
+    movie_info = {"title": response.get("Title")}
     movie_info["year"] = response.get("Year")
     movie_info["release"] = response.get("Released")
     movie_info["duration"] = response.get("Runtime")
