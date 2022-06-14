@@ -1,0 +1,8 @@
+Pyrogram
+Tgcrypto
+Pymongo[srv]
+Motor
+Marshmallow
+Umongo
+Requests
+aiofiles
