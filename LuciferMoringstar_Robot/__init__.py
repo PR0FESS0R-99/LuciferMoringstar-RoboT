@@ -54,9 +54,9 @@ class temp(object):
     BUTTONS = {} # AutoFilter
     CURRENT = int(environ.get("SKIP", 2)) # Skip Files
     CANCEL = False # Cancel Index
-    PYRO_VERSION = "2.0.24"
+    PYRO_VERSION = "2.0.27"
     PY3_VERSION = "3.0.13"
-    BOT_VERSION = "1.0.1"
+    BOT_VERSION = "1.0.2"
     PMAF_OFF = []
     filterBtns = int(FILTER_BUTTONS)
     broadcast_ids = {} # don't change this..!!   
