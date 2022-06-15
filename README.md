@@ -162,7 +162,7 @@ Do Fork And Star The Repository If You Liked It.
 ----
 
 ### How To Deploy
-<a href="https://youtu.be/-xDQbsF-wek"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/-xDQbsF-wek?style=social">
+<a href="https://youtu.be/gdz9PAGwEns"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/gdz9PAGwEns?style=social">
 
 ----
 
