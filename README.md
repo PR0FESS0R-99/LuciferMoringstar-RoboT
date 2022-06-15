@@ -171,7 +171,7 @@ Do Fork And Star The Repository If You Liked It.
 
 ----
 
-### Error 
+### How To Fix Error 
 <a href="https://youtu.be/Zsknt_nY2LQ"><img src="https://telegra.ph/file/5c98868b0eea075cb7c77.jpg" alt="PR0FESS0R-99" border="0" height="125" width="200" align="center" /></a>
 
 ----
