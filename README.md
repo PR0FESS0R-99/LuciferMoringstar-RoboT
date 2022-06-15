@@ -166,6 +166,11 @@ Do Fork And Star The Repository If You Liked It.
 
 ----
 
+### How To Use This Bot
+<a href="https://youtu.be/zk5Rs3_Cqhw"><img src="https://img.shields.io/badge/How%20To%20Use-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/zk5Rs3_Cqhw?style=social">
+
+----
+
 ### Deploy To Heroku
 <a href="https://heroku.com/deploy?template=https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot"><img src="https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LuciferMoringstar_Robot/modules/logo/LuciferMoringstar-Deploy-To-Heroku%20(1).jpg" alt="PR0FESS0R-99" border="0" height="125" width="200" align="center" /></a>
 
@@ -177,30 +182,3 @@ Do Fork And Star The Repository If You Liked It.
 ----
 
 ### -- Thankyou For Use -- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
