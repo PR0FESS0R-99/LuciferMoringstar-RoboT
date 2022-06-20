@@ -100,7 +100,7 @@ async def usage(bot: lucifermoringstar_robot, update):
     pr0fess0r_99 = [[ InlineKeyboardButton("🗑️ 𝙳𝙴𝙻𝙴𝚃𝙴 🗑️", callback_data="close") ]]
     await bot.send_photo(photo=random.choice(PICS), chat_id=update.chat.id, caption=USAGE_MESSAGE.format(CREATOR_NAME, CREATOR_USERNAME), reply_markup=InlineKeyboardMarkup(pr0fess0r_99))
 
-@lucifermoringstar_robot.on_message(filters.command(["broadcast"]) & filters.private, group=5)
+@lucifermoringstar_robot.on_message(filters.command(["broadcast"]) & filters.user(ADMINS) & filters.private, group=5)
 async def broadcast(bot: lucifermoringstar_robot, update):
     await send_broadcast(bot, update, db, send_msg, temp)
 
