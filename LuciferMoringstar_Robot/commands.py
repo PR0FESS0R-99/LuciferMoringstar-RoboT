@@ -85,7 +85,7 @@ async def start(bot: lucifermoringstar_robot, update):
                         [ InlineKeyboardButton("ℹ️ 𝙷𝙴𝙻𝙿", callback_data="help"), InlineKeyboardButton("𝙰𝙱𝙾𝚄𝚃 🤠", callback_data="about") ]] 
         await bot.send_photo(photo=random.choice(PICS), chat_id=update.chat.id, caption=START_MESSAGE.format(mention=update.from_user.mention, name=temp.Bot_Name, username=temp.Bot_Username), reply_markup=InlineKeyboardMarkup(pr0fess0r_99))
 
-@lucifermoringstar_robot.on_message(filters.command(["admin", "admins"]) & filters.private, group=2)
+@lucifermoringstar_robot.on_message(filters.command(["admin", "admins"]) & filters.user(ADMINS) & filters.private, group=2)
 async def admin(bot: lucifermoringstar_robot, update):
     await bot.send_photo(photo=random.choice(PICS), chat_id=update.chat.id, caption=ADMIN_CMD_MESSAGE, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("× 𝙲𝙻𝙾𝚂𝙴 ×", callback_data="close") ]] ))
 
@@ -104,7 +104,7 @@ async def usage(bot: lucifermoringstar_robot, update):
 async def broadcast(bot: lucifermoringstar_robot, update):
     await send_broadcast(bot, update, db, send_msg, temp)
 
-@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('settings'))
+@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('settings'), group=5)
 async def settings(bot, update):
     userid = update.from_user.id if update.from_user else None
     if not userid:
@@ -146,7 +146,7 @@ async def settings(bot, update):
         reply_markup = InlineKeyboardMarkup(buttons)
         await update.reply_text(text=SETTINGS_MESSAGE.format(title=title), reply_markup=reply_markup, disable_web_page_preview=True, reply_to_message_id=update.id)
         
-@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('set_temp'))
+@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('set_temp'), group=6)
 async def save_template(bot, update):
     sts = await update.reply_text("⏳️")
     await asyncio.sleep(0.3)
@@ -185,7 +185,7 @@ async def save_template(bot, update):
     await save_group_settings(grp_id, 'template', pr0fess0r_99)
     await sts.edit(f"""𝚂𝚄𝙲𝙲𝙴𝚂𝚂𝙵𝚄𝙻𝙻𝚈 𝙲𝙷𝙰𝙽𝙶𝙴𝙳 𝚃𝙴𝙼𝙿𝙻𝙰𝚃𝙴 (𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝚃𝙴𝙼𝙿) 𝙵𝙾𝚁 {title} 𝚃𝙾\n\n{pr0fess0r_99}""", reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("× 𝙲𝙻𝙾𝚂𝙴 ×", callback_data="close") ]] ))
 
-@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('setwelcome'))
+@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('setwelcome'), group=7)
 async def setwelcome(client, message):
     sts = await message.reply("⏳️")
     await asyncio.sleep(0.3)
@@ -226,7 +226,7 @@ async def setwelcome(client, message):
     await sts.edit(f"""𝚂𝚄𝙲𝙲𝙴𝚂𝚂𝙵𝚄𝙻𝙻𝚈 𝙲𝙷𝙰𝙽𝙶𝙴𝙳 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝙼𝙴𝚂𝚂𝙰𝙶𝙴 𝙵𝙾𝚁 {title} 𝚃𝙾\n\n{pr0fess0r_99}""", reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("× 𝙲𝙻𝙾𝚂𝙴 ×", callback_data="close") ]] ))
 
 
-@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('setspell'))
+@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('setspell'), group=8)
 async def setspell(client, message):
     sts = await message.reply("⏳️")
     await asyncio.sleep(0.3)
@@ -270,7 +270,7 @@ async def setspell(client, message):
     await save_group_settings(grp_id, 'spelltext', pr0fess0r_99)
     await sts.edit(f"""𝚂𝚄𝙲𝙲𝙴𝚂𝚂𝙵𝚄𝙻𝙻𝚈 𝙲𝙷𝙰𝙽𝙶𝙴𝙳 𝚂𝙴𝚃 𝚂𝙿𝙴𝙻𝙻 𝙲𝙷𝙴𝙲𝙺 𝙵𝙾𝚁 {title} 𝚃𝙾\n\n{pr0fess0r_99}""", reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("× 𝙲𝙻𝙾𝚂𝙴 ×", callback_data="close") ]] ))
 
-@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('setcaption'))
+@lucifermoringstar_robot.on_message((filters.private | filters.group) & filters.command('setcaption'), group=9)
 async def filecap(client, message):
     sts = await message.reply("⏳️")
     await asyncio.sleep(0.3)
