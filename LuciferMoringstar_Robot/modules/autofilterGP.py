@@ -96,7 +96,7 @@ async def group_filters(client, update):
                         await asyncio.sleep(FILTER_DEL_SECOND)
                         await auto0_delete.delete()
                     except Exception as error:
-                        auto1_delete=await client.send_photo(chat_id=update.chat.id, photo=random.choice(PICS), caption=MOVIE_TEXT, reply_to_message_id=update.id)
+                        auto1_delete=await client.send_photo(chat_id=update.chat.id, photo=random.choice(PICS), caption=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_to_message_id=update.id)
                         auto2_delete=await client.send_photo(chat_id=update.chat.id, photo="https://telegra.ph/file/2602c9d464dc2b1a53e0f.jpg", caption=f"‼️‼️‼️‼️‼️‼️‼️ **🅻︎🅾︎🅶︎🆂︎**\n   ❌️ 🅴︎🆁︎🆁︎🅾︎🆁︎ **{error}**", reply_to_message_id=update.id, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("✖️ 𝙲𝙻𝙾𝚂𝙴 ✖️", callback_data="close") ]] ))
                         auto3_delete=await client.send_photo(chat_id=update.chat.id, photo=random.choice(PICS), caption=REQUEST_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=update.id)
                         await asyncio.sleep(FILTER_DEL_SECOND)
@@ -109,7 +109,7 @@ async def group_filters(client, update):
                         await asyncio.sleep(FILTER_DEL_SECOND)
                         await auto0_delete.delete()
                     except Exception as error:
-                        auto1_delete=await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT, reply_to_message_id=update.id)
+                        auto1_delete=await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_to_message_id=update.id)
                         auto2_delete=await client.send_message(chat_id=update.chat.id, text=f"‼️‼️‼️‼️‼️‼️‼️ **🅻︎🅾︎🅶︎🆂︎**\n   ❌️ 🅴︎🆁︎🆁︎🅾︎🆁︎ **{error}**", reply_to_message_id=update.id, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("✖️ 𝙲𝙻𝙾𝚂𝙴 ✖️", callback_data="close") ]] ))
                         auto3_delete=await client.send_message(chat_id=update.chat.id, text=REQUEST_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=update.id)
                         await asyncio.sleep(FILTER_DEL_SECOND)
@@ -117,7 +117,7 @@ async def group_filters(client, update):
                         await auto2_delete.delete()
                         await auto3_delete.delete()
             except Exception as error:
-                auto1_delete=await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT, reply_to_message_id=update.id)
+                auto1_delete=await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_to_message_id=update.id)
                 auto2_delete=await client.send_photo(chat_id=update.chat.id, photo="https://telegra.ph/file/2602c9d464dc2b1a53e0f.jpg", caption=f"""‼️‼️‼️‼️‼️‼️‼️ **🅻︎🅾︎🅶︎🆂︎**\n   ❌️ 🅴︎🆁︎🆁︎🅾︎🆁︎ **{error}**""", reply_to_message_id=update.id, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("✖️ 𝙲𝙻𝙾𝚂𝙴 ✖️", callback_data="close") ]] ))
                 auto3_delete=await client.send_message(chat_id=update.chat.id, text=REQUEST_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name=f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=update.id)
                 await asyncio.sleep(FILTER_DEL_SECOND)
@@ -142,7 +142,7 @@ async def group_filters(client, update):
                     await asyncio.sleep(FILTER_DEL_SECOND)
                     await auto0_delete.delete()
                 except Exception as error:
-                    auto1_delete=await client.send_photo(chat_id=update.chat.id, photo=random.choice(PICS), caption=MOVIE_TEXT, reply_to_message_id=update.id)
+                    auto1_delete=await client.send_photo(chat_id=update.chat.id, photo=random.choice(PICS), caption=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_to_message_id=update.id)
                     auto2_delete=await client.send_photo(chat_id=update.chat.id, photo="https://telegra.ph/file/2602c9d464dc2b1a53e0f.jpg", caption=f"‼️‼️‼️‼️‼️‼️‼️ **🅻︎🅾︎🅶︎🆂︎**\n   ❌️ 🅴︎🆁︎🆁︎🅾︎🆁︎ **{error}**", reply_to_message_id=update.id, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("✖️ 𝙲𝙻𝙾𝚂𝙴 ✖️", callback_data="close") ]] ))
                     auto3_delete=await client.send_photo(chat_id=update.chat.id, photo=random.choice(PICS), caption=REQUEST_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=update.id)
                     await asyncio.sleep(FILTER_DEL_SECOND)
@@ -155,7 +155,7 @@ async def group_filters(client, update):
                     await asyncio.sleep(FILTER_DEL_SECOND)
                     await auto0_delete.delete()
                 except Exception as error:
-                    auto1_delete=await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT, reply_to_message_id=update.id)
+                    auto1_delete=await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_to_message_id=update.id)
                     auto2_delete=await client.send_message(chat_id=update.chat.id, text=f"‼️‼️‼️‼️‼️‼️‼️ **🅻︎🅾︎🅶︎🆂︎**\n   ❌️ 🅴︎🆁︎🆁︎🅾︎🆁︎ **{error}**", reply_to_message_id=update.id, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("✖️ 𝙲𝙻𝙾𝚂𝙴 ✖️", callback_data="close") ]] ))
                     auto3_delete=await client.send_message(chat_id=update.chat.id, text=REQUEST_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=update.id)
                     await asyncio.sleep(FILTER_DEL_SECOND)
@@ -163,7 +163,7 @@ async def group_filters(client, update):
                     await auto2_delete.delete()
                     await auto3_delete.delete()
         except Exception as error:
-            auto1_delete=await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT, reply_to_message_id=update.id)
+            auto1_delete=await client.send_message(chat_id=update.chat.id, text=MOVIE_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name = f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_to_message_id=update.id)
             auto2_delete=await client.send_photo(chat_id=update.chat.id, photo="https://telegra.ph/file/2602c9d464dc2b1a53e0f.jpg", caption=f"""‼️‼️‼️‼️‼️‼️‼️ **🅻︎🅾︎🅶︎🆂︎**\n   ❌️ 🅴︎🆁︎🆁︎🅾︎🆁︎ **{error}**""", reply_to_message_id=update.id, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("✖️ 𝙲𝙻𝙾𝚂𝙴 ✖️", callback_data="close") ]] ))
             auto3_delete=await client.send_message(chat_id=update.chat.id, text=REQUEST_TEXT.format(mention=update.from_user.mention, query=search, greeting=None, group_name=f"[{update.chat.title}](t.me/{update.chat.username})" or f"[{update.chat.title}](t.me/{update.from_user.username})"), reply_markup=InlineKeyboardMarkup(buttons), reply_to_message_id=update.id)
             await asyncio.sleep(FILTER_DEL_SECOND)
