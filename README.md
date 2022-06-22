@@ -160,6 +160,32 @@ Do Fork And Star The Repository If You Liked It.
 `SUPORT_CHAT` : Backup Support, With out @Mo_Tech_YT
 
 ----
+### 🤖 BotFather Command'S
+```
+start - check bot alive 
+id - get group id & your id
+info - your information 
+stats - bot status
+settings - open your group settings 
+pmautofilter - pm autofilter control
+connect - connect a group
+disconnect - disconnect a group
+connections - all group connections
+set_temp - set custom search risult template 
+setwelcome - set custom welcome message 
+setspell - set your custom spell check reply 
+setcaption - set your custom caption
+total - admin only
+channel - admin only
+logs - admin only
+delete - admin only
+delall - admin only
+admin - admin only
+leave - admin only
+setskip - admin only
+broadcast - admin only
+```
+----
 
 ### How To Deploy
 <a href="https://youtu.be/gdz9PAGwEns"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/gdz9PAGwEns?style=social">
