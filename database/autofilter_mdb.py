@@ -31,7 +31,8 @@ from pymongo.errors import DuplicateKeyError
 from umongo import Instance, Document, fields
 from motor.motor_asyncio import AsyncIOMotorClient
 from marshmallow.exceptions import ValidationError
-from LuciferMoringstar_Robot import DATABASE_URI, DATABASE_NAME, temp
+from LuciferMoringstar_Robot.functions import temp
+from LuciferMoringstar_Robot import DATABASE_URI, DATABASE_NAME
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
