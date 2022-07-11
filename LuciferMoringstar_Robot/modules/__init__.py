@@ -103,3 +103,21 @@ filecaption_text = """
  • {file_name} : 𝙵𝙸𝙻𝙴 𝙽𝙰𝙼𝙴
  • {size} : 𝙵𝙸𝙻𝙴 𝚂𝙸𝚉𝙴
  • {caption} : 𝙶𝙴𝚃 𝙲𝙰𝙿𝚈 𝙲𝙰𝙿𝚃𝙸𝙾𝙽"""
+
+
+class modeles_text(object):
+    autofilterfilter_text = """**🗒️ Model : --AutoFilter-** :-\n
+__I Can Provide files in your group, it very easy way just add me to your group and make me admin your group, thats all. I will provide files from your group__\n
+📚 --**Available Command**-- :-\n
+• __use the /settings command to modify autofilter settings__
+• __use the /pmautofilter to turn on\off pm autofilter__\n
+📰 **--Available Vars--** :-\n
+`{title}` - `{votes}` - `{aka}` - `{seasons}` - `{box_office}` - `{localized_title}` - `{kind}` - `{imdb_id}` - `{cast}` - `{runtime}` - `{countries}` - `{certificates}` - `{languages}` - `{director}` - `{writer}` - `{producer}` - `{composer}` - `{cinematographer}` - `{music_team}` - `{distributors}` - `{release_date}` - `{year}` - `{genres}` - `{poster}` - `{plot}` - `{rating}` - `{url}`"""
+
+
+
+
+
+
+
+
