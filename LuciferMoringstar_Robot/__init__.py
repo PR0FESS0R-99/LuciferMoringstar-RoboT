@@ -29,10 +29,13 @@ SUPPORT = SUPPORT_CHAT
 GET_FILECHANNEL = int(GET_FILECHANNEL)
 # Cache Time
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
-# File
+" FILES "
 CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", FILECAPTION_MESSAGE)
 PROTECT_FILES = "False"
 FILTER_DEL_SECOND = FILTER_DEL_SECOND
+" IMDB FUNCTIONS "
+LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
+MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 
 COMMANDS = ["pmautofilter", "connections", "delete"]
 
