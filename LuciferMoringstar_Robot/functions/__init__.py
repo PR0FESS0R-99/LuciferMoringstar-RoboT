@@ -31,3 +31,4 @@ from .force_sub_func import is_subscribed
 from .fileID_func import get_file_id
 from .user_func import extract_user
 from .broadcast_func import send_msg
+from .imdb_func import get_poster
