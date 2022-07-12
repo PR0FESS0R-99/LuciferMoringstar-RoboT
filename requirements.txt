@@ -5,4 +5,5 @@ Motor
 Marshmallow
 Umongo
 Requests
-aiofiles
+Aiofiles
+imdbpy==2021.4.18
