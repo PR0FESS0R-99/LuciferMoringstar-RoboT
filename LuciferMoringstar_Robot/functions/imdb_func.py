@@ -26,7 +26,7 @@
 
 from re import findall
 from imdb import IMDb
-from LuciferMoringstar_Robot import LONG_IMDB_DESCRIPTION, 
+from LuciferMoringstar_Robot import LONG_IMDB_DESCRIPTION, MAX_LIST_ELM
 
 imdb = IMDb() 
 
