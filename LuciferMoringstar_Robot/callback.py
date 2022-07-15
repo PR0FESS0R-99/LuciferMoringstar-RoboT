@@ -310,9 +310,20 @@ async def cb_handler(bot, update):
 
         elif update.data == "help":
             try:
-                buttons = [[ InlineKeyboardButton("𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁𝚂", callback_data="autofilter"), InlineKeyboardButton("𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂", callback_data="connection"), InlineKeyboardButton("𝙲𝙰𝙿𝚃𝙸𝙾𝙽", callback_data="filecaption")  ],
-                          [ InlineKeyboardButton("𝚆𝙴𝙻𝙲𝙾𝙼𝙴", callback_data="welcome"), InlineKeyboardButton("𝚂𝙿𝙴𝙻𝙻𝙲𝙷𝙴𝙲𝙺", callback_data="spellcheck"), InlineKeyboardButton("𝙼𝙸𝚂𝙲", callback_data="misc") ],
-                          [ InlineKeyboardButton("𝚂𝚃𝙰𝚃𝚄𝚂", callback_data="status"), InlineKeyboardButton("𝙷𝙾𝙼𝙴", callback_data="start") ]]                     
+                buttons = [[
+                 InlineKeyboardButton("AutoFilter", callback_data="autofilter"),
+                 InlineKeyboardButton("FileStore", callback_data="filestore"),
+                 InlineKeyboardButton("Misc", callback_data="misc")
+                 ],[
+                 InlineKeyboardButton("Connections", callback_data="connection"),
+                 InlineKeyboardButton("SpellCheck", callback_data="spellcheck")
+                 ],[
+                 InlineKeyboardButton("Welcome", callback_data="welcome"),
+                 InlineKeyboardButton("Caption", callback_data="filecaption")
+                 ],[
+                 InlineKeyboardButton("Status", callback_data="status"),
+                 InlineKeyboardButton("Home", callback_data="start")
+                 ]]                     
                 await update.message.edit(HELP_MESSAGE.format(mention=update.from_user.mention, name=temp.Bot_Name, username=temp.Bot_Username), reply_markup=InlineKeyboardMarkup(buttons))
             except MessageNotModified:
                 pass
@@ -347,32 +358,37 @@ async def cb_handler(bot, update):
                 pass        
         elif update.data == "autofilter":
             try:
-                await update.message.edit(autofilter_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ 𝙱𝙰𝙲𝙺 ⇇", callback_data="help") ]] ))
+                await update.message.edit(autofilter_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
         elif update.data == "connection":
             try:
-                await update.message.edit(modeles_text.connection_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ 𝙱𝙰𝙲𝙺 ⇇", callback_data="help") ]] ))
+                await update.message.edit(modeles_text.connection_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
         elif update.data == "spellcheck":
             try:
-                await update.message.edit(spellcheck_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ 𝙱𝙰𝙲𝙺 ⇇", callback_data="help") ]] ))
+                await update.message.edit(spellcheck_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
         elif update.data == "welcome":
             try:
-                await update.message.edit(welcome_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ 𝙱𝙰𝙲𝙺 ⇇", callback_data="help") ]] ))
+                await update.message.edit(welcome_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
         elif update.data == "misc":
             try:
-                await update.message.edit(misc_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ 𝙱𝙰𝙲𝙺 ⇇", callback_data="help") ]] ))
+                await update.message.edit(misc_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
         elif update.data == "filecaption":
             try:
-                await update.message.edit(filecaption_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ 𝙱𝙰𝙲𝙺 ⇇", callback_data="help") ]] ))
+                await update.message.edit(filecaption_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
+            except MessageNotModified:
+                pass
+        elif update.data == "filestore":
+            try:
+                await update.message.edit(modeles_text.filestore_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
 
