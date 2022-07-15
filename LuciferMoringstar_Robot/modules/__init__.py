@@ -22,18 +22,6 @@ autofilter_text = """
 › 𝙴𝙶 : `/set_temp {query}`
 """
 
-connection_text = """
-𝙼𝙾𝙳𝚄𝙻𝙴 : 🅲︎🅾︎🅽︎🅽︎🅴︎🅲︎🆃︎🅸︎🅾︎🅽︎🆂︎ :-
-
- • 𝚈𝙾𝚄 𝙲𝙰𝙽 𝙼𝙾𝙳𝙸𝙵𝚈 𝙰𝚄𝚃𝙾𝙵𝙸𝙻𝚃𝙴𝚁 𝚂𝙴𝚃𝚃𝙸𝙽𝙶𝚂 𝙵𝚁𝙾𝙼 𝙿𝙼 𝙰𝙵𝚃𝙴𝚁 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙳𝙽𝙶
-
-📚 🅲︎🅾︎🅼︎🅼︎🅰︎🅽︎🅳︎🆂︎ :-
-
- • /connect : 𝙲𝚁𝙴𝙰𝚃𝙴 𝙰 𝙽𝙴𝚆 𝙲𝙾𝙽𝙽𝙴𝙲𝚃
- • /disconnect : 𝙳𝙴𝙻𝙴𝚃𝙴 𝙰𝙽𝚈 𝙴𝚇𝙸𝚂𝚃𝙸𝙽𝙶 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽
- • /connections : 𝙶𝙴𝚃 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂 𝙻𝙸𝚂𝚃"""
-
-
 spellcheck_text = """
 𝙼𝙾𝙳𝚄𝙻𝙴 : 🆂︎🅿︎🅴︎🅻︎🅻︎🅲︎🅷︎🅴︎🅲︎🅺︎ :-
 
@@ -106,18 +94,46 @@ filecaption_text = """
 
 
 class modeles_text(object):
-    autofilterfilter_text = """**🗒️ Model : --AutoFilter-** :-\n
-__I Can Provide files in your group, it very easy way just add me to your group and make me admin your group, thats all. I will provide files from your group__\n
-📚 --**Available Command**-- :-\n
+
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
+
+    autofilterfilter_text = """
+**🗒️ Model : --AutoFilter-** :-
+
+__I Can Provide files in your group, it very easy way just add me to your group and make me admin your group, thats all. I will provide files from your group__
+
+📚 --**Available Command**-- :-
+
 • __use the /settings command to modify autofilter settings__
-• __use the /pmautofilter to turn on\off pm autofilter__\n
-📰 **--Available Vars--** :-\n
+• __use the /pmautofilter to turn on\off pm autofilter__
+
+📰 **--Available Vars--** :-
 `{title}` - `{votes}` - `{aka}` - `{seasons}` - `{box_office}` - `{localized_title}` - `{kind}` - `{imdb_id}` - `{cast}` - `{runtime}` - `{countries}` - `{certificates}` - `{languages}` - `{director}` - `{writer}` - `{producer}` - `{composer}` - `{cinematographer}` - `{music_team}` - `{distributors}` - `{release_date}` - `{year}` - `{genres}` - `{poster}` - `{plot}` - `{rating}` - `{url}`"""
 
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
+
+    filestore_text = """
+📄 **Model: --FileStore-- :**
+
+__By Using This Module you can store files in my database and i will give you a permament link to access the saved files__
+
+📚 **--Command and Usage--** :
+
+• __/add_file - Reply to any media__"""
 
 
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 
+    connection_text = """
+📄 **Model: --FileStore-- :**
 
+__You can modify AutoFilter settings from pm after connecting__
+
+📚 **--Command and Usage--** :
+
+• __/connect - create a new connections__
+• __/disconnect - delete any existing connections__
+• __/connections - get connections list__"""
 
 
 
