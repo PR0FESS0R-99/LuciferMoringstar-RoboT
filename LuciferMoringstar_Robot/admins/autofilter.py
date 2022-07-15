@@ -130,4 +130,4 @@ async def deletefiles(bot, update):
 @Client.on_message(filters.private & filters.command('delall') & filters.user(ADMINS))
 async def deleteall(bot, update):
     buttons = [[ InlineKeyboardButton(text="𝚈𝙴𝚂", callback_data="files_delete"), InlineKeyboardButton(text="𝙽𝙾", callback_data="close") ]]  
-    await message.reply_text("""𝚃𝙷𝙸𝚂 𝚆𝙸𝙻𝙻 𝙳𝙴𝙻𝙴𝚃𝙴 𝙰𝙻𝙻 𝙸𝙽𝙳𝙴𝚇𝙴𝙳 𝙵𝙸𝙻𝙴𝚂\n𝙳𝙾 𝚈𝙾𝚄𝚆𝙰𝙽𝚃 𝚃𝙾 𝙲𝙾𝙽𝚃𝙸𝙽𝚄𝙴?""", reply_markup=InlineKeyboardMarkup(buttons))
+    await update.reply_text("""𝚃𝙷𝙸𝚂 𝚆𝙸𝙻𝙻 𝙳𝙴𝙻𝙴𝚃𝙴 𝙰𝙻𝙻 𝙸𝙽𝙳𝙴𝚇𝙴𝙳 𝙵𝙸𝙻𝙴𝚂\n𝙳𝙾 𝚈𝙾𝚄𝚆𝙰𝙽𝚃 𝚃𝙾 𝙲𝙾𝙽𝚃𝙸𝙽𝚄𝙴?""", reply_markup=InlineKeyboardMarkup(buttons))
