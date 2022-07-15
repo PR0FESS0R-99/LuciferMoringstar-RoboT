@@ -41,7 +41,7 @@ def extract_user(update: Message) -> Union[int, str]:
             len(update.entities) > 1 and
             update.entities[1].type == "text_mention"
         ):
-           
+
             required_entity = update.entities[1]
             user_id = required_entity.user.id
             user_first_name = required_entity.user.first_name

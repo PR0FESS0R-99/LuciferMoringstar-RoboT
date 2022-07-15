@@ -33,7 +33,7 @@ class Bot(Client):
         temp.ME = me.id
         temp.Bot_Username = me.username
         temp.Bot_Name = me.first_name
-        self.username = '@' + me.username
+        self.username = f'@{me.username}'
         logging.info(f"{me.first_name} with for Pyrogram v{__version__} (Layer {layer}) Started on @{me.username}")                
 
     async def stop(self, *args):

@@ -72,7 +72,7 @@ class Database:
     
     async def get_chat(self, chat):
         chat = await self.grp.find_one({'id':int(chat)})
-        return False if not chat else chat.get('chat_status')
+        return chat.get('chat_status') if chat else False
             
     async def update_settings(self, id, settings):
         await self.grp.update_one({'id': int(id)}, {'$set': {'settings': settings}})
@@ -91,9 +91,7 @@ class Database:
             'filemode': FILE_MODE
         }
         chat = await self.grp.find_one({'id':int(id)})
-        if chat:
-            return chat.get('settings', default)
-        return default
+        return chat.get('settings', default) if chat else default
     
     async def disable_chat(self, chat, reason="No Reason"):
         chat_status = dict(is_disabled=True, reason=reason)           

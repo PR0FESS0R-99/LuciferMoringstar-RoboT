@@ -44,7 +44,12 @@ async def index_files(bot, update):
     _, muhammedrk, chat, lst_msg_id, from_user = update.data.split("#")
     if muhammedrk == 'reject':
         await update.message.delete()
-        await bot.send_message(chat_id = int(from_user), text = """𝚈𝙾𝚄𝚁 𝚂𝚄𝙱𝙼𝙸𝚂𝚂𝙸𝙾𝙽 𝙵𝙾𝚁 𝙸𝙽𝙳𝙴𝚇𝙸𝙽𝙶 **{}** 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 𝙳𝙴𝙲𝙻𝙸𝙴𝙽𝙴𝙳 𝙱𝚈 𝙾𝚄𝚁 𝙼𝙾𝙳𝙴𝚁𝙰𝚃𝙾𝚁𝚂""".format(chat), reply_to_message_id = int(lst_msg_id))
+        await bot.send_message(
+            chat_id=int(from_user),
+            text=f"""𝚈𝙾𝚄𝚁 𝚂𝚄𝙱𝙼𝙸𝚂𝚂𝙸𝙾𝙽 𝙵𝙾𝚁 𝙸𝙽𝙳𝙴𝚇𝙸𝙽𝙶 **{chat}** 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 𝙳𝙴𝙲𝙻𝙸𝙴𝙽𝙴𝙳 𝙱𝚈 𝙾𝚄𝚁 𝙼𝙾𝙳𝙴𝚁𝙰𝚃𝙾𝚁𝚂""",
+            reply_to_message_id=int(lst_msg_id),
+        )
+
         return
 
     if lock.locked():
@@ -53,9 +58,12 @@ async def index_files(bot, update):
     msg = update.message
     await update.answer("𝙿𝚁𝙾𝙲𝙴𝚂𝚂𝙸𝙽𝙶...⏳", show_alert=True)
     if int(from_user) not in ADMINS:
-        await bot.send_message(int(from_user),
-                               "𝚈𝙾𝚄𝚁 𝚂𝚄𝙱𝙼𝙸𝚂𝚂𝙸𝙾𝙽 𝙵𝙾𝚁 𝙸𝙽𝙳𝙴𝚇𝙸𝙽𝙶 {} 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 𝙰𝙲𝙲𝙴𝙿𝚃𝙴𝙳 𝙱𝚈 𝙾𝚄𝚁 𝙼𝙾𝙳𝙴𝚁𝙰𝚃𝙾𝚁𝚂 𝙰𝙽𝙳 𝚆𝙸𝙻𝙻 𝙱𝙴 𝙰𝙳𝙳𝙴𝙳 𝚂𝙾𝙾𝙽".format(chat),
-                               reply_to_message_id=int(lst_msg_id))
+        await bot.send_message(
+            int(from_user),
+            f"𝚈𝙾𝚄𝚁 𝚂𝚄𝙱𝙼𝙸𝚂𝚂𝙸𝙾𝙽 𝙵𝙾𝚁 𝙸𝙽𝙳𝙴𝚇𝙸𝙽𝙶 {chat} 𝙷𝙰𝚂 𝙱𝙴𝙴𝙽 𝙰𝙲𝙲𝙴𝙿𝚃𝙴𝙳 𝙱𝚈 𝙾𝚄𝚁 𝙼𝙾𝙳𝙴𝚁𝙰𝚃𝙾𝚁𝚂 𝙰𝙽𝙳 𝚆𝙸𝙻𝙻 𝙱𝙴 𝙰𝙳𝙳𝙴𝙳 𝚂𝙾𝙾𝙽",
+            reply_to_message_id=int(lst_msg_id),
+        )
+
     pr0fess0r = [[ InlineKeyboardButton('𝚂𝚃𝙾𝙿', callback_data='close') ]]
     await update.message.edit(text = "𝚂𝚃𝙰𝚁𝚃𝙸𝙽𝙶 𝙸𝙽𝙳𝙴𝚇𝙸𝙽𝙶..", reply_markup=InlineKeyboardMarkup(pr0fess0r))
     try:
@@ -72,10 +80,10 @@ async def send_for_index(bot, message):
         match = regex.match(message.text)
         if not match:
             return await message.reply('Invalid link')
-        chat_id = match.group(4)
-        last_msg_id = int(match.group(5))
+        chat_id = match[4]
+        last_msg_id = int(match[5])
         if chat_id.isnumeric():
-            chat_id  = int(("-100" + chat_id))
+            chat_id = int(f"-100{chat_id}")
     elif message.forward_from_chat.type == enums.ChatType.CHANNEL:
         last_msg_id = message.forward_from_message_id
         chat_id = message.forward_from_chat.username or message.forward_from_chat.id
@@ -119,7 +127,7 @@ async def send_for_index(bot, message):
      ],[
      InlineKeyboardButton('Reject Index', callback_data=f'index#reject#{chat_id}#{message.id}#{message.from_user.id}')
      ]]
-    
+
     reply_markup = InlineKeyboardMarkup(buttons)
     await bot.send_message(LOG_CHANNEL,
                            f'#IndexRequest\n\nBy : {message.from_user.mention} (<code>{message.from_user.id}</code>)\nChat ID/ Username - <code> {chat_id}</code>\nLast Message ID - <code>{last_msg_id}</code>\nInviteLink - {link}',
@@ -136,7 +144,7 @@ async def set_skip_number(bot, update):
         except:
             return await update.reply("Skip number should be an integer.")
         await update.reply(f"Successfully set SKIP number as {skip}")
-        temp.CURRENT = int(skip)
+        temp.CURRENT = skip
     else:
         await update.reply("Give me a skip number")
 
