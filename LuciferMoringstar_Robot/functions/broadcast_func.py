@@ -24,25 +24,21 @@
 # Repo Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot
 # License Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LICENSE
 
-import asyncio
-from pyrogram import Client as lucifermoringstar_robot, filters
-from LuciferMoringstar_Robot.functions import get_settings
-from pyrogram.errors import ChatWriteForbidden
+from traceback import format_exc
+from pyrogram.errors import InputUserDeactivated, FloodWait, UserIsBlocked, PeerIdInvalid
 
-@lucifermoringstar_robot.on_message(filters.group & filters.new_chat_members)
-async def welcome(client, update):
-    settings = await get_settings(update.chat.id)
-    if settings["welcome"]:
-        try:
-            try:            
-                welcometext = settings["welcometext"]
-                new_members = update.from_user.mention
-                dell = await update.reply_text(welcometext.format(first_name = update.from_user.first_name, last_name = update.from_user.last_name, username = f"@{update.from_user.username}" or None, group_name = update.chat.title, mention = new_members), disable_web_page_preview=True)
-                await asyncio.sleep(1000)
-                await dell.delete()
-            except ChatWriteForbidden:
-                pass
-            except Exception as error:
-                pass
-        except Exception as error:       
-            await update.reply_text(f"{error}")
+async def send_msg(user_id, message):
+    try:
+        await message.copy(chat_id=user_id)
+        return 200, None
+    except FloodWait as e:
+        await asyncio.sleep(e.x)
+        return send_msg(user_id, message)
+    except InputUserDeactivated:
+        return 400, f"{user_id} : deactivated\n"
+    except UserIsBlocked:
+        return 400, f"{user_id} : blocked the bot\n"
+    except PeerIdInvalid:
+        return 400, f"{user_id} : user id invalid\n"
+    except Exception as e:
+        return 500, f"{user_id} : {format_exc()}\n"

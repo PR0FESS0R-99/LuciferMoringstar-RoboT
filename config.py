@@ -1,56 +1,40 @@
-import re, os
-from os import environ
-from translation import LuciferMoringstar
-id_pattern = re.compile(r'^.\d+$')
+# MIT License
+# Copyright (c) 2022 Muhammed
+import os, re
+search = re.compile(r'^.\d+$')
 def is_enabled(value, default):
-    if value.lower() in ["true", "yes", "1", "enable", "on"]:
+    if value.lower() in ["true", "yes", "1", "enable", "y"]:
         return True
-    elif value.lower() in ["false", "no", "0", "disable", "off"]:
+    elif value.lower() in ["false", "no", "0", "disable", "n"]:
         return False
     else:
         return default
 
-# ==================================
-API_ID = int(environ["API_ID"])
-API_HASH = environ["API_HASH"]
-B_KEYS = environ["BOT_TOKEN"]
-START_MSG = environ.get("START_MSG", LuciferMoringstar.DEFAULT_MSG)
-BOT_PICS = (environ.get('PICS', 'https://telegra.ph/file/8d4e4693a8a907cb51797.jpg')).split()
-SUPPORT = environ.get("SUPPORT", "t.me/Mo_Tech_YT")
-SPELL_MODE = is_enabled((environ.get('SPELL_MODE', "on")), True)
-SET_SPEL_M = environ.get("SPELL_MODE_TEXT", LuciferMoringstar.SPELL_CHECK)
-LOG_CHANNEL = int(environ.get("LOG_CHANNEL", None))
-DATABASE_URI = environ.get("DATABASE_URI", None)
-FORCE = environ.get('FORCES_SUB')
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", LuciferMoringstar.FILE_CAPTIONS)
-DEV_NAME = environ.get("DEV_NAME", "Muhammed")
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ['ADMINS'].split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ['CHANNELS'].split()]
-AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 
+# Creator
+CREATOR_NAME = os.environ.get("CREATOR_NAME", "𝙼𝚄𝙷𝙰𝙼𝙼𝙴𝙳")
+CREATOR_USERNAME = os.environ.get("CREATOR_USERNAME", "PR0FESS0_99")
 
-# ==================================
-# Empty 😂
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
-CACHE_TIME = int(environ.get('CACHE_TIME', 300))
-USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-BUTTONS = {}
-CURRENT = int(environ.get("SKIP", 2))
-CANCEL = False
-FORCES_SUB = int(FORCE) if FORCE and id_pattern.search(FORCE) else FORCE
-DATABASE_NAME = environ.get("DATABASE_NAME", 'LuciferMoringstar_Robot')
-AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-# ==================================
+# Account
+API_HASH = os.environ.get("API_HASH", "5b1d0992294a67cb54512a4fafeb0c88")
+API_ID = os.environ.get("API_ID", "6170803")
+# About Bot
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "1905228806:AAH2iahJcg5J6bqpcW11jB9KajwHbIjaslGTY")
+PICS = os.environ.get("PICS", "https://telegra.ph/file/034d53b5ed1d920ecab8b.jpg")
+# Database
+DATABASE_NAME = os.environ.get("DATABASE_NAME", "LuciferMoringstar-Robot")
+DATABASE_URI = os.environ.get("DATABASE_URI", "mongodb+srv://{Username}:{Passs}@cluster0.{clusterID}.mongodb.net/myFirstDatabase?retryWrites=true{iD}=majority")
+# Chats & Users
+ADMINS = os.environ.get("ADMINS", "2028425293 1637186875")
+SUPPORT_CHAT = os.environ.get("SUPPORT_CHAT", "Mo_Tech_Group")
+AUTH_CHANNEL = os.environ.get("AUTH_CHANNEL", "-1001685151224")
+CHANNELS = [int(ch) if search.search(ch) else ch for ch in os.environ.get("CHANNELS", "-1001784382279").split()]
+LOG_CHANNEL = os.environ.get("LOG_CHANNEL", "-1001590063851")
+GET_FILECHANNEL = os.environ.get("GET_FILECHANNEL", "-1001570208190")
+FILTER_DEL_SECOND = int(os.environ.get("FILTER_DEL_SECOND", "600"))
 
-team_name = os.environ.get('team_name', 'Mo Tech 🇮🇳')
-team_link = os.environ.get('team_link', 't.me/Mo_Tech_YT')
-
-# ==================================
-# About Bot 🤖
-class bot_info(object):
-    BOT_NAME = None
-    BOT_USERNAME = None
-    BOT_ID = None
-
-
+# AutoFilter
+AUTH_GROUPS = os.environ.get("AUTH_GROUPS", "")
+AUTH_USERS = [int(user) if search.search(user) else user for user in os.environ.get('AUTH_USERS', '').split()]
+FILTER_BUTTONS = os.environ.get("FILTER_BUTTONS", "10")
+PROTECT_FILES = is_enabled((os.environ.get('PROTECT_FILES', "True")), True) 

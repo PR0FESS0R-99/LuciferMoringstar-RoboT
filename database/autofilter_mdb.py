@@ -1,15 +1,41 @@
+# MIT License
+
+# Copyright (c) 2022 Muhammed
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
+# Telegram Link : https://telegram.dog/Mo_Tech_Group
+# Repo Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot
+# License Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LICENSE
+
 import re, base64, os, requests, json, logging
 from struct import pack
-from pyrogram.errors import UserNotParticipant
 from pyrogram.file_id import FileId
 from pymongo.errors import DuplicateKeyError
 from umongo import Instance, Document, fields
 from motor.motor_asyncio import AsyncIOMotorClient
 from marshmallow.exceptions import ValidationError
-from config import DATABASE_URI, DATABASE_NAME, COLLECTION_NAME, USE_CAPTION_FILTER, FORCES_SUB
+from LuciferMoringstar_Robot import DATABASE_URI, DATABASE_NAME, temp
+
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
-from imdb import IMDb
+
 client = AsyncIOMotorClient(DATABASE_URI)
 db = client[DATABASE_NAME]
 instance = Instance.from_db(db)
@@ -25,7 +51,8 @@ class Media(Document):
     caption = fields.StrField(allow_none=True)
 
     class Meta:
-        collection_name = COLLECTION_NAME
+        indexes = ('$file_name', )
+        collection_name = "Telegram_files"
 
 
 async def save_file(media):
@@ -61,7 +88,7 @@ async def save_file(media):
             return True, 1
 
 
-async def get_search_results(query, file_type=None, max_results=10, offset=0):
+async def get_search_results(query, file_type=None, max_results=temp.filterBtns, offset=0):
     """For given query return (results, next_offset)"""
 
     query = query.strip()
@@ -77,7 +104,7 @@ async def get_search_results(query, file_type=None, max_results=10, offset=0):
     except:
         return []
 
-    if USE_CAPTION_FILTER:
+    if False:
         filter = {'$or': [{'file_name': regex}, {'caption': regex}]}
     else:
         filter = {'file_name': regex}
@@ -99,7 +126,7 @@ async def get_search_results(query, file_type=None, max_results=10, offset=0):
     # Get list of files
     files = await cursor.to_list(length=max_results)
 
-    return files, next_offset
+    return files, next_offset, total_results
 
 
 async def get_filter_results(query):
@@ -124,8 +151,8 @@ async def get_filter_results(query):
 async def get_file_details(query):
     filter = {'file_id': query}
     cursor = Media.find(filter)
-    filedetails = await cursor.to_list(length=1)
-    return filedetails
+    file_details_pr0fess0r99 = await cursor.to_list(length=1)
+    return file_details_pr0fess0r99
 
 def encode_file_id(s: bytes) -> str:
     r = b""
@@ -162,66 +189,4 @@ def unpack_new_file_id(new_file_id):
     )
     file_ref = encode_file_ref(decoded.file_reference)
     return file_id, file_ref
-
-
-
-imdb = IMDb() 
-
-async def get_poster(query, bulk=False, id=False):
-    if not id:
-        pattern = re.compile(r"^(([a-zA-Z\s])*)?\s?([1-2]\d\d\d)?", re.IGNORECASE)
-        match = pattern.match(query)
-        year = None
-        if match:
-            title = match.group(1)
-            year = match.group(3)
-        else:
-            title = query
-        movieid = imdb.search_movie(title.lower(), results=10)
-        if not movieid:
-            return None
-        if year:
-            filtered=list(filter(lambda k: str(k.get('year')) == str(year), movieid))
-            if not filtered:
-                filtered = movieid
-        else:
-            filtered = movieid
-        movieid=list(filter(lambda k: k.get('kind') in ['movie', 'tv series'], filtered))
-        if not movieid:
-            movieid = filtered
-        if bulk:
-            return movieid
-        movieid = movieid[0].movieID
-    else:
-        movieid = int(query)
-    movie = imdb.get_movie(movieid)
-    title = movie.get('title')
-    genres = ", ".join(movie.get("genres")) if movie.get("genres") else None
-    rating = str(movie.get("rating"))
-    if movie.get("original air date"):
-        date = movie["original air date"]
-    elif movie.get("year"):
-        date = movie.get("year")
-    else:
-        date = "N/A"
-    poster = movie.get('full-size cover url')
-    plot = movie.get('plot')
-    if plot and len(plot) > 0:
-        plot = plot[0]
-    if plot and len(plot) > 800:
-        plot = plot[0:800] + "..."
-    return {
-        'title': title,
-        'year': date,
-        'genres': genres,
-        'poster': poster,
-        'plot': plot,
-        'rating': rating,
-        'url':f'https://www.imdb.com/title/tt{movieid}'
-
-    }
-
-
-
-
 

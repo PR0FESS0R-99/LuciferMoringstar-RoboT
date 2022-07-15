@@ -23,26 +23,37 @@
 # Telegram Link : https://telegram.dog/Mo_Tech_Group
 # Repo Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot
 # License Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LICENSE
+ 
+from pyrogram.types import Message
+from typing import Union
 
-import asyncio
-from pyrogram import Client as lucifermoringstar_robot, filters
-from LuciferMoringstar_Robot.functions import get_settings
-from pyrogram.errors import ChatWriteForbidden
+def extract_user(update: Message) -> Union[int, str]:
+    """extracts the user from a message"""
+    # https://github.com/SpEcHiDe/PyroGramBot/blob/f30e2cca12002121bad1982f68cd0ff9814ce027/pyrobot/helper_functions/extract_user.py#L7
+    user_id = None
+    user_first_name = None
+    if update.reply_to_message:
+        user_id = update.reply_to_message.from_user.id
+        user_first_name = update.reply_to_message.from_user.first_name
 
-@lucifermoringstar_robot.on_message(filters.group & filters.new_chat_members)
-async def welcome(client, update):
-    settings = await get_settings(update.chat.id)
-    if settings["welcome"]:
+    elif len(update.command) > 1:
+        if (
+            len(update.entities) > 1 and
+            update.entities[1].type == "text_mention"
+        ):
+           
+            required_entity = update.entities[1]
+            user_id = required_entity.user.id
+            user_first_name = required_entity.user.first_name
+        else:
+            user_id = update.command[1]
+            # don't want to make a request -_-
+            user_first_name = user_id
         try:
-            try:            
-                welcometext = settings["welcometext"]
-                new_members = update.from_user.mention
-                dell = await update.reply_text(welcometext.format(first_name = update.from_user.first_name, last_name = update.from_user.last_name, username = f"@{update.from_user.username}" or None, group_name = update.chat.title, mention = new_members), disable_web_page_preview=True)
-                await asyncio.sleep(1000)
-                await dell.delete()
-            except ChatWriteForbidden:
-                pass
-            except Exception as error:
-                pass
-        except Exception as error:       
-            await update.reply_text(f"{error}")
+            user_id = int(user_id)
+        except ValueError:
+            pass
+    else:
+        user_id = update.from_user.id
+        user_first_name = update.from_user.first_name
+    return (user_id, user_first_name)

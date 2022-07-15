@@ -24,25 +24,23 @@
 # Repo Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot
 # License Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LICENSE
 
-import asyncio
-from pyrogram import Client as lucifermoringstar_robot, filters
-from LuciferMoringstar_Robot.functions import get_settings
-from pyrogram.errors import ChatWriteForbidden
+from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+from LuciferMoringstar_Robot import temp
+from database.autofilter_mdb import unpack_new_file_id
 
-@lucifermoringstar_robot.on_message(filters.group & filters.new_chat_members)
-async def welcome(client, update):
-    settings = await get_settings(update.chat.id)
-    if settings["welcome"]:
-        try:
-            try:            
-                welcometext = settings["welcometext"]
-                new_members = update.from_user.mention
-                dell = await update.reply_text(welcometext.format(first_name = update.from_user.first_name, last_name = update.from_user.last_name, username = f"@{update.from_user.username}" or None, group_name = update.chat.title, mention = new_members), disable_web_page_preview=True)
-                await asyncio.sleep(1000)
-                await dell.delete()
-            except ChatWriteForbidden:
-                pass
-            except Exception as error:
-                pass
-        except Exception as error:       
-            await update.reply_text(f"{error}")
+# https://github.com/EvamariaTG/EvaMaria/blob/e325a1d8ef484ecc67bad74e1a02173ee0505801/plugins/genlink.py#L23
+
+@Client.on_message(filters.private & filters.command(['add_file', 'filestore']))
+async def gen_link_s(bot, message):
+    replied = message.reply_to_message
+    if not replied:
+        return await message.reply('Reply to a message to get a shareable link.')
+
+    file_type = replied.media
+    if file_type not in ["video", 'audio', 'document']:
+        return await message.reply("__**Reply to a Supported Media**__")
+
+    file_id, ref = unpack_new_file_id((getattr(replied, file_type)).file_id)
+    url = f"https://t.me/{temp.Bot_Username}?start=muhammedrk-mo-tech-group-{file_id}"
+    await message.reply(f"**Here is your Link:**\n`{url}")

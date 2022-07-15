@@ -23,26 +23,22 @@
 # Telegram Link : https://telegram.dog/Mo_Tech_Group
 # Repo Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot
 # License Link : https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LICENSE
+ 
+from pyrogram import Client, filters
+from database.autofilter_mdb import save_file
+from LuciferMoringstar_Robot import CHANNELS
 
-import asyncio
-from pyrogram import Client as lucifermoringstar_robot, filters
-from LuciferMoringstar_Robot.functions import get_settings
-from pyrogram.errors import ChatWriteForbidden
+media_filter = filters.document | filters.video | filters.audio
 
-@lucifermoringstar_robot.on_message(filters.group & filters.new_chat_members)
-async def welcome(client, update):
-    settings = await get_settings(update.chat.id)
-    if settings["welcome"]:
-        try:
-            try:            
-                welcometext = settings["welcometext"]
-                new_members = update.from_user.mention
-                dell = await update.reply_text(welcometext.format(first_name = update.from_user.first_name, last_name = update.from_user.last_name, username = f"@{update.from_user.username}" or None, group_name = update.chat.title, mention = new_members), disable_web_page_preview=True)
-                await asyncio.sleep(1000)
-                await dell.delete()
-            except ChatWriteForbidden:
-                pass
-            except Exception as error:
-                pass
-        except Exception as error:       
-            await update.reply_text(f"{error}")
+@Client.on_message(filters.chat(CHANNELS) & media_filter)
+async def media(bot, update):
+    for file_type in ("document", "video", "audio"):
+        media = getattr(update, file_type, None)
+        if media is not None:
+            break
+    else:
+        return
+
+    media.file_type = file_type
+    media.caption = update.caption
+    await save_file(media)
