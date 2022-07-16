@@ -316,10 +316,12 @@ async def cb_handler(bot, update):
                  InlineKeyboardButton("Misc", callback_data="misc")
                  ],[
                  InlineKeyboardButton("Connections", callback_data="connection"),
-                 InlineKeyboardButton("SpellCheck", callback_data="spellcheck")
+                 InlineKeyboardButton("SpellCheck", callback_data="spellcheck"),
+                 InlineKeyboardButton("Via", callback_data="inlinecb")
                  ],[
                  InlineKeyboardButton("Welcome", callback_data="welcome"),
-                 InlineKeyboardButton("Caption", callback_data="filecaption")
+                 InlineKeyboardButton("Caption", callback_data="filecaption"),
+                 InlineKeyboardButton("Fun", callback_data="funcb")
                  ],[
                  InlineKeyboardButton("Status", callback_data="status"),
                  InlineKeyboardButton("Home", callback_data="start")
@@ -389,6 +391,16 @@ async def cb_handler(bot, update):
         elif update.data == "filestore":
             try:
                 await update.message.edit(modeles_text.filestore_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
+            except MessageNotModified:
+                pass
+        elif update.data == "inlinecb":
+            try:
+                await update.message.edit(modeles_text.inline_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton('🔍 Search Here 🔎', switch_inline_query_current_chat="") ],[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
+            except MessageNotModified:
+                pass
+        elif update.data == "funcb":
+            try:
+                await update.message.edit(modeles_text.fun_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
 
