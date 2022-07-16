@@ -135,5 +135,29 @@ __You can modify AutoFilter settings from pm after connecting__
 • __/disconnect - delete any existing connections__
 • __/connections - get connections list__"""
 
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
+
+    fun_text = """
+📄 **Model: --Fun-- :**
+
+__Just some kind of fun thing's__
+
+📚 **--Commands and Usage--** :
+
+• __/throw or /dark - to make dart__
+• __/goal or /shoot - to make a goal or shoot__
+• __/luck - spin and try your luck__"""
+
+
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
+
+    inline_text = """
+📄 **Model: --FileStore-- :**
+
+__You can pick up files from anywhere using Inline Mode__
+
+__Click the button below. Search for you want file__"""
+
+# ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 
 
