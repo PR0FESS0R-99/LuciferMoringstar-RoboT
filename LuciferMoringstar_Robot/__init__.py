@@ -64,3 +64,9 @@ class temp(object):
     PMAF_OFF = []
     filterBtns = int(FILTER_BUTTONS)
     broadcast_ids = {} # don't change this..!!   
+
+class emoji(object):
+    GOAL_E_MOJI = "⚽"
+    TRY_YOUR_LUCK = "🎰"
+    THROW_DART = "🎯"
+
