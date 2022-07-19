@@ -105,6 +105,9 @@ Do Fork And Star The Repository If You Liked It.
 
 * [x] Custom SpellCheck
 
+* [x] FileStore
+
+* [x] Fun Games
 ----
 
 ### Pre Requisites 
