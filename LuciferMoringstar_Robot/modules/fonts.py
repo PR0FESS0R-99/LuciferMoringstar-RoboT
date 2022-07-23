@@ -89,10 +89,10 @@ async def style_buttons(c, m, cb=False):
     else:
         await m.reply_text(text="Ente Any Text Eg `/font [text]`")
 
-@Client.on_callback_query(filters.regex('^style'))
-async def style(c, m):
+# @Client.on_callback_query(filters.regex('^style'))
+async def style(bot, update):
     await m.answer()
-    cmd, style = m.data.split('+')
+    cmd, style = update.data.split('+')
     if style == 'typewriter':
         cls = Fonts.typewriter
     if style == 'outline':
@@ -172,9 +172,9 @@ async def style(c, m):
     if style == 'frozen':
         cls = Fonts.frozen
 
-    r, text = m.message.reply_to_message.text.split(None, 1)
+    r, text = update.message.reply_to_message.text.split(None, 1)
     new_text = cls(text)
     try:
-        await m.message.edit_text(new_text, reply_markup=m.message.reply_markup)
+        await update.message.edit_text(new_text, reply_markup=update.message.reply_markup)
     except:
         pass
