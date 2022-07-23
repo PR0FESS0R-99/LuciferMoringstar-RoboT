@@ -108,6 +108,12 @@ Do Fork And Star The Repository If You Liked It.
 * [x] FileStore
 
 * [x] Fun Games
+
+* [x] Fonts StylishText 
+
+* [x] Share Text
+
+* [x] Text To Speech 
 ----
 
 ### Pre Requisites 
