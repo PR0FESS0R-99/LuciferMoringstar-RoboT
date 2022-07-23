@@ -33,3 +33,4 @@ from .user_func import extract_user
 from .broadcast_func import send_msg
 from .imdb_func import get_poster
 from .fonts_func import Fonts
+from .tts import convert
