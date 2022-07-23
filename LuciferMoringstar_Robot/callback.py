@@ -323,6 +323,10 @@ async def cb_handler(bot, update):
                  InlineKeyboardButton("Caption", callback_data="filecaption"),
                  InlineKeyboardButton("Fun", callback_data="funcb")
                  ],[
+                 InlineKeyboardButton("Font", callback_data="fontcb"),
+                 InlineKeyboardButton("ShareText", callback_data="sharetextcb"),
+                 InlineKeyboardButton("TTs", callback_data="ttscb")
+                 ],[
                  InlineKeyboardButton("Status", callback_data="status"),
                  InlineKeyboardButton("Home", callback_data="start")
                  ]]                     
@@ -401,6 +405,21 @@ async def cb_handler(bot, update):
         elif update.data == "funcb":
             try:
                 await update.message.edit(modeles_text.fun_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
+            except MessageNotModified:
+                pass
+        elif update.data == "fontcb":
+            try:
+                await update.message.edit(modeles_text.font_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
+            except MessageNotModified:
+                pass
+        elif update.data == "sharetextcb":
+            try:
+                await update.message.edit(modeles_text.sharetext_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
+            except MessageNotModified:
+                pass
+        elif update.data == "ttscb":
+            try:
+                await update.message.edit(modeles_text.tts_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
 
