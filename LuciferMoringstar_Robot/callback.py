@@ -31,6 +31,7 @@ from pyrogram.errors import UserIsBlocked, PeerIdInvalid, UserNotParticipant, Me
 from LuciferMoringstar_Robot import temp, CUSTOM_FILE_CAPTION, AUTH_CHANNEL, SUPPORT, CREATOR_NAME, CREATOR_USERNAME, SAVE_FILES, GET_FILECHANNEL, ADMINS, START_MESSAGE
 from LuciferMoringstar_Robot.functions import get_size, get_settings, save_group_settings, is_subscribed
 from LuciferMoringstar_Robot.modules import autofilter_text, modeles_text, spellcheck_text, welcome_text, misc_text, filecaption_text
+from LuciferMoringstar_Robot.modules.fonts import style
 from LuciferMoringstar_Robot.translation import HELP_MESSAGE, ABOUT_MESSAGE, STATUS_MESSAGE, GETFILE_TEXT, USAGE_MESSAGE, NOT_SUB
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
 from database.autofilter_mdb import Media, get_file_details
@@ -422,6 +423,9 @@ async def cb_handler(bot, update):
                 await update.message.edit(modeles_text.tts_text, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("⇇ Back To Menu ⇇", callback_data="help") ]] ))
             except MessageNotModified:
                 pass
+
+        elif "style" in update.data:
+            await style(bot, update) # StylishText CallbackQuery
 
         elif update.data == "backcb":
             await update.answer()
