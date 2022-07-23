@@ -7,3 +7,5 @@ Umongo
 Requests
 Aiofiles
 imdbpy==2021.4.18
+googletrans==3.1.0a0 # Google Translater 
+gTTS # Google Translater
