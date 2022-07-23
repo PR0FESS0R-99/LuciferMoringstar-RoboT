@@ -7,7 +7,8 @@ from pyrogram import *
 async def sharelink(bot, update):
     # https://github.com/PR0FESS0R-99/ShareText-Bot/blob/01a849d3cdb6220509b8883e47df2e64e704ae55/main.py#L17 
     if len(update.command) != 2:
-        return await update.reply("**--Use Correct Format-- :-\n  • `/sharetext your text`**")
-    await bot.send_photo(chat_id=update.chat.id,
-        text=f"**Message Sharing Link Is Ready** :- https://t.me/share/url?url={quote(update.text)}", reply_to_message_id=update.id, reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("📤 Share Link 📤", url=f"https://t.me/share/url?url={quote(update.text)}") ]] )       
+        return await update.reply("**--Use Correct Format-- :-\n  • `/share your text`**")
+    text = update.text.split(" ", 1)[1]
+    await update.reply(
+        text=f"**Message Sharing Link Is Ready** :- https://t.me/share/url?url={quote(text)}", reply_markup=InlineKeyboardMarkup( [[ InlineKeyboardButton("📤 Share Link 📤", url=f"https://t.me/share/url?url={quote(text)}") ]] )       
     )
