@@ -160,4 +160,36 @@ __Click the button below. Search for you want file__"""
 
 # ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ #
 
+    font_text = """
+📄 **Model: --Fonts-- :**
+
+__I Can Help You To Get Stylish fonts__
+
+📚 **--Commands and Usage--** :
+
+• __/font [text] - just send me some text and see magic__"""
+
+# ≥ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ≤ #
+
+    sharetext_text = """
+📄 **Model: --ShareText-- :**
+
+__a model to create a link to share text in the telegram__
+
+📚 **--Command and Usage--** :
+
+• __/share [text] - Enter Any Text__"""
+
+# ≥ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ≤ #
+
+    tts_text = """
+📄 **Model: --Text To Speech-- :**
+
+__a module to convert text to voice with language support__
+
+📚 **--Command and Usage--** :
+
+• __/tts :- Reply To Any Text Message With Language Code To Convert As Audio__"""
+
+
 
