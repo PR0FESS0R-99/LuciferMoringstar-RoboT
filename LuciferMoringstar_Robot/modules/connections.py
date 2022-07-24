@@ -60,55 +60,51 @@ async def addconnection(bot, update):
         return
 
 @Client.on_message((filters.private | filters.group) & filters.command('disconnect'))
-async def deleteconnection(client, message):
-    userid = message.from_user.id if message.from_user else None
+async def delete_connections_cmd(bot, update):
+    
+    if update.chat.type == enums.ChatType.PRIVATE:
+        await update.reply_text("__Run /connections to view or disconnect from groups..!__", quote=True)
+        return
 
-    chat_type = message.chat.type
-    if not userid:
-        return await message.reply(f"𝚈𝙾𝚄𝚁 𝙰𝚁𝙴 𝙰𝙽𝙾𝙽𝚈𝙼𝙾𝚄𝚂 𝙰𝙳𝙼𝙸𝙽. /connect {message.chat.id} 𝙸𝙽 𝙿𝙼")
-
-    if chat_type == enums.ChatType.PRIVATE:
-        await message.reply_text("𝚁𝚄𝙽 /connections 𝚃𝙾 𝚅𝙸𝙴𝚆 𝙾𝚁 𝙳𝙸𝚂𝙲𝙾𝙽𝙽𝙴𝙲𝚃 𝙵𝚁𝙾𝙼 𝙶𝚁𝙾𝚄𝙿..!", quote=True)
-
-    elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
-        group_id = message.chat.id
-
-        member = await client.get_chat_member(group_id, userid)
-        if (
-                member.status != enums.ChatMemberStatus.ADMINISTRATOR
-                and member.status != enums.ChatMemberStatus.OWNER
-                and str(userid) not in ADMINS
-        ):
+    elif update.chat.type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
+        group_id = update.chat.id
+        user_id = update.from_user.id
+        st = await bot.get_chat_member(update.chat.id, update.from_user.id)
+        if (st.status != enums.ChatMemberStatus.ADMINISTRATOR and st.status != enums.ChatMemberStatus.OWNER and update.from_user.id not in ADMINS):
             return
 
-        delcon = await delete_connection(str(userid), str(group_id))
+        delcon = await delete_connection(str(user_id), str(group_id))
         if delcon:
-            await message.reply_text("𝚂𝚄𝙲𝙲𝙴𝚂𝚂𝙵𝚄𝙻𝙻𝚈 𝙳𝙸𝚂𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝙵𝚁𝙾𝙼 𝚃𝙷𝙸𝚂 𝙲𝙷𝙰𝚃..", quote=True)
+            await update.reply_text("__Successfully disconnected from this chat__")
         else:
-            await message.reply_text("𝚃𝙷𝙸𝚂 𝙲𝙷𝙰𝚃 𝙸𝚂𝙽'𝚃 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝚃𝙾 𝙼𝙴\n     𝙳𝙾 /connect 𝚃𝙾 𝙲𝙾𝙽𝙽𝙴𝙲𝚃.", quote=True)
+            await update.reply_text("__This chat isn't connected to me!\nDo /connect to connect.__")
 
 
-@Client.on_message(filters.private & filters.command(["connections"]))
-async def all_connections(client, message):
-    userid = message.from_user.id
+@Client.on_message(filters.private & filters.command("connections"))
+async def all_connections_cmd(bot, update):
+
+    userid = update.from_user.id
 
     groupids = await all_connections(str(userid))
     if groupids is None:
-        await message.reply_text("𝚃𝙷𝙴𝚁𝙴 𝙰𝚁𝙴 𝙽𝙾 𝙰𝙲𝚃𝙸𝚅𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂..!\n   𝙲𝙾𝙽𝙽𝙴𝙲𝚃 𝚃𝙾 𝚂𝙰𝙼𝙴 𝙶𝙴𝙾𝚄𝙿𝚂 𝙵𝙸𝚁𝚂𝚃..!", quote=True)        
+        text = "__**There Are No Active Connections..! Connect To Some Groups First**__"
+        await update.reply_text(text)
         return
+
     buttons = []
     for groupid in groupids:
         try:
-            ttl = await client.get_chat(int(groupid))
+            ttl = await bot.get_chat(int(groupid))
             title = ttl.title
             active = await if_active(str(userid), str(groupid))
-            act = " - 🅰︎🅲︎🆃︎🅸︎🆅︎🅴︎" if active else ""
-            buttons.append([InlineKeyboardButton(f"{title}{act}", callback_data=f"groupcb:{groupid}:{act}")])           
+            act = " - ACTIVE" if active else ""
+            buttons.append( [ InlineKeyboardButton(f"{title}{act}", callback_data=f"groupcb:{groupid}:{act}") ] )            
         except:
             pass
 
     if buttons:
-        await message.reply_text("""𝚈𝙾𝚄𝚁 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙴𝙳 𝙶𝚁𝙾𝚄𝙿 𝙳𝙴𝚃𝙰𝙸𝙻𝙴𝚂:\n\n""", reply_markup=InlineKeyboardMarkup(buttons), quote=True)        
+        text = "**Your Connected Group Details :**\n\n"
+        await update.reply_text(text, reply_markup=InlineKeyboardMarkup(buttons))        
     else:
-        await message.reply_text("""𝚃𝙷𝙴𝚁𝙴 𝙰𝚁𝙴 𝙽𝙾 𝙰𝙲𝚃𝙸𝚅𝙴 𝙲𝙾𝙽𝙽𝙴𝙲𝚃𝙸𝙾𝙽𝚂..! 𝙲𝙾𝙽𝙽𝙴𝙲𝚃 𝚃𝙾 𝚂𝙰𝙼𝙴 𝙶𝚁𝙾𝚄𝙿 𝙵𝙸𝚁𝚂𝚃""", quote=True)
-        
+        text = "__**There Are No Active Connections..! Connect To Some Groups First**__"
+        await update.reply_text(text)
