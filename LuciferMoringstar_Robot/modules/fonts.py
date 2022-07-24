@@ -29,7 +29,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQ
 from LuciferMoringstar_Robot.functions import Fonts
 
 @Client.on_message(filters.command("font"))
-async def style_buttons(c, m, cb=False):
+async def style_buttons(bot, update, cb=False):
     buttons = [[
         InlineKeyboardButton('𝚃𝚢𝚙𝚎𝚠𝚛𝚒𝚝𝚎𝚛', callback_data='style+typewriter'),
         InlineKeyboardButton('𝕆𝕦𝕥𝕝𝕚𝕟𝕖', callback_data='style+outline'),
@@ -83,16 +83,16 @@ async def style_buttons(c, m, cb=False):
         InlineKeyboardButton('S̶t̶r̶i̶k̶e̶', callback_data='style+strike'),
         InlineKeyboardButton('F༙r༙o༙z༙e༙n༙', callback_data='style+frozen')
         ]]
-    if ' ' in m.text:
-        title = m.text.split(" ", 1)[1]
-        await m.reply_text(title, reply_markup=InlineKeyboardMarkup(buttons), quote=True)
+    if ' ' in update.text:
+        title = update.text.split(" ", 1)[1]
+        await update.reply_text(title, reply_markup=InlineKeyboardMarkup(buttons))
     else:
-        await m.reply_text(text="Ente Any Text Eg `/font [text]`")
+        await update.reply_text(text="Ente Any Text Eg `/font [text]`")
 
 # @Client.on_callback_query(filters.regex('^style'))
-async def style(bot, update):
-    await m.answer()
-    cmd, style = update.data.split('+')
+async def stylishtext(bot, update, style):
+    await update.answer()
+
     if style == 'typewriter':
         cls = Fonts.typewriter
     if style == 'outline':
