@@ -113,7 +113,10 @@ Do Fork And Star The Repository If You Liked It.
 
 * [x] Share Text
 
-* [x] Text To Speech 
+* [x] Text To Speech GB
+
+* [x] 4GB Support
+
 ----
 
 ### Pre Requisites 
