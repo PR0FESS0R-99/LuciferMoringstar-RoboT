@@ -49,7 +49,7 @@ async def start(bot: lucifermoringstar_robot, update):
             invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
             try:
                 user = await bot.get_chat_member(int(AUTH_CHANNEL), update.from_user.id)
-                if user.status == enums.ChatMemberStatus.RESTRICTED:
+                if user.status == enums.ChatMemberStatus.BANNED:
                     await bot.send_message(chat_id=update.from_user.id, text="""𝚂𝙾𝚁𝚁𝚈 𝚂𝙸𝚁, 𝚈𝙾𝚄 𝙰𝚁𝙴 𝙱𝙰𝙽𝙽𝙴𝙳 𝚃𝙾 𝚄𝚂𝙴 𝙼𝙴""", disable_web_page_preview=True)                  
                     return
             except UserNotParticipant:
