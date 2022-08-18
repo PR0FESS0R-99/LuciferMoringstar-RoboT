@@ -551,7 +551,7 @@ async def cb_handler(bot, update):
                     await update.answer("𝚃𝙷𝙰𝚃𝚂'𝚂 𝙽𝙾𝚃 𝙵𝙾𝚁 𝚈𝙾𝚄..!", show_alert=True)
         
         elif update.data == "pages":
-            await update.answer("🤨 𝙲𝚞𝚛𝚒𝚘𝚜𝚒𝚝𝚢 𝙸𝚜 𝙰 𝙻𝚒𝚝𝚝𝚕𝚎 𝙼𝚘𝚛𝚎, 𝙸𝚜𝚗'𝚝 𝚒𝚝?", show_alert=True)
+            await update.answer("🤨 Curiosity Is A Little More, Isn't it?", show_alert=True)
 
     else:
         await update.answer("𝚃𝙷𝙰𝚃𝚂'𝚂 𝙽𝙾𝚃 𝙵𝙾𝚁 𝚈𝙾𝚄..!", show_alert=True)
