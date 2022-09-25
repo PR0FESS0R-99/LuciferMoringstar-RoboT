@@ -1,8 +1,8 @@
 ###  <a href="https://youtu.be/FCU_XJmyG_U">LuciferMoringstar-Robot</a>
 
-<img src="https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LuciferMoringstar_Robot/modules/logo/LuciferMoringstar-Robot-Logo.jpeg" alt="LuciferMoringstar Robot Logo">
+<img src="https://github.com/harifilter/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LuciferMoringstar_Robot/modules/logo/LuciferMoringstar-Robot-Logo.jpeg" alt="LuciferMoringstar Robot Logo">
 
-<img src="https://img.shields.io/github/stars/PR0FESS0R-99/LuciferMoringstar-Robot?style=social"/>   <img src="https://img.shields.io/github/forks/PR0FESS0R-99/LuciferMoringstar-Robot?style=social"/>
+<img src="https://img.shields.io/github/stars/harifilter/LuciferMoringstar-Robot?style=social"/>   <img src="https://img.shields.io/github/forks/harifilter/LuciferMoringstar-Robot?style=social"/>
 
 ----
 
@@ -10,7 +10,7 @@
 <details><summary>Read MIT License</summary>
 <p>
 <br>
-<a href="https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LICENSE"><img src="https://img.shields.io/badge/Click-Here-FF3333.svg?logo=github&logoColor=FF3333"></a>
+<a href="https://github.com/harifilter/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LICENSE"><img src="https://img.shields.io/badge/Click-Here-FF3333.svg?logo=github&logoColor=FF3333"></a>
 </a>
 </p>
 </details>
@@ -30,9 +30,9 @@ Selling The Codes To Other People For Money Is *Strictly Prohibited*.
 ```
 ### Credits
 
-Thanks To [LuciferMoringstar-Robot](https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot) [Orginal Code](https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot)
-Thanks To [Muhammed](https://github.com/PR0FESS0R-99)
-Thanks To [Developers](https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot#credits)
+Thanks To [LuciferMoringstar-Robot](https://github.com/harifilter/LuciferMoringstar-Robot) [Orginal Code](https://github.com/harifilter/LuciferMoringstar-Robot)
+Thanks To [Muhammed](https://github.com/harifilter)
+Thanks To [Developers](https://github.com/harifilter/LuciferMoringstar-Robot#credits)
 ```
 
 ----
@@ -58,19 +58,19 @@ Thanks To [Developers](https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot#c
 
 ### Support
 
-Join Our [Telegram Group](https://telegram.dog/Mo_Tech_Group) For Support/Assistance And Our [Channel](https://telegram.dog/Mo_Tech_YT) For Updates.
+Join Our [Telegram Group](https://t.me/all_movie_work) For Support/Assistance And Our [Channel](https://t.me/tamilhb) For Updates.
 
 Report Bugs, Give Feature Requests There..
 Do Fork And Star The Repository If You Liked It.
 
-<a href="https://telegram.dog/Mo_Tech_YT"><img alt="telegram" src="https://img.shields.io/badge/Updates-%22B1B17.svg?&logo=telegram&logoColor=white"></a>
-<a href="https://youtube.com/channel/UCmGBpXoM-OEm-FacOccVKgQ"><img src="https://img.shields.io/badge/Mo-Tech-FF3333.svg?logo=youtube&logoColor=FF3333"></a>
-<a href="https://telegram.dog/Mo_Tech_Group"><img alt="telegram" src="https://img.shields.io/badge/Group-%22B1B17.svg?&logo=telegram&logoColor=white"></a>
+<a href="https://t.me/all_movie_work"><img alt="telegram" src="https://img.shields.io/badge/Updates-%22B1B17.svg?&logo=telegram&logoColor=white"></a>
+<a href="https://youtube.com/channel/UCj9rAtz7yI2OD84mSM2KJdQ"><img src="https://img.shields.io/badge/tamilhb.svg?logo=youtube&logoColor=FF3333"></a>
+<a href="https://t.me/all_movie_work"><img alt="telegram" src="https://img.shields.io/badge/Group-%22B1B17.svg?&logo=telegram&logoColor=white"></a>
 
 ----
 
 ### Subscribe
-<a href="https://youtube.com/c/MoTech_YT"> <img src="https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LuciferMoringstar_Robot/modules/logo/MoTcch-YouTube-Channel.png"/> </a>
+<a href="https://youtube.com/channel/UCj9rAtz7yI2OD84mSM2KJdQ"> <img src="https://github.com/harifilter/LuciferMoringstar-Robot/blob/LuciferMoringstar-Robot/LuciferMoringstar_Robot/modules/logo/Haritech-YouTube-Channel.png"/> </a>
 
 ----
 
