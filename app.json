@@ -1,5 +1,5 @@
 {
-    "name": "LuciferMoringstar-Robot",
+    "name": "harifilter-Robot",
     "description": "When you going to send File on Telegram Channel this bot will save that in database, So you can get file in Bot PM",
     "stack": "container",
     "keywords": [
@@ -10,7 +10,7 @@
       "pyrogram",
       "bot"
     ],
-    "website": "https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot",
+    "website": "https://github.com/harifilter/LuciferMoringstar-Robot",
     "repository": "https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot",
     "env": {
         "API_HASH": {
