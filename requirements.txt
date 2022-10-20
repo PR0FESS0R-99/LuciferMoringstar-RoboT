@@ -1,8 +1,2 @@
 Pyrogram
 Tgcrypto==1.2.3
-Pymongo[srv]
-Motor
-
-Requests
-Aiofiles
-imdbpy==2021.4.18
