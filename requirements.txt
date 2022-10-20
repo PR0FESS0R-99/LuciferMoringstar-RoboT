@@ -1,8 +1,7 @@
 Pyrogram
-Tgcrypto
+Tgcrypto==1.2.3
 Pymongo[srv]
 Motor
-Marshmallow
 Umongo
 Requests
 Aiofiles
