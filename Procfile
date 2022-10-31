@@ -1,1 +1,1 @@
-web: python3 LuciferMoringstar-Robot
+worker: python3 LuciferMoringstar_Robot
