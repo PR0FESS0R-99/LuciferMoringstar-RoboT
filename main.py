@@ -10,7 +10,7 @@ class lucifermoringstar_robot(Client):
     def __init__(self):
         super().__init__(
             name="lucifer-bot",
-            plugins=("root": "LuciferMoringstar_Robot"),
+            plugins={"root": "LuciferMoringstar_Robot"},
             api_hash=Config.TG_API_HASH,
             api_id=Config.TG_API_ID,
             bot_token=Config.TG_BOT_TOKEN,
