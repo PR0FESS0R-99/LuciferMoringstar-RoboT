@@ -1,1 +1,1 @@
-worker: python3 lucifer.py
+worker: python3 main.py
