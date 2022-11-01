@@ -28,3 +28,5 @@ class lucifermoringstar_robot(Client):
     async def stop(self, *args):
         await super().stop()
         print("🤖 Lucifermoringstar-Robot stopped. Bye.")
+
+lucifermoringstar_robot().run()
