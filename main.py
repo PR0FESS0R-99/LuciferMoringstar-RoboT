@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 # (c) @PR0FESS0R-99
 
+from pyrogram.raw.all import layer
 from pyrogram import Client, __version__
 from simple_configs import Config
 
