@@ -5,7 +5,7 @@
 from pyrogram import Client, __version__
 from simple_configs import Config
 
-class lucifermoringstar_robot(Client):
+class Lucifer(Client):
 
     def __init__(self):
         super().__init__(
@@ -30,4 +30,5 @@ class lucifermoringstar_robot(Client):
         await super().stop()
         print("🤖 Lucifermoringstar-Robot stopped. Bye.")
 
-lucifermoringstar_robot().run()
+app = Lucifer()
+app.run()
