@@ -1,2 +1,0 @@
-Pyrogram
-Tgcrypto==1.2.3
