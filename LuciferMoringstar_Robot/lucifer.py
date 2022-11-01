@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # (c) @PR0FESS0R-99
 
-from pyrogram import Client, enums, __version__
+from pyrogram import Client, __version__
 from simple_configs import Config
 
 class LuciferMoringstar_Robot(Client):
