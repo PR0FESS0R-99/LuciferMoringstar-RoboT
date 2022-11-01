@@ -5,7 +5,7 @@
 from pyrogram import Client, enums, __version__
 from simple_configs import Config
 
-class Lucifermoringstar_Robot(Client):
+class LuciferMoringstar_Robot(Client):
 
     def __init__(self):
         name = self.__class__.__name__.lower()
