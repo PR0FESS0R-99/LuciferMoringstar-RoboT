@@ -1,4 +1,4 @@
-FROM python:3.10-slim-buster
+FROM python:3.6.14-slim-buster
 
 RUN apt update && apt upgrade -y
 RUN apt install git -y
