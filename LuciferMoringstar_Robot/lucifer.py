@@ -22,7 +22,7 @@ class Lucifermoringstar_Robot(Client):
         await super().start()
         usr_bot_me = self.me
         print(
-            f"Lucifermoringstar-Robot based on Pyrogram v{__version__}"
+            f"🤖 Lucifermoringstar-Robot based on Pyrogram v{__version__}"
             f"(Layer {layer}) started on @{usr_bot_me.username}. "       
         )
 
