@@ -1,11 +1,5 @@
-RUN apt update && apt upgrade -y
-RUN apt install git -y
-COPY requirements.txt /requirements.txt
-
-RUN cd /
-RUN pip3 install -U pip && pip3 install -U -r requirements.txt
-RUN mkdir /LuciferMoringstar-Robot
-WORKDIR /LuciferMoringstar-Robot
-
-COPY service.sh /service.sh
-CMD ["/bin/bash", "/service.sh"]
+FROM python:3.9
+WORKDIR /app
+COPY . /app/
+RUN pip install -r requirements.txt
+CMD ["python", "main.py"]
