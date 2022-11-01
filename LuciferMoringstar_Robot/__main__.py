@@ -1,6 +1,6 @@
-from .lucifer import lucifermoringstar_robot
+from .lucifer import Lucifermoringstar_Robot
 
-app = lucifermoringstar_robot()
+app = Lucifermoringstar_Robot()
 app.run()
 
     
