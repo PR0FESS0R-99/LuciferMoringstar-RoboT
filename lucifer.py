@@ -8,10 +8,9 @@ from simple_configs import Config
 class lucifermoringstar_robot(Client):
 
     def __init__(self):
-        name = self.__class__.__name__.lower()
         super().__init__(
             name="lucifer-bot",
-            plugins=dict(root=f"{name}/plugins"),
+            plugins=dict(root="LuciferMoringstar_Robot"),
             api_hash=Config.TG_API_HASH,
             api_id=Config.TG_API_ID,
             bot_token=Config.TG_BOT_TOKEN,
