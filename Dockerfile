@@ -1,4 +1,4 @@
-FROM python:3-slim-buster
+FROM python-slim-buster
 
 RUN apt update && apt upgrade -y
 RUN apt install git -y
