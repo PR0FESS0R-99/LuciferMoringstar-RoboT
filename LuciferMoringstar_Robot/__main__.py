@@ -1,3 +1,5 @@
 from .lucifer import lucifermoringstar_robot
 
-lucifermoringstar_robot.run()
+lucifer = lucifermoringstar_robot()
+
+lucifer.run()
