@@ -14,3 +14,5 @@ lucifermoringstar_robot = Client(
   sleep_threshold=10,
   workers=200
 )
+
+lucifermoringstar_robot.start()
