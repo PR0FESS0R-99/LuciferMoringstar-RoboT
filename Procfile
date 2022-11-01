@@ -1,1 +1,1 @@
-worker: python3 LuciferMoringstar_Robot
+worker: python3 -m LuciferMoringstar_Robot
