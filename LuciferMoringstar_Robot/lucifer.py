@@ -5,14 +5,27 @@
 from pyrogram import Client, enums, __version__
 from simple_configs import Config
 
-lucifermoringstar_robot = Client(
-  name="LuciferMoringstar-Robot",
-  api_hash=Config.TG_API_HASH,
-  api_id=Config.TG_API_ID,
-  bot_token=Config.TG_BOT_TOKEN,
-  plugins={"root": "LuciferMoringstar_Robot/plugins"},
-  sleep_threshold=10,
-  workers=200
-)
+class lucifermoringstar_robot(Client):
 
-lucifermoringstar_robot.start()
+    def __init__(self):
+        name = self.__class__.__name__.lower()
+        super().__init__(
+            name="lucifer-bot",
+            plugins=dict(root=f"{name}/plugins"),
+            api_hash=Config.TG_API_HASH,
+            api_id=Config.TG_API_ID,
+            bot_token=Config.TG_BOT_TOKEN,
+            sleep_threshold=60,
+        )
+
+    async def start(self):
+        await super().start()
+        usr_bot_me = self.me
+        print(
+            f"Lucifermoringstar-Robot based on Pyrogram v{__version__}"
+            f"(Layer {layer}) started on @{usr_bot_me.username}. "       
+        )
+
+    async def stop(self, *args):
+        await super().stop()
+        print("Lucifermoringstar-Robot stopped. Bye.")
