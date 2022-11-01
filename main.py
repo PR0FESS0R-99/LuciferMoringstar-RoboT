@@ -15,6 +15,7 @@ class lucifermoringstar_robot(Client):
             api_id=Config.TG_API_ID,
             bot_token=Config.TG_BOT_TOKEN,
             sleep_threshold=60,
+            workers=50
         )
 
     async def start(self):
