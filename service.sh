@@ -1,14 +1,14 @@
-if [ -z $UPSTREAM_REPO ]
+if [ -z "https://github.com/PR0FESS0R-99/Midukki-RoBoT" ]
 
 then
-  echo "Cloning Main Branch [Lucifer]"
-  git clone https://github.com/PR0FESS0R-99/LuciferMoringstar-Robot.git /LuciferMoringstar-Robot
+  echo "Successfully Cloned Midukki-RoboT"
+  git clone https://github.com/PR0FESS0R-99/Midukki-RoBoT /Midukki-RoBoT 
 else
-  echo "Cloning Custom Repo from $UPSTREAM_REPO "
-  git clone $UPSTREAM_REPO /LuciferMoringstar-Robot
+  echo "Successfully Cloned Midukki-RoboT"
+  git clone https://github.com/PR0FESS0R-99/Midukki-RoBoT /Midukki-RoBoT 
 
 fi
-cd /LuciferMoringstar-Robot
+cd /Midukki-RoBoT
 pip3 install -U -r requirements.txt
-echo "Started Clone Version Lucifer...."
+echo "Started Clone Version Midukki...."
 python3 main.py
